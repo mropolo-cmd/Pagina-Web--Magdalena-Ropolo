@@ -1,1 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASSOULINE × Magdalena Ropolo</title>
 
+    <!-- Tipografías: Assouline vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Icono bolsa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Favicon y CSS -->
+    <link rel="icon" type="image/png" href="assets/logo-collab.png">
+    <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+    <!-- Accesibilidad: saltar al contenido -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- HEADER: fijo, con menú izq, logo centrado e ícono bolsa der -->
+    <header class="site-header" role="banner">
+        <nav class="navbar" aria-label="Principal">
+        <!-- Botón hamburguesa (mobile) -->
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- Menú (izquierda) -->
+        <ul id="navLinks" class="nav-links">
+            <li><a href="#">TRAVEL</a></li>
+            <li><a href="#">OBJECTS</a></li>
+            <li><a href="#">GIFTS</a></li>
+            <li><a href="#">ABOUT</a></li>
+        </ul>
+
+        <!-- Logo centrado (tu imagen) -->
+        <a class="brand" href="index.html" aria-label="Inicio">
+            <!-- PONÉ tu archivo en /assets -->
+            <img src="assets/logo-collab.png" alt="ASSOULINE × Magdalena Ropolo" />
+        </a>
+
+        <!-- Bolsa (derecha) -->
+        <a href="#" class="bag" aria-label="Ver carrito">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+        </nav>
+    </header>
+
+    <!-- Overlay para el menú mobile -->
+    <div class="overlay" id="overlay" hidden></div>
+
+    <!-- HERO: tu video a pantalla completa -->
+    <main id="contenido">
+        <section class="hero" aria-label="Presentación de la colaboración">
+        <!-- Reemplazá rutas por tus archivos en /assets -->
+        <video id="heroVideo" class="hero__video" autoplay muted loop playsinline poster="assets/posterVideo.jpg">
+            <source src="assets/hero_vertical.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+        </video>
+
+        <!-- Botón de sonido -->
+        <button id="soundToggle" class="sound-btn" aria-controls="heroVideo" aria-pressed="false">
+            <span id="soundIcon" aria-hidden="true">🔇</span>
+            <span class="visually-hidden">Activar o desactivar sonido</span>
+        </button>
+        </section>
+    </main>
+
+    <script src="js/app.js" defer></script>
+</body>
+</html>

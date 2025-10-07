@@ -1,1 +1,149 @@
+/* ===== Paleta sobria (sin degradados) ===== */
+:root{
+    --bg:#ffffff;
+    --ink:#111;            /* negro intenso */
+    --ink-soft:#444;
+    --line:#e9e9e9;
+    --header-h:90px;
+}
 
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height:1.5;
+}
+
+/* Titulares estilo Assouline */
+h1,h2,h3{
+    font-family:"Cormorant Garamond", serif;
+    letter-spacing:.02em;
+}
+
+.visually-hidden{ position:absolute; left:-9999px; }
+
+/* Skip link accesible */
+.skip-link{
+    position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+    left:1rem; top:1rem; width:auto; height:auto;
+    padding:.5rem .75rem; background:#fff; border:1px solid #000; z-index:2000;
+}
+
+/* ===== Header ===== */
+.site-header{
+    position:fixed; top:0; left:0; right:0;
+    height:var(--header-h);
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    z-index:1000;
+}
+
+.navbar{
+    height:100%;
+    display:flex; align-items:center;
+    padding:0 28px;
+    position:relative;
+}
+
+/* Menú izquierdo */
+.nav-links{
+    list-style:none; margin:0; padding:0;
+    display:flex; gap:26px;
+}
+.nav-links a{
+    text-decoration:none; color:var(--ink);
+    font-weight:500; letter-spacing:.06em;
+    position:relative;
+}
+.nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-3px; height:1px; width:0;
+    background:rgba(0,0,0,.75); transition:width .2s ease;
+}
+.nav-links a:hover::after{ width:100%; }
+
+/* Logo centrado */
+.brand{
+    position:absolute; left:50%; transform:translateX(-50%);
+    display:block; line-height:0;
+}
+.brand img{ height:40px; width:auto; display:block; }
+
+/* Bolsa derecha */
+.bag{
+    margin-left:auto; color:var(--ink);
+    font-size:20px; text-decoration:none;
+}
+
+/* Hamburguesa (oculta en desktop) */
+.menu-toggle{
+    display:none; background:none; border:0; padding:0; width:24px; height:18px; cursor:pointer;
+}
+.menu-toggle span{
+    display:block; height:2px; width:100%; background:var(--ink); margin:3px 0;
+}
+
+/* ===== Hero (pantalla completa sin recortes) ===== */
+.hero{
+    position:relative;
+    margin-top:var(--header-h);                    /* debajo del header fijo */
+    height:calc(100dvh - var(--header-h));        /* toda la ventana visible */
+    overflow:hidden;
+    background:#000;                               /* bordes negros elegantes */
+}
+@supports not (height:100dvh){
+    .hero{ height:calc(100vh - var(--header-h)); } /* fallback */
+}
+
+/* El video SIEMPRE entero (sin recortar) */
+.hero__video{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:contain;             /* clave: no corta nada */
+    object-position:center center;  /* centrado perfecto */
+    background:#000;                /* relleno en las bandas */
+}
+
+/* Botón sonido */
+.sound-btn{
+    position:absolute; right:32px; bottom:28px;
+    background:rgba(0,0,0,.35); color:#fff;
+    border:1px solid #fff; border-radius:999px;
+    padding:.45rem .7rem; font-size:18px;
+    backdrop-filter:saturate(120%) blur(1.5px);
+}
+.sound-btn:hover{ background:rgba(0,0,0,.55); }
+
+/* Overlay para cerrar menú tocando afuera (mobile) */
+.overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.45);
+    opacity:0; transition:opacity .2s ease; z-index:900;
+}
+.overlay.active{ opacity:1; }
+
+/* ===== Responsive ===== */
+@media (max-width:992px){
+    :root{ --header-h:70px; }
+
+    .menu-toggle{ display:block; }
+
+    .nav-links{
+    position:fixed; left:0; right:0; top:var(--header-h);
+    flex-direction:column; gap:0;
+    background:#fff; border-top:1px solid var(--line);
+    transform:translateY(-120%); transition:transform .25s ease;
+    padding:.5rem 1rem; z-index:1001;
+    }
+    .nav-links.active{ transform:translateY(0); }
+    .nav-links a{ display:block; padding:.8rem 0; }
+
+    .brand img{ height:34px; }
+    .bag{ font-size:22px; }
+}
+
+/* No hay media query que cambie a cover:
+    así garantizamos CERO recortes en todos los dispositivos. */
