@@ -1,149 +1,287 @@
-/* ===== Paleta sobria (sin degradados) ===== */
-:root{
-    --bg:#ffffff;
-    --ink:#111;            /* negro intenso */
-    --ink-soft:#444;
-    --line:#e9e9e9;
-    --header-h:90px;
+/* RESET Y TIPOGRAFÍA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    line-height:1.5;
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f8f7f3;
+    color: #333;
 }
 
-/* Titulares estilo Assouline */
-h1,h2,h3{
-    font-family:"Cormorant Garamond", serif;
-    letter-spacing:.02em;
+/* ===================================
+    HEADER
+    =================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.visually-hidden{ position:absolute; left:-9999px; }
-
-/* Skip link accesible */
-.skip-link{
-    position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
-}
-.skip-link:focus{
-    left:1rem; top:1rem; width:auto; height:auto;
-    padding:.5rem .75rem; background:#fff; border:1px solid #000; z-index:2000;
-}
-
-/* ===== Header ===== */
-.site-header{
-    position:fixed; top:0; left:0; right:0;
-    height:var(--header-h);
-    background:#fff;
-    border-bottom:1px solid var(--line);
-    z-index:1000;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.navbar{
-    height:100%;
-    display:flex; align-items:center;
-    padding:0 28px;
-    position:relative;
+/* LOGO A LA IZQUIERDA */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-/* Menú izquierdo */
-.nav-links{
-    list-style:none; margin:0; padding:0;
-    display:flex; gap:26px;
-}
-.nav-links a{
-    text-decoration:none; color:var(--ink);
-    font-weight:500; letter-spacing:.06em;
-    position:relative;
-}
-.nav-links a::after{
-    content:""; position:absolute; left:0; bottom:-3px; height:1px; width:0;
-    background:rgba(0,0,0,.75); transition:width .2s ease;
-}
-.nav-links a:hover::after{ width:100%; }
-
-/* Logo centrado */
-.brand{
-    position:absolute; left:50%; transform:translateX(-50%);
-    display:block; line-height:0;
-}
-.brand img{ height:40px; width:auto; display:block; }
-
-/* Bolsa derecha */
-.bag{
-    margin-left:auto; color:var(--ink);
-    font-size:20px; text-decoration:none;
+.logo-img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    background-color: #ffffff;
 }
 
-/* Hamburguesa (oculta en desktop) */
-.menu-toggle{
-    display:none; background:none; border:0; padding:0; width:24px; height:18px; cursor:pointer;
-}
-.menu-toggle span{
-    display:block; height:2px; width:100%; background:var(--ink); margin:3px 0;
-}
 
-/* ===== Hero (pantalla completa sin recortes) ===== */
-.hero{
-    position:relative;
-    margin-top:var(--header-h);                    /* debajo del header fijo */
-    height:calc(100dvh - var(--header-h));        /* toda la ventana visible */
-    overflow:hidden;
-    background:#000;                               /* bordes negros elegantes */
-}
-@supports not (height:100dvh){
-    .hero{ height:calc(100vh - var(--header-h)); } /* fallback */
+/* MENÚ DE NAVEGACIÓN CENTRADO */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* El video SIEMPRE entero (sin recortar) */
-.hero__video{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:contain;             /* clave: no corta nada */
-    object-position:center center;  /* centrado perfecto */
-    background:#000;                /* relleno en las bandas */
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-/* Botón sonido */
-.sound-btn{
-    position:absolute; right:32px; bottom:28px;
-    background:rgba(0,0,0,.35); color:#fff;
-    border:1px solid #fff; border-radius:999px;
-    padding:.45rem .7rem; font-size:18px;
-    backdrop-filter:saturate(120%) blur(1.5px);
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    left: 0;
+    bottom: -5px;
+    background-color: #000;
+    transition: width 0.3s ease;
 }
-.sound-btn:hover{ background:rgba(0,0,0,.55); }
 
-/* Overlay para cerrar menú tocando afuera (mobile) */
-.overlay{
-    position:fixed; inset:0; background:rgba(0,0,0,.45);
-    opacity:0; transition:opacity .2s ease; z-index:900;
+.navbar a:hover::after {
+    width: 100%;
 }
-.overlay.active{ opacity:1; }
 
-/* ===== Responsive ===== */
-@media (max-width:992px){
-    :root{ --header-h:70px; }
+  /* ICONO DEL CARRITO */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-    .menu-toggle{ display:block; }
+.icon-link,
+.bag {
+    color: #000;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
 
-    .nav-links{
-    position:fixed; left:0; right:0; top:var(--header-h);
-    flex-direction:column; gap:0;
-    background:#fff; border-top:1px solid var(--line);
-    transform:translateY(-120%); transition:transform .25s ease;
-    padding:.5rem 1rem; z-index:1001;
+.icon-link:hover,
+.bag:hover {
+    opacity: 0.6;
+}
+
+/* BOTÓN HAMBURGUESA (oculto en desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ===================================
+    VIDEO HERO
+    =================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 80px;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTÓN DE SONIDO */
+.sound-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 35px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.sound-btn:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+
+/* ===================================
+    RESPONSIVE - MÓVIL
+    =================================== */
+@media (max-width: 768px) {
+    
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    position: relative;
     }
-    .nav-links.active{ transform:translateY(0); }
-    .nav-links a{ display:block; padding:.8rem 0; }
 
-    .brand img{ height:34px; }
-    .bag{ font-size:22px; }
+    /* Botón hamburguesa visible */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 22px;
+        height: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+    }
+
+    /* Logo centrado */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    /* OCULTAR ICONOS EN MÓVIL (ESTO ES LO NUEVO) */
+    .nav-icons .icon-link {
+        display: none;
+    }
+
+    /* Carrito a la derecha */
+    .bag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-size: 22px;
+    }
+
+    /* Menú desplegable */
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        position: static;
+        transform: none;
+        top: 70px;
+        left: 0;
+        margin: 0;
+        padding: 20px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar ul.active {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        animation: slideDown 0.3s ease;
+        z-index: 1001;
+    }
+
+    @keyframes slideDown {
+        from { 
+            opacity: 0; 
+            transform: translateY(-10px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    /* Video hero ajustado */
+    .hero {
+        margin-top: 70px;
+    }
+
+    .sound-btn {
+        bottom: 20px;
+        right: 20px;
+    }
 }
-
-/* No hay media query que cambie a cover:
-    así garantizamos CERO recortes en todos los dispositivos. */
