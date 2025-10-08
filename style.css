@@ -40,7 +40,7 @@ header {
 }
 
 .logo-img {
-    height: 35px;
+    height: 50px;
     width: auto;
     object-fit: contain;
     background-color: #ffffff;
@@ -65,9 +65,10 @@ header {
     position: relative;
     transition: all 0.3s ease;
     font-size: 13px;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+    letter-spacing: 0.08em; /* Aumentar el espaciado */
+    font-weight: 400; /* Cambiar a 400 */
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif; /* CAMBIAR A MONTSERRAT */
 }
 
 .navbar a::after {
@@ -224,7 +225,7 @@ header {
     }
 
     .logo-img {
-        height: 40px;
+        height: 50px;
     }
 
     /* OCULTAR ICONOS EN MÓVIL (ESTO ES LO NUEVO) */
