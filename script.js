@@ -1,8 +1,6 @@
 console.log("Assouline x Magdalena Ropolo — sitio cargado correctamente");
 
-// ===================================
-// CONTROL DEL SONIDO DEL VIDEO
-// ===================================
+// ============================== CONTROL DEL SONIDO DEL VIDEO ======================
 const video = document.getElementById('heroVideo');
 const soundBtn = document.getElementById('soundToggle');
 const soundIcon = document.getElementById('soundIcon');
@@ -17,9 +15,7 @@ soundBtn.addEventListener('click', () => {
     }
 });
 
-// ===================================
-// MENÚ DESPLEGABLE MÓVIL
-// ===================================
+// =======================MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
