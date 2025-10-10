@@ -11,9 +11,7 @@ body {
     color: #333;
 }
 
-/* ===================================
-    HEADER
-    =================================== */
+/* ============================= HEADER =============================== */
 header {
     position: fixed;
     top: 0;
@@ -98,16 +96,34 @@ header {
     gap: 20px;
 }
 
-.icon-link,
 .bag {
+    position: relative;
     color: #000;
-    font-size: 18px;
+    font-size: 24px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.icon-link:hover,
 .bag:hover {
-    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+/* Contador del carrito */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 /* BOTÓN HAMBURGUESA (oculto en desktop) */
@@ -148,9 +164,7 @@ header {
     opacity: 1;
 }
 
-/* ===================================
-    VIDEO HERO
-    =================================== */
+/* =============================== VIDEO HERO ============================== */
 .hero {
     position: relative;
     width: 100%;
@@ -166,7 +180,6 @@ header {
     /* Fondo negro para los espacios */
 }
 
-/* BOTÓN DE SONIDO */
 /* BOTÓN DE SONIDO */
 .sound-btn {
     position: absolute;
@@ -231,6 +244,7 @@ header {
 }
 
 .btn-shop-now {
+    display: inline-block; 
     background-color: #000;
     color: #fff;
     border: none;
@@ -242,6 +256,7 @@ header {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-weight: 500;
+    text-decoration: none;
 }
 
 .btn-shop-now:hover {
@@ -557,9 +572,6 @@ header {
     margin-bottom: 0;
 }
 
-.footer-social {
-    justify-content: flex-end;
-}
 
 .footer-logo-section {
     text-align: left;
@@ -673,25 +685,7 @@ header {
     justify-content: center;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    color: #c4b5a0;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
 
-.social-icon:hover {
-    background-color: #f8f7f3;
-    color: #3d2817;
-    border-color: #f8f7f3;
-    transform: translateY(-3px);
-}
 
 .footer-bottom {
     margin-top: 25px;
@@ -732,6 +726,7 @@ header {
         border: none;
         cursor: pointer;
     }
+
     .menu-toggle span {
         display: block;
         height: 2px;
@@ -740,13 +735,16 @@ header {
         border-radius: 1px;
         transition: all 0.3s ease;
     }
+
     /* Ocultar mega menú en móvil */
     .mega-menu {
         display: none;
     }
+
     .has-dropdown:hover .mega-menu {
         display: none;
     }
+
     /* Logo centrado */
     .logo {
         position: absolute;
@@ -829,7 +827,7 @@ header {
         right: 20px;
     }
 
-    /* Sección colección en móvil */
+    /* Sección colección en tel */
     .collection-section {
         padding: 50px 20px 0 20px;
     }
@@ -852,7 +850,7 @@ header {
         height: 400px;
     }
 
-    /* Carrusel de destinos en móvil */
+    /* Carrusel de destinos en tel */
     .destinations-section {
         padding: 60px 20px;
     }
@@ -936,11 +934,4 @@ header {
         text-align: center;
     }
 
-    .footer-contact {
-        text-align: center;
-    }
-
-    .footer-social {
-        justify-content: center;
-    }
 }

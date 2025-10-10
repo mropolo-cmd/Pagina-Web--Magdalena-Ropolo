@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/logoRojo.png">
 </head>
+
 <body>
     <!-- HEADER -->
     <header>
@@ -35,29 +36,18 @@
             <!-- Menú de navegación AL CENTRO -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="#">NEW</a></li>
-                <li><a href="#">BOOKS</a></li>
+                <li><a href="productos.html">BOOKS</a></li>
                 <li><a href="#">ABOUT US</a></li>
                 <li><a href="#">BOUTIQUES</a></li>
             </ul>
-
             <!-- Iconos a la derecha -->
             <div class="nav-icons">
-                <a href="#" class="icon-link">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
-                <a href="#" class="icon-link">
-                    <i class="fa-solid fa-globe"></i>
-                </a>
-                <a href="#" class="icon-link">
-                    <i class="fa-regular fa-bookmark"></i>
-                </a>
-                <a href="#" class="icon-link">
-                    <i class="fa-regular fa-user"></i>
-                </a>
-                <a href="#" class="bag">
+                <a href="#" class="bag" id="cartIcon">
                     <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
                 </a>
             </div>
+
         </nav>
     </header>
 
@@ -90,7 +80,7 @@
                     a través del
                     arte del viaje.
                 </p>
-                <button class="btn-shop-now">SHOP NOW</button>
+                <a href="products.html" class="btn-shop-now">SHOP NOW</a>
             </div>
         </div>
         <div class="collection-images">
@@ -215,11 +205,6 @@
                     Email: <a href="mailto:info@assouline-ropolo.com">info@assouline-ropolo.com</a><br>
                     Tel: +54 11 5555-5555
                 </p>
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
-                </div>
             </div>
         </div>
         <!-- Copyright -->
@@ -230,4 +215,5 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
+
 </html>
