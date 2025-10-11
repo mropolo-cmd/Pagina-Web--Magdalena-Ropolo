@@ -5,15 +5,13 @@ const video = document.getElementById('heroVideo');
 const soundBtn = document.getElementById('soundToggle');
 const soundIcon = document.getElementById('soundIcon');
 
-soundBtn.addEventListener('click', () => {
-    video.muted = !video.muted;
+if (soundBtn && video && soundIcon) {
+    soundBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        soundIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+    });
+}
 
-    if (video.muted) {
-        soundIcon.className = 'fas fa-volume-mute';
-    } else {
-        soundIcon.className = 'fas fa-volume-up';
-    }
-});
 
 // =======================MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
@@ -31,9 +29,7 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
-// ===================================
-// CARRUSEL DE DESTINOS
-// ===================================
+// ================================= CARRUSEL DE DESTINOS =============================
 let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -100,3 +96,6 @@ if (newsletterForm) {
 }
 
 console.log("Newsletter y footer cargados ✓");
+
+console.log("Products page loaded ✓");
+
