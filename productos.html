@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/logoRojo.png">
 </head>
+
 <body>
     <!-- HEADER -->
     <header>
@@ -130,20 +132,22 @@
     </div>
     <!-- MODAL: COMPRA EXITOSA -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-4">
+        <div class="modal-dialog">
+            <div class="modal-content success-simple">
                 <div class="modal-body">
-                    <i class="fas fa-check-circle text-success mb-3" style="font-size: 80px;"></i>
-                    <h3 class="mb-3">¡Compra Exitosa!</h3>
-                    <p class="text-muted mb-4">Gracias por tu compra. Recibirás un email de confirmación en breve con
-                        los detalles de tu pedido.</p>
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
-                        CONTINUAR COMPRANDO
+                    Compra realizada con éxito, gracias por comprar en <strong>Assouline x Magdalena Ropolo</strong>
+                </div>
+                <div class="modal-footer justify-content-end">
+                    <button type="button" class="btn btn-link text-pink fw-semibold px-0" data-bs-dismiss="modal">
+                        Cerrar
                     </button>
                 </div>
             </div>
         </div>
     </div>
+
+    </div>
+
     <!-- FOOTER -->
     <footer class="main-footer">
         <div class="footer-content">
@@ -177,4 +181,5 @@
     <!-- JS -->
     <script src="script.js"></script>
 </body>
+
 </html>

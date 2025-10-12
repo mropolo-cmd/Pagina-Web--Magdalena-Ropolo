@@ -333,11 +333,9 @@ if (checkoutBtn) {
         const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
         cartModal.hide();
 
-        // Mostrar modal de éxito
+        // Mostrar modal de éxito--> uso el que esta en la pag de bootstrap
         setTimeout(() => {
-            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-            successModal.show();
-
+            new bootstrap.Modal(document.getElementById('successModal')).show();
             // Limpiar carrito
             cart = [];
             updateCart();
