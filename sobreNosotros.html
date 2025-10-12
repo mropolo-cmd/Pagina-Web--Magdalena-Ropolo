@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sobre Nosotros - Assouline x Magdalena Ropolo</title>
+    <!-- Tipografía -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logoRojo.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <!-- Botón hamburguesa -->
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Logo a la izquierda -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-collab.png" alt="Assouline x Magdalena Ropolo" class="logo-img">
+                </a>
+            </div>
+            <!-- Menú de navegación AL CENTRO -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="productos.html">LIBROS</a></li>
+                <li><a href="sobreNosotros.html">SOBRE NOSOTROS</a></li>
+                <li><a href="#">BOUTIQUES</a></li>
+            </ul>
+            <!-- Iconos a la derecha -->
+            <div class="nav-icons">
+                <a href="#" class="bag" id="cartIcon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- Overlay para menú móvil -->
+    <div class="overlay" id="overlay"></div>
+    <!-- SECCIÓN HERO -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1 class="about-hero-title">DONDE LA CULTURA<br>ENCUENTRA EL LUJO</h1>
+            <p class="about-hero-subtitle">
+                A través de libros excepcionales, fragancias para el hogar y objetos de arte, Assouline invita a los 
+                intelectuales y curiosos a un mundo de belleza. Aquí, te invitamos a conocer la historia de esta 
+                colaboración, fundada en París en 2024 por la visión compartida de Prosper Assouline, Martine Assouline 
+                y Magdalena Ropolo.
+            </p>
+        </div>
+    </section>
+    <!-- SECCIÓN 1: Foto izquierda, texto derecha -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image-container">
+                <img src="assets/librosVintage.jpg" alt="Inicio de la colección" class="about-main-image">
+            </div>
+            <div class="about-text-container">
+                <h2 class="about-section-title">Comienzo</h2>
+                <p class="about-section-text">
+                    Todo comenzó en 1993, cuando Martine y Prosper Assouline se encontraban en el hotel 
+                    La Colombe d'Or en Francia, uno de sus lugares favoritos en el mundo. Mientras experimentaban 
+                    juntos su belleza, su curiosidad por la vida y su amor por los libros los inspiraron a crear 
+                    su propio volumen sobre el hotel. Prosper capturó las imágenes, Martine escribió el texto, 
+                    y La Colombe D'Or se convirtió en su primer libro, lanzado en 1994.
+                </p>
+                <img src="assets/polaroid.webp" alt="Detalle colección" class="about-small-image">
+            </div>
+        </div>
+    </section>
+    <!-- SECCIÓN 2: Foto derecha, texto izquierda -->
+    <section class="about-section about-section-reverse">
+        <div class="about-container">
+            <div class="about-text-container">
+                <h2 class="about-section-title">La Visión</h2>
+                <p class="about-section-text">
+                    En 2024, Magdalena Ropolo descubrió en Buenos Aires un ejemplar vintage de aquella primera 
+                    edición de La Colombe d'Or. Fascinada por la filosofía editorial de Assouline y compartiendo 
+                    esa misma pasión por el viaje como forma de arte, nació una colaboración natural. 
+                    The Travel Series Collection reúne destinos cuidadosamente curados desde la perspectiva 
+                    de Magdalena, manteniendo intacto el espíritu fundacional de Assouline: la unión del talento 
+                    editorial de Martine y la visión creativa de Prosper.
+                </p>
+                <img src="assets/dueña.webp" alt="Colaboración" class="about-small-image">
+            </div>
+            <div class="about-image-container">
+                <img src="assets/mesaLibrosMarmol.webp" alt="The Travel Series" class="about-main-image">
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Logo -->
+            <div class="footer-logo-section">
+                <img src="assets/logoCasa.jpeg" alt="Maison Assouline" class="footer-logo">
+            </div>
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h2 class="newsletter-title">Suscríbete a Nuestro Newsletter</h2>
+                <p class="newsletter-subtitle">Recibe las últimas novedades de la colección Travel Series</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="text" placeholder="Nombre" required class="newsletter-input">
+                    <input type="email" placeholder="Email" required class="newsletter-input">
+                    <button type="submit" class="newsletter-button">SUSCRIBIRSE</button>
+                </form>
+            </div>
+            <!-- Info de contacto -->
+            <div class="footer-info">
+                <p class="footer-contact">
+                    Email: <a href="mailto:info@assouline-ropolo.com">info@assouline-ropolo.com</a><br>
+                    Tel: +54 11 5555-5555
+                </p>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>Creado por Magdalena Ropolo | © 2025 Assouline x Magdalena Ropolo</p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
