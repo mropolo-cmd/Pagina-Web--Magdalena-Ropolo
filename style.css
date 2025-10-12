@@ -1262,6 +1262,10 @@ header {
     font-size: 16px;
 }
 
+/* para suavizar el tema de que cuando apoyo el mouse en la foto se cambie a la sigueinte */
+.product-image { transition: opacity .2s ease; display:block; }
+
+
 /* ============================= RESPONSIVE ================================ */
 @media (max-width: 1200px) {
     .products-grid {

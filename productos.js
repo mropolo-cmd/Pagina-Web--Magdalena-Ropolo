@@ -3,146 +3,110 @@ const productsDatabase = [
     {
         id: 1,
         title: "Mexico City",
-        author: "Magdalena Ropolo",
         price: 135000,
         images: [
             "assets/libros/mexico1.jpg",
-            "assets/libros/mexico2.jpg",
-            "assets/libros/mexico3.jpg"
+            "assets/libros/mexico2.jpg"
         ],
-        description: "Una exploración visual de la vibrante capital mexicana, sus colores, su cultura y su historia milenaria."
     },
     {
         id: 2,
         title: "Amalfi Coast",
-        author: "Magdalena Ropolo",
         price: 145000,
         images: [
             "assets/libros/amalfi1.jpg",
-            "assets/libros/amalfi2.jpg",
-            "assets/libros/amalfi3.jpg"
+            "assets/libros/amalfi2.jpg"
         ],
-        description: "Acantilados espectaculares, pueblos verticales y el Mediterráneo en su máximo esplendor."
     },
     {
         id: 3,
         title: "Bali Mystique",
-        author: "Magdalena Ropolo",
         price: 128000,
         images: [
             "assets/libros/bali1.webp",
-            "assets/libros/bali2.webp",
-            "assets/libros/bali3.webp"
+            "assets/libros/bali2.webp"
         ],
-        description: "Una oda al equilibrio perfecto entre espiritualidad y naturaleza. Templos, arrozales y playas doradas bajo la luz cálida del trópico."
     },
     {
         id: 4,
         title: "Capri Dolce Vita",
-        author: "Magdalena Ropolo",
         price: 138000,
         images: [
             "assets/libros/capri1.jpg",
-            "assets/libros/capri2.jpg",
-            "assets/libros/capri3.jpg"
+            "assets/libros/capri2.webp"
         ],
-        description: "El glamour italiano hecho paisaje. Cielos azules, acantilados vertiginosos y una elegancia atemporal en cada rincón de la isla."
     },
     {
         id: 5,
         title: "Havana Blues",
-        author: "Magdalena Ropolo",
         price: 132000,
         images: [
             "assets/libros/havana1.jpg",
-            "assets/libros/havana2.webp",
-            "assets/libros/havana3.jpg"
+            "assets/libros/havana2.webp"
         ],
-        description: "Una mirada nostálgica a la Habana: autos clásicos, fachadas desgastadas y una energía musical que late en cada calle."
     },
     {
         id: 6,
         title: "Ibiza Bohemia",
-        author: "Magdalena Ropolo",
         price: 142000,
         images: [
             "assets/libros/ibiza1.webp",
-            "assets/libros/ibiza2.webp",
-            "assets/libros/ibiza3.webp"
+            "assets/libros/ibiza2.webp"
         ],
-        description: "Entre calas escondidas y noches infinitas, la isla blanca combina lo bohemio, lo natural y lo cosmopolita con un magnetismo único."
     },
     {
         id: 7,
         title: "Jamaica Vibes",
-        author: "Magdalena Ropolo",
         price: 136000,
         images: [
             "assets/libros/jamaica1.jpg",
-            "assets/libros/jamaica2.jpg",
-            "assets/libros/jamaica3.jpg"
+            "assets/libros/jamaica2.jpg"
         ],
-        description: "Verde, ritmo y alma. Una celebración de la cultura caribeña, sus playas de arena blanca y la esencia vibrante del reggae."
     },
     {
         id: 8,
         title: "Tulum Gypset",
-        author: "Magdalena Ropolo",
         price: 130000,
         images: [
             "assets/libros/tulum1.jpg",
-            "assets/libros/tulum2.jpg",
-            "assets/libros/tulum3.jpg"
+            "assets/libros/tulum2.jpg"
         ],
-        description: "Ruinas mayas, playas paradisíacas y la nueva onda bohemia del Caribe mexicano."
     },
     {
         id: 9,
         title: "Mykonos Muse",
-        author: "Magdalena Ropolo",
         price: 148000,
         images: [
             "assets/libros/mykonos1.jpg",
-            "assets/libros/mykonos2.jpg",
-            "assets/libros/mykonos3.webp"
+            "assets/libros/mykonos2.jpg"
         ],
-        description: "El sol del Egeo baña sus calles blancas y puertas azules. Un icono del hedonismo mediterráneo donde el arte y la fiesta se funden."
     },
     {
         id: 10,
         title: "Red Sea The Saudi Coast",
-        author: "Magdalena Ropolo",
         price: 139000,
         images: [
             "assets/libros/redsea1.webp",
-            "assets/libros/redsea2.webp",
-            "assets/libros/redsea3.webp"
+            "assets/libros/redsea2.webp"
         ],
-        description: "Corales infinitos, desiertos dorados y un mar que parece líquido cristal. Un homenaje visual al contraste entre arena y agua."
     },
     {
         id: 11,
         title: "Kyoto Serenity",
-        author: "Magdalena Ropolo",
         price: 141000,
         images: [
             "assets/libros/kyoto1.webp",
-            "assets/libros/kyoto2.webp",
-            "assets/libros/kyoto3.webp"
+            "assets/libros/kyoto2.webp"
         ],
-        description: "Jardines zen, templos milenarios y la estética minimalista japonesa en su forma más pura."
     },
     {
         id: 12,
         title: "Sevilla Arte",
-        author: "Magdalena Ropolo",
         price: 134000,
         images: [
             "assets/libros/sevilla1.webp",
-            "assets/libros/sevilla2.webp",
-            "assets/libros/sevilla3.webp"
+            "assets/libros/sevilla2.webp"
         ],
-        description: "El alma de Andalucía hecha color y pasión. Flamenco, patios con azahares y una arquitectura que vibra con historia y arte."
     }
 ];
 
@@ -158,30 +122,39 @@ function formatPrice(price) {
 function displayProducts() {
     const grid = document.getElementById('productsGrid');
     const countElement = document.getElementById('productsCount');
-
     if (!grid) return;
-
-    // Actualizar contador
     if (countElement) {
         countElement.textContent = productsDatabase.length + ' PRODUCTOS EN ESTA COLECCIÓN';
     }
-
     grid.innerHTML = '';
-
     productsDatabase.forEach(product => {
+        const first = product.images[0];
+        const second = product.images[1] || product.images[0]; // por si faltara la 2
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML =
-            '<img src="' + product.images[0] + '" alt="' + product.title + '" class="product-image">' +
-            '<div class="product-info">' +
+        productCard.innerHTML =
+        '<img src="' + first + '" alt="' + product.title + '" class="product-image" ' +
+        '     data-first="' + first + '" data-second="' + second + '">' +
+        '<div class="product-info">' +
             '<h3 class="product-title">' + product.title + '</h3>' +
-            '<p class="product-author">' + product.author + '</p>' +
             '<p class="product-price">' + formatPrice(product.price) + '</p>' +
-            '<button class="btn-view-product" onclick="addToCart(' + product.id + ')">' +
-            'AGREGAR AL CARRITO' +
-            '</button>' +
-            '</div>';
+            '<button class="btn-view-product" onclick="addToCart(' + product.id + ')">AGREGAR AL CARRITO</button>' +
+        '</div>';
         grid.appendChild(productCard);
+
+        // ----- Hover swap (1 ↔ 2) + preload -----
+        const imgEl = productCard.querySelector('.product-image');
+        const preload = new Image();
+        preload.src = second; // evita parpadeo
+
+        imgEl.addEventListener('mouseenter', () => { imgEl.src = second; });
+        imgEl.addEventListener('mouseleave', () => { imgEl.src = first; });
+
+        // En mobile: primer toque alterna
+        imgEl.addEventListener('touchstart', () => {
+            imgEl.src = (imgEl.src.endsWith(second)) ? first : second;
+        }, { passive: true });
     });
 }
 
@@ -283,7 +256,6 @@ function displayCartModal() {
             '<img src="' + item.images[0] + '" alt="' + item.title + '" class="cart-item-modal-img">' +
             '<div class="cart-item-modal-info">' +
             '<h5 class="cart-item-modal-title">' + item.title + '</h5>' +
-            '<p class="cart-item-modal-author">' + item.author + '</p>' +
             '<p class="cart-item-modal-price">' + formatPrice(item.price) + ' c/u</p>' +
             '<div class="cart-item-modal-actions">' +
             '<button class="btn-quantity-modal" onclick="changeQuantity(' + index + ', -1)">-</button>' +
