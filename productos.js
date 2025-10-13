@@ -110,43 +110,45 @@ const productsDatabase = [
     }
 ];
 
-// ========================== CARRITO (GLOBAL) ================================
-let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
+// ========================== CARRITO (USA EL GLOBAL DE script.js) ================================
+// No redefinimos cart aquí, usamos el que ya está en script.js
 
-// =========================== FORMATEAR PRECIO ===============================
-function formatPrice(price) {
-    return '$' + price.toLocaleString('es-AR');
-}
+// =========================== FORMATEAR PRECIO (USA EL DE script.js) ===============================
+// Ya está definido en script.js
 
 // =============================== MOSTRAR PRODUCTOS EN LA PÁGINA ===============================
 function displayProducts() {
     const grid = document.getElementById('productsGrid');
     const countElement = document.getElementById('productsCount');
     if (!grid) return;
+    
     if (countElement) {
         countElement.textContent = productsDatabase.length + ' PRODUCTOS EN ESTA COLECCIÓN';
     }
+    
     grid.innerHTML = '';
+    
     productsDatabase.forEach(product => {
         const first = product.images[0];
-        const second = product.images[1] || product.images[0]; // por si faltara la 2
+        const second = product.images[1] || product.images[0];
+        
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML =
-        productCard.innerHTML =
-        '<img src="' + first + '" alt="' + product.title + '" class="product-image" ' +
-        '     data-first="' + first + '" data-second="' + second + '">' +
-        '<div class="product-info">' +
-            '<h3 class="product-title">' + product.title + '</h3>' +
-            '<p class="product-price">' + formatPrice(product.price) + '</p>' +
-            '<button class="btn-view-product" onclick="addToCart(' + product.id + ')">AGREGAR AL CARRITO</button>' +
-        '</div>';
+            '<img src="' + first + '" alt="' + product.title + '" class="product-image" ' +
+            '     data-first="' + first + '" data-second="' + second + '">' +
+            '<div class="product-info">' +
+                '<h3 class="product-title">' + product.title + '</h3>' +
+                '<p class="product-price">' + formatPrice(product.price) + '</p>' +
+                '<button class="btn-view-product" onclick="addToCart(' + product.id + ')">AGREGAR AL CARRITO</button>' +
+            '</div>';
+        
         grid.appendChild(productCard);
 
         // ----- Hover swap (1 ↔ 2) + preload -----
         const imgEl = productCard.querySelector('.product-image');
         const preload = new Image();
-        preload.src = second; // evita parpadeo
+        preload.src = second;
 
         imgEl.addEventListener('mouseenter', () => { imgEl.src = second; });
         imgEl.addEventListener('mouseleave', () => { imgEl.src = first; });
@@ -160,159 +162,25 @@ function displayProducts() {
 
 // =========================== AGREGAR AL CARRITO ================================
 function addToCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
     const product = productsDatabase.find(p => p.id === productId);
+    if (!product) return;
+    
     const existingItem = cart.find(item => item.id === productId);
-
     if (existingItem) {
         existingItem.quantity++;
     } else {
         cart.push({ ...product, quantity: 1 });
     }
 
-    updateCart();
-    showNotification('Producto agregado al carrito');
-}
-
-// ============================ ACTUALIZAR CARRITO ================================
-function updateCart() {
     localStorage.setItem('assoulineCart', JSON.stringify(cart));
-    updateCartCount();
-}
-
-// ======================= ACTUALIZAR CONTADOR DEL CARRITO =================
-function updateCartCount() {
-    const cartCount = document.getElementById('cartCount');
-    if (cartCount) {
+    
+    const cartCountEl = document.getElementById('cartCount');
+    if (cartCountEl) {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCount.textContent = totalItems;
+        cartCountEl.textContent = totalItems;
     }
-}
-
-// ======================= MOSTRAR NOTIFICACIÓN ===============================
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.style.cssText =
-        'position: fixed;' +
-        'top: 100px;' +
-        'right: 30px;' +
-        'background-color: #2ecc71;' +
-        'color: white;' +
-        'padding: 15px 25px;' +
-        'border-radius: 3px;' +
-        'box-shadow: 0 5px 20px rgba(0,0,0,0.2);' +
-        'z-index: 10000;' +
-        'font-family: Montserrat, sans-serif;' +
-        'font-size: 14px;' +
-        'animation: slideIn 0.3s ease;';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    setTimeout(function () {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(function () {
-            notification.remove();
-        }, 300);
-    }, 2000);
-}
-
-// =========================== ABRIR MODAL DEL CARRITO ==================================
-const cartIcon = document.getElementById('cartIcon');
-if (cartIcon) {
-    cartIcon.addEventListener('click', (e) => {
-        e.preventDefault();
-        displayCartModal();
-        const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
-        cartModal.show();
-    });
-}
-
-// ============================= MOSTRAR ITEMS DEL CARRITO =========================
-function displayCartModal() {
-    const cartBody = document.getElementById('cartModalBody');
-    const cartTotal = document.getElementById('cartModalTotal');
-
-    if (!cartBody) return;
-
-    if (cart.length === 0) {
-        cartBody.innerHTML =
-            '<div class="empty-cart">' +
-            '<i class="fas fa-shopping-bag"></i>' +
-            '<p>Tu carrito está vacío</p>' +
-            '</div>';
-        cartTotal.textContent = formatPrice(0);
-        return;
-    }
-
-    let total = 0;
-    cartBody.innerHTML = '';
-
-    cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item-modal';
-        cartItem.innerHTML =
-            '<img src="' + item.images[0] + '" alt="' + item.title + '" class="cart-item-modal-img">' +
-            '<div class="cart-item-modal-info">' +
-            '<h5 class="cart-item-modal-title">' + item.title + '</h5>' +
-            '<p class="cart-item-modal-price">' + formatPrice(item.price) + ' c/u</p>' +
-            '<div class="cart-item-modal-actions">' +
-            '<button class="btn-quantity-modal" onclick="changeQuantity(' + index + ', -1)">-</button>' +
-            '<span class="cart-quantity-text">' + item.quantity + '</span>' +
-            '<button class="btn-quantity-modal" onclick="changeQuantity(' + index + ', 1)">+</button>' +
-            '<button class="btn-remove-modal" onclick="removeFromCart(' + index + ')">' +
-            '<i class="fas fa-trash"></i>' +
-            '</button>' +
-            '</div>' +
-            '</div>';
-        cartBody.appendChild(cartItem);
-    });
-
-    cartTotal.textContent = formatPrice(total);
-}
-
-// ========================  CAMBIAR CANTIDAD ================================
-function changeQuantity(index, change) {
-    cart[index].quantity += change;
-
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-
-    updateCart();
-    displayCartModal();
-}
-
-// ========================  ELIMINAR DEL CARRITO ================================
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-    displayCartModal();
-}
-
-// ======================= FINALIZAR COMPRA ===========================
-const checkoutBtn = document.getElementById('checkoutBtn');
-if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-        if (cart.length === 0) {
-            showNotification('Tu carrito está vacío');
-            return;
-        }
-
-        // Cerrar modal del carrito
-        const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
-        cartModal.hide();
-
-        // Mostrar modal de éxito--> uso el que esta en la pag de bootstrap
-        setTimeout(() => {
-            new bootstrap.Modal(document.getElementById('successModal')).show();
-            // Limpiar carrito
-            cart = [];
-            updateCart();
-        }, 300);
-    });
+    
 }
 
 // ============================ ANIMACIONES ===============================
@@ -330,13 +198,9 @@ document.head.appendChild(style);
 
 // =========================== FUNCIONES GLOBALES ==============================
 window.addToCart = addToCart;
-window.changeQuantity = changeQuantity;
-window.removeFromCart = removeFromCart;
 
 // ==================== INICIALIZAR =================================
 window.addEventListener('DOMContentLoaded', function () {
     displayProducts();
-    updateCartCount();
     console.log('12 productos cargados ✓');
-    console.log('Sistema de carrito activo ✓');
 });

@@ -1,4 +1,4 @@
-/* RESET Y TIPOGRAFÍA */
+/* RESET Y TIPOGRAFÃA */
 * {
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ header {
 }
 
 
-/* MENÚ DE NAVEGACIÓN CENTRADO */
+/* MENÃš DE NAVEGACIÃ“N CENTRADO */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -100,7 +100,7 @@ header {
     position: relative;
     color: #000;
     font-size: 26px;
-    /* MÁS GRANDE */
+    /* MÃS GRANDE */
     transition: all 0.3s ease;
     cursor: pointer;
     padding: 5px;
@@ -110,7 +110,7 @@ header {
     opacity: 0.7;
 }
 
-/* Contador del carrito - CÍRCULO ARRIBA A LA DERECHA */
+/* Contador del carrito - CÃRCULO ARRIBA A LA DERECHA */
 .cart-count {
     position: absolute;
     top: -5px;
@@ -130,7 +130,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* BOTÓN HAMBURGUESA (oculto en desktop) */
+/* BOTÃ“N HAMBURGUESA (oculto en desktop) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -184,7 +184,7 @@ header {
     /* Fondo negro para los espacios */
 }
 
-/* BOTÓN DE SONIDO */
+/* BOTÃ“N DE SONIDO */
 .sound-btn {
     position: absolute;
     bottom: 25px;
@@ -210,7 +210,7 @@ header {
     transform: scale(1.1);
 }
 
-/* ============================== SECCIÓN: LA COLECCIÓN=========================== */
+/* ============================== SECCIÃ“N: LA COLECCIÃ“N=========================== */
 .collection-section {
     background-color: #ffffff;
     padding: 80px 40px 0 40px;
@@ -269,7 +269,7 @@ header {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Imágenes de la colección */
+/* ImÃ¡genes de la colecciÃ³n */
 .collection-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -297,7 +297,7 @@ header {
     transform: scale(1.05);
 }
 
-/* =============================SECCIÓN: CARRUSEL DE DESTINOS ========================= */
+/* =============================SECCIÃ“N: CARRUSEL DE DESTINOS ========================= */
 .destinations-section {
     background-color: #f8f7f3;
     padding: 100px 40px;
@@ -346,7 +346,7 @@ header {
     object-fit: cover;
 }
 
-/* Flechas de navegación */
+/* Flechas de navegaciÃ³n */
 .carousel-btn {
     display: none;
     position: absolute;
@@ -460,7 +460,7 @@ header {
     transform: translateX(5px);
 }
 
-/* ============================= SECCIÓN: BOUTIQUES Y HISTORIA ============= */
+/* ============================= SECCIÃ“N: BOUTIQUES Y HISTORIA ============= */
 .info-dual-section {
     background-color: #ffffff;
     padding: 100px 40px;
@@ -689,8 +689,6 @@ header {
     justify-content: center;
 }
 
-
-
 .footer-bottom {
     margin-top: 25px;
     padding-top: 15px;
@@ -705,7 +703,7 @@ header {
     font-weight: 300;
 }
 
-/* Modal de éxito */
+/* Modal  */
 .success-simple {
     border-radius: 12px;
 }
@@ -720,7 +718,7 @@ header {
     text-decoration: none;
 }
 
-/* ============================== PÁGINA SOBRE NOSOTROS ================================ */
+/* ============================== PAGINA SOBRE NOSOTROS ================================ */
 
 /* Hero Section - COMPACTO */
 .about-hero {
@@ -754,7 +752,6 @@ header {
     max-width: 800px;
     margin: 0 auto;
 }
-
 
 /* Secciones de contenido */
 .about-section {
@@ -827,8 +824,54 @@ header {
     transform: scale(1.02);
 }
 
+/* Items del carrito en el modal */
+.cart-item-modal {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
 
-/* ====================== RESPONSIVE - MÓVIL ========================== */
+.cart-item-modal:last-child {
+    border-bottom: none;
+}
+
+.cart-item-modal-img {
+    width: 80px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.cart-item-modal-info {
+    flex: 1;
+}
+
+.cart-item-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.cart-item-modal-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.cart-item-modal-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+/* ====================== RESPONSIVE - TEL ========================== */
 @media (max-width: 768px) {
 
     .navbar {
@@ -842,7 +885,7 @@ header {
         position: relative;
     }
 
-    /* Botón hamburguesa visible */
+    /* Boton hamburguesa visible */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -863,7 +906,7 @@ header {
         transition: all 0.3s ease;
     }
 
-    /* Ocultar mega menú en móvil */
+    /* Ocultar mega menu en tel */
     .mega-menu {
         display: none;
     }
@@ -884,7 +927,7 @@ header {
         height: 50px;
     }
 
-    /* OCULTAR ICONOS EN MÓVIL (ESTO ES LO NUEVO) */
+    /* OCULTAR ICONOS EN TEL */
     .nav-icons .icon-link {
         display: none;
     }
@@ -898,7 +941,7 @@ header {
         font-size: 22px;
     }
 
-    /* Menú desplegable */
+    /* Menu desplegable */
     .navbar ul {
         display: none;
         flex-direction: column;
@@ -944,7 +987,6 @@ header {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* Esto ya lo tenías, pero asegurate */
         object-position: center;
         /* AGREGAR: centra el video */
     }
@@ -954,7 +996,7 @@ header {
         right: 20px;
     }
 
-    /* Sección colección en tel */
+    /* Seccion coleccion en tel */
     .collection-section {
         padding: 50px 20px 0 20px;
     }
@@ -1013,7 +1055,7 @@ header {
         font-size: 14px;
     }
 
-    /* Sección dual en móvil */
+    /* Seccion dual en el tel */
     .info-dual-section {
         padding: 60px 20px;
     }
@@ -1035,14 +1077,14 @@ header {
         font-size: 26px;
     }
 
-    /* Footer en móvil */
+    /* Footer en tel */
     .main-footer {
         padding: 50px 20px 20px;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
-        /* Una columna en móvil */
+        /* Una columna en tel */
         gap: 30px;
         text-align: center;
     }
@@ -1139,7 +1181,7 @@ header {
         font-size: 20px;
     }
 
-    /* Modal en móvil */
+    /* Modal en mÃ³vil */
     .modal-body {
         padding: 20px 15px;
     }
@@ -1161,9 +1203,31 @@ header {
         height: 250px;
     }
 
+    /* Modal del carrito responsive */
+    .cart-modal-content {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+
+    .cart-modal-header {
+        padding: 20px;
+    }
+
+    .cart-modal-header h2 {
+        font-size: 24px;
+    }
+
+    .cart-modal-body {
+        padding: 15px 20px;
+    }
+
+    .cart-modal-footer {
+        padding: 15px 20px;
+    }
+
 }
 
-/* ============================== PÁGINA DE PRODUCTOS ================================ */
+/* ============================== PAGINA DE PRODUCTOS ================================ */
 .products-page {
     margin-top: 80px;
     padding: 80px 20px 100px;
@@ -1360,49 +1424,106 @@ header {
 }
 
 /* ============================== MODAL DEL CARRITO ================================ */
-.cart-item-modal {
+.cart-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cart-modal-content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
     display: flex;
-    gap: 20px;
-    padding: 20px 0;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cart-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
     border-bottom: 1px solid #e0e0e0;
+    background-color: #f8f7f3;
 }
 
-.cart-item-modal:last-child {
-    border-bottom: none;
-}
-
-.cart-item-modal-img {
-    width: 80px;
-    height: 110px;
-    object-fit: cover;
-    border: 1px solid #e0e0e0;
-}
-
-.cart-item-modal-info {
-    flex: 1;
-}
-
-.cart-item-modal-title {
+.cart-modal-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 5px;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0;
     color: #000;
 }
 
-.cart-item-modal-author {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 8px;
+.cart-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    padding: 5px;
 }
 
-.cart-item-modal-price {
+.cart-modal-close:hover {
+    color: #000;
+}
+
+.cart-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 30px;
+}
+
+.cart-modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f8f7f3;
+}
+
+/* Total y botón de checkout */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #000;
-    margin-bottom: 12px;
+}
+
+.cart-total-amount {
+    font-size: 24px;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-checkout:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .cart-item-modal-actions {
@@ -1421,6 +1542,7 @@ header {
     font-weight: 600;
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+    color: #000;
 }
 
 .btn-quantity-modal:hover {
@@ -1470,8 +1592,11 @@ header {
     font-size: 16px;
 }
 
-/* para suavizar el tema de que cuando apoyo el mouse en la foto se cambie a la sigueinte */
-.product-image { transition: opacity .2s ease; display:block; }
+/* para suavizar el tema de que cuando apoyo el mouse en la foto se cambie a la siguiente */
+.product-image { 
+    transition: opacity .2s ease; 
+    display:block; 
+}
 
 
 /* ============================= RESPONSIVE ================================ */
