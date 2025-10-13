@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Boutiques - Assouline x Magdalena Ropolo</title>
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logoRojo.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-collab.png" alt="Assouline x Magdalena Ropolo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="productos.html">LIBROS</a></li>
+                <li><a href="sobreNosotros.html">SOBRE NOSOTROS</a></li>
+                <li><a href="boutiques.html">BOUTIQUES</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="bag" id="cartIcon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <!-- HERO SECTION -->
+    <section class="boutiques-hero">
+        <div class="boutiques-hero-content">
+            <h1 class="boutiques-hero-title">NUESTRAS BOUTIQUES</h1>
+            <p class="boutiques-hero-subtitle">
+                Descubre nuestras boutiques exclusivas alrededor del mundo. Cada espacio está cuidadosamente 
+                diseñado para celebrar el arte del libro de lujo y la cultura visual.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAISON ASSOULINE - LONDRES (CON CARRUSEL COMO HICE EN LA PAGINA PRINCIPAL ) -->
+    <section class="boutique-featured">
+        <div class="boutique-featured-container">
+            <!-- Carrusel -->
+            <div class="boutique-carousel-container">
+                <div class="boutique-carousel-slides" id="boutiqueCarousel">
+                    <div class="boutique-carousel-slide active">
+                        <img src="assets/casaCentral.webp" alt="Maison Assouline Londres">
+                    </div>
+                    <div class="boutique-carousel-slide">
+                        <img src="assets/casaCentral2.webp" alt="Maison Assouline Londres">
+                    </div>
+                    <div class="boutique-carousel-slide">
+                        <img src="assets/casaCentral3.webp" alt="Maison Assouline Londres">
+                    </div>
+                    <div class="boutique-carousel-slide">
+                        <img src="assets/casaCentral4.webp" alt="Maison Assouline Londres">
+                    </div>
+                    <div class="boutique-carousel-slide">
+                        <img src="assets/casaCentral5.webp" alt="Maison Assouline Londres">
+                    </div>
+                    <div class="boutique-carousel-slide">
+                        <img src="assets/casaCentral6.webp" alt="Maison Assouline Londres">
+                    </div>
+                    <div class="boutique-carousel-slide">
+                        <img src="assets/CasaCentral7.webp" alt="Maison Assouline Londres">
+                    </div>
+                </div>
+                <!-- Puntitos de las fotos -->
+                <div class="boutique-carousel-dots" id="boutiqueCarouselDots"></div>
+            </div>
+            <!-- Info de la boutique -->
+            <div class="boutique-featured-info">
+                <h2 class="boutique-featured-title">MAISON ASSOULINE</h2>
+                <p class="boutique-featured-subtitle">LONDRES - FLAGSHIP STORE</p>
+                <p class="boutique-featured-description">
+                    Nuestra casa central en el corazón de Piccadilly es más que una boutique: es un santuario 
+                    para los amantes de los libros de lujo. Con su arquitectura icónica y selección curada, 
+                    Maison Assouline Londres ofrece una experiencia inmersiva en el mundo del arte editorial.
+                </p>
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">DIRECCIÓN</h3>
+                    <p class="boutique-info-text">196A Piccadilly, Mayfair<br>London W1J 9EY, United Kingdom</p>
+                </div>
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">HORARIOS</h3>
+                    <p class="boutique-info-text">
+                        Lunes - Sábado: 10:00 - 20:00<br>
+                        Domingo: 12:00 - 18:00
+                    </p>
+                </div>
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">CONTACTO</h3>
+                    <p class="boutique-info-text">
+                        <a href="mailto:london@assouline.com">london@assouline.com</a><br>
+                        <a href="tel:+442074939400">+44 20 7493 9400</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BOUTIQUE 2: NUEVA YORK -->
+    <section class="boutique-standard">
+        <div class="boutique-standard-container">
+            <div class="boutique-standard-image">
+                <img src="assets/boutiqueModerna.webp"Assouline New York">
+            </div>
+            <div class="boutique-standard-info">
+                <h2 class="boutique-standard-title">ASSOULINE NEW YORK</h2>
+                <p class="boutique-standard-subtitle">THE PLAZA HOTEL</p>
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">DIRECCIÓN</h3>
+                    <p class="boutique-info-text">768 Fifth Avenue, The Plaza<br>New York, NY 10019, USA</p>
+                </div>
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">HORARIOS</h3>
+                    <p class="boutique-info-text">Lunes - Domingo: 10:00 - 19:00</p>
+                </div>
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">CONTACTO</h3>
+                    <p class="boutique-info-text">
+                        <a href="mailto:newyork@assouline.com">newyork@assouline.com</a><br>
+                        <a href="tel:+12127593880">+1 212 759 3880</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BOUTIQUE 3: MIAMI (INVERTIDA) -->
+    <section class="boutique-standard boutique-standard-reverse">
+        <div class="boutique-standard-container">
+            <div class="boutique-standard-info">
+                <h2 class="boutique-standard-title">ASSOULINE MIAMI</h2>
+                <p class="boutique-standard-subtitle">BAL HARBOUR SHOPS</p>
+
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">DIRECCIÓN</h3>
+                    <p class="boutique-info-text">9700 Collins Avenue<br>Bal Harbour, FL 33154, USA</p>
+                </div>
+
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">HORARIOS</h3>
+                    <p class="boutique-info-text">Lunes - Sábado: 10:00 - 21:00<br>Domingo: 12:00 - 18:00</p>
+                </div>
+
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">CONTACTO</h3>
+                    <p class="boutique-info-text">
+                        <a href="mailto:miami@assouline.com">miami@assouline.com</a><br>
+                        <a href="tel:+13057638813">+1 305 763 8813</a>
+                    </p>
+                </div>
+            </div>
+            <div class="boutique-standard-image">
+                <img src="assets/BoutiqueMiami.webp"Assouline Miami">
+            </div>
+        </div>
+    </section>
+    <!-- BOUTIQUE 4: PARÍS -->
+    <section class="boutique-standard">
+        <div class="boutique-standard-container">
+            <div class="boutique-standard-image">
+                <img src="assets/boutique.webp" alt="Assouline Paris">
+            </div>
+            <div class="boutique-standard-info">
+                <h2 class="boutique-standard-title">ASSOULINE PARIS</h2>
+                <p class="boutique-standard-subtitle">SAINT-GERMAIN-DES-PRÉS</p>
+
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">DIRECCIÓN</h3>
+                    <p class="boutique-info-text">35 Rue Bonaparte<br>75006 Paris, France</p>
+                </div>
+
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">HORARIOS</h3>
+                    <p class="boutique-info-text">Lunes - Sábado: 11:00 - 19:30<br>Domingo: Cerrado</p>
+                </div>
+
+                <div class="boutique-info-section">
+                    <h3 class="boutique-info-title">CONTACTO</h3>
+                    <p class="boutique-info-text">
+                        <a href="mailto:paris@assouline.com">paris@assouline.com</a><br>
+                        <a href="tel:+33143298710">+33 1 43 29 87 10</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <img src="assets/logoCasa.jpeg" alt="Maison Assouline" class="footer-logo">
+            </div>
+            <div class="footer-newsletter">
+                <h2 class="newsletter-title">Suscríbete a Nuestro Newsletter</h2>
+                <p class="newsletter-subtitle">Recibe las últimas novedades de la colección Travel Series</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="text" placeholder="Nombre" required class="newsletter-input">
+                    <input type="email" placeholder="Email" required class="newsletter-input">
+                    <button type="submit" class="newsletter-button">SUSCRIBIRSE</button>
+                </form>
+            </div>
+            <div class="footer-info">
+                <p class="footer-contact">
+                    Email: <a href="mailto:info@assouline-ropolo.com">info@assouline-ropolo.com</a><br>
+                    Tel: +54 11 5555-5555
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Creado por Magdalena Ropolo | © 2025 Assouline x Magdalena Ropolo</p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

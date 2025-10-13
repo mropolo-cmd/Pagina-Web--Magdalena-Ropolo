@@ -388,7 +388,7 @@ window.changeQuantity = changeQuantity;
 window.removeFromCart = removeFromCart;
 
 // window.changeQuantitySimple = changeQuantitySimple;
-// window.removeFromCartSimple = removeFromCartSimple;
+// window.removeFromCartSimple = removeFromCartSimple; LO COMENTO PORQUE PUSE EL NORMAL
 
 window.closeSimpleCartModal = closeSimpleCartModal;
 window.checkoutSimple = checkoutSimple;
@@ -398,5 +398,39 @@ window.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
     console.log('Sistema de carrito activo ✓');
 });
-
 console.log("Script principal cargado ✓");
+
+// ========================== CARRUSEL DE BOUTIQUES ================================
+const boutiqueSlides = document.querySelectorAll('.boutique-carousel-slide');
+const boutiqueDotsContainer = document.getElementById('boutiqueCarouselDots');
+
+if (boutiqueSlides.length > 0 && boutiqueDotsContainer) {
+    let currentBoutiqueSlide = 0;
+    // Crear dots dinámicamente
+    boutiqueSlides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = 'boutique-dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => showBoutiqueSlide(index));
+        boutiqueDotsContainer.appendChild(dot);
+    });
+    const boutiqueDots = document.querySelectorAll('.boutique-dot');
+    function showBoutiqueSlide(index) {
+        if (index >= boutiqueSlides.length) {
+            currentBoutiqueSlide = 0;
+        } else if (index < 0) {
+            currentBoutiqueSlide = boutiqueSlides.length - 1;
+        } else {
+            currentBoutiqueSlide = index;
+        }
+        boutiqueSlides.forEach(slide => slide.classList.remove('active'));
+        boutiqueDots.forEach(dot => dot.classList.remove('active'));
+        boutiqueSlides[currentBoutiqueSlide].classList.add('active');
+        boutiqueDots[currentBoutiqueSlide].classList.add('active');
+    }
+    // Auto-play cada 5 segundos
+    setInterval(() => {
+        showBoutiqueSlide(currentBoutiqueSlide + 1);
+    }, 5000);
+    console.log('Carrusel de boutiques cargado ✓');
+}

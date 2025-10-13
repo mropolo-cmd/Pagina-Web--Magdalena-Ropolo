@@ -871,9 +871,243 @@ header {
     margin-bottom: 12px;
 }
 
-/* ====================== RESPONSIVE - TEL ========================== */
-@media (max-width: 768px) {
+/* ============================== PAGINA BOUTIQUES ================================ */
 
+/* Hero Boutiques */
+.boutiques-hero {
+    margin-top: 80px;
+    padding: 80px 40px 70px;
+    background-color: #f8f7f3;
+    text-align: center;
+}
+
+.boutiques-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.boutiques-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.boutiques-hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #666;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Boutique Featured (con carrusel) */
+.boutique-featured {
+    padding: 100px 40px;
+    background-color: #ffffff;
+}
+
+.boutique-featured-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Carrusel boutique */
+.boutique-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.boutique-carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.boutique-carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.boutique-carousel-slide.active {
+    opacity: 1;
+}
+
+.boutique-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dots del carrusel */
+.boutique-carousel-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.boutique-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boutique-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.boutique-dot.active {
+    background-color: #fff;
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* Info boutique featured */
+.boutique-featured-info {
+    padding: 0 20px;
+}
+
+.boutique-featured-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.boutique-featured-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: #999;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.boutique-featured-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #666;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.boutique-info-section {
+    margin-bottom: 30px;
+}
+
+.boutique-info-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.boutique-info-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    font-weight: 300;
+}
+
+.boutique-info-text a {
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.boutique-info-text a:hover {
+    opacity: 0.6;
+}
+
+/* Boutiques estándar */
+.boutique-standard {
+    padding: 100px 40px;
+    background-color: #ffffff;
+}
+
+.boutique-standard:nth-child(even) {
+    background-color: #f8f7f3;
+}
+
+.boutique-standard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.boutique-standard-image {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.boutique-standard-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.boutique-standard-image:hover img {
+    transform: scale(1.05);
+}
+
+.boutique-standard-info {
+    padding: 0 20px;
+}
+
+.boutique-standard-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.boutique-standard-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: #999;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+
+/* ====================== RESPONSIVE TEL GENERAL (DONDE TENGO CASI TODO) ========================== */
+@media (max-width: 768px) {
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -1223,6 +1457,67 @@ header {
 
     .cart-modal-footer {
         padding: 15px 20px;
+    }
+
+    .boutiques-hero {
+        margin-top: 70px;
+        padding: 50px 20px 40px;
+    }
+
+    .boutiques-hero-title {
+        font-size: 38px;
+    }
+
+    .boutiques-hero-subtitle {
+        font-size: 14px;
+    }
+
+    .boutique-featured {
+        padding: 60px 20px;
+    }
+
+    .boutique-featured-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .boutique-carousel-container {
+        height: 400px;
+    }
+
+    .boutique-carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .boutique-carousel-btn.prev {
+        left: 10px;
+    }
+
+    .boutique-carousel-btn.next {
+        right: 10px;
+    }
+
+    .boutique-featured-title {
+        font-size: 32px;
+    }
+
+    .boutique-standard {
+        padding: 60px 20px;
+    }
+
+    .boutique-standard-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .boutique-standard-image {
+        height: 400px;
+    }
+
+    .boutique-standard-title {
+        font-size: 28px;
     }
 
 }
@@ -1595,11 +1890,11 @@ header {
 /* para suavizar el tema de que cuando apoyo el mouse en la foto se cambie a la siguiente */
 .product-image { 
     transition: opacity .2s ease; 
-    display:block; 
+    display:block;
+    
 }
 
-
-/* ============================= RESPONSIVE ================================ */
+/* ============================= RESPONSIVES APARTE ================================ */
 @media (max-width: 1200px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
