@@ -1,16 +1,14 @@
-/* RESET Y TIPOGRAFÃA */
+/* RESET Y TIPOGRAFIA */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Cormorant Garamond', serif;
     background-color: #f8f7f3;
     color: #333;
 }
-
 /* ============================= HEADER =============================== */
 header {
     position: fixed;
@@ -20,7 +18,6 @@ header {
     z-index: 1000;
     border-bottom: 1px solid #e0e0e0;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,24 +27,18 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
-
-
 /* LOGO A LA IZQUIERDA */
 .logo {
     display: flex;
     align-items: center;
 }
-
 .logo-img {
     height: 50px;
     width: auto;
     object-fit: contain;
     background-color: #ffffff;
 }
-
-
-/* MENÃš DE NAVEGACIÃ“N CENTRADO */
+/* MENU DE NAVEGACION CENTRADO */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -58,7 +49,6 @@ header {
     left: 50%;
     transform: translateX(-50%);
 }
-
 .navbar a {
     text-decoration: none;
     color: #000;
@@ -105,12 +95,10 @@ header {
     cursor: pointer;
     padding: 5px;
 }
-
 .bag:hover {
     opacity: 0.7;
 }
-
-/* Contador del carrito - CÃRCULO ARRIBA A LA DERECHA */
+/* Contador del carrito - CIRCULITO ARRIBA A LA DERECHA */
 .cart-count {
     position: absolute;
     top: -5px;
@@ -129,8 +117,7 @@ header {
     border: 2px solid #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-/* BOTÃ“N HAMBURGUESA (oculto en desktop) */
+/* BOTON HAMBURGUESA (oculto en desktop) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -142,7 +129,6 @@ header {
     cursor: pointer;
     padding: 0;
 }
-
 .menu-toggle span {
     display: block;
     height: 2px;
@@ -151,7 +137,6 @@ header {
     border-radius: 1px;
     transition: all 0.3s ease;
 }
-
 /* OVERLAY */
 .overlay {
     position: fixed;
@@ -167,7 +152,6 @@ header {
     display: block;
     opacity: 1;
 }
-
 /* =============================== VIDEO HERO ============================== */
 .hero {
     position: relative;
@@ -175,7 +159,6 @@ header {
     height: 100vh;
     margin-top: 80px;
 }
-
 .hero video {
     width: 100%;
     height: 100%;
@@ -183,8 +166,7 @@ header {
     background-color: #000;
     /* Fondo negro para los espacios */
 }
-
-/* BOTÃ“N DE SONIDO */
+/* BOTON DE SONIDO */
 .sound-btn {
     position: absolute;
     bottom: 25px;
@@ -204,12 +186,10 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 .sound-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
-
 /* ============================== SECCIÃ“N: LA COLECCIÃ“N=========================== */
 .collection-section {
     background-color: #ffffff;
@@ -217,7 +197,6 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .collection-content {
     max-width: 1200px;
     margin: 0 auto 60px auto;
@@ -227,7 +206,6 @@ header {
     text-align: left;
     max-width: 900px;
 }
-
 .collection-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -237,7 +215,6 @@ header {
     color: #000;
     text-transform: uppercase;
 }
-
 .collection-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -246,7 +223,6 @@ header {
     margin-bottom: 35px;
     font-weight: 300;
 }
-
 .btn-shop-now {
     display: inline-block;
     background-color: #000;
@@ -262,28 +238,24 @@ header {
     font-weight: 500;
     text-decoration: none;
 }
-
 .btn-shop-now:hover {
     background-color: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* ImÃ¡genes de la colecciÃ³n */
+/* Imagenes de la coleccion */
 .collection-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-top: 0;
 }
-
 .collection-image-left,
 .collection-image-right {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
-
 .collection-image-left img,
 .collection-image-right img {
     width: 100%;
@@ -291,18 +263,15 @@ header {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .collection-image-left img:hover,
 .collection-image-right img:hover {
     transform: scale(1.05);
 }
-
-/* =============================SECCIÃ“N: CARRUSEL DE DESTINOS ========================= */
+/* =============================SECCION: CARRUSEL DE DESTINOS ========================= */
 .destinations-section {
     background-color: #f8f7f3;
     padding: 100px 40px;
 }
-
 .destinations-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -311,7 +280,6 @@ header {
     gap: 80px;
     align-items: center;
 }
-
 /* Carrusel */
 .carousel-container {
     position: relative;
@@ -321,13 +289,11 @@ header {
     border-radius: 3px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
-
 .carousel-slides {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
 .carousel-slide {
     position: absolute;
     width: 100%;
@@ -335,18 +301,15 @@ header {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-
 .carousel-slide.active {
     opacity: 1;
 }
-
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* Flechas de navegaciÃ³n */
+/* Flechas de navegacion */
 .carousel-btn {
     display: none;
     position: absolute;
@@ -365,21 +328,17 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 .carousel-btn:hover {
     background-color: #fff;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 .carousel-btn.prev {
     left: 20px;
 }
-
 .carousel-btn.next {
     right: 20px;
 }
-
 /* Puntitos indicadores */
 .carousel-dots {
     position: absolute;
@@ -390,7 +349,6 @@ header {
     gap: 12px;
     z-index: 10;
 }
-
 .dot {
     width: 12px;
     height: 12px;
@@ -399,22 +357,18 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .dot:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
-
 .dot.active {
     background-color: #fff;
     width: 30px;
     border-radius: 6px;
 }
-
 /* Texto de destinos */
 .destinations-text {
     padding: 0 20px;
 }
-
 .destinations-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -424,7 +378,6 @@ header {
     color: #000;
     line-height: 1.2;
 }
-
 .destinations-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -433,7 +386,6 @@ header {
     margin-bottom: 20px;
     font-weight: 300;
 }
-
 .destinations-link {
     display: inline-flex;
     align-items: center;
@@ -447,25 +399,20 @@ header {
     margin-top: 20px;
     transition: all 0.3s ease;
 }
-
 .destinations-link:hover {
     gap: 15px;
 }
-
 .destinations-link i {
     transition: transform 0.3s ease;
 }
-
 .destinations-link:hover i {
     transform: translateX(5px);
 }
-
 /* ============================= SECCIÃ“N: BOUTIQUES Y HISTORIA ============= */
 .info-dual-section {
     background-color: #ffffff;
     padding: 100px 40px;
 }
-
 .info-dual-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -473,34 +420,28 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
-
 .info-card {
     position: relative;
     overflow: hidden;
     background-color: #f8f7f3;
     transition: transform 0.3s ease;
 }
-
 .info-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
 .info-card-image {
     width: 100%;
     height: 400px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .info-card:hover .info-card-image {
     transform: scale(1.05);
 }
-
 .info-card-content {
     padding: 40px;
 }
-
 .info-card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
@@ -509,7 +450,6 @@ header {
     margin-bottom: 20px;
     color: #000;
 }
-
 .info-card-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -518,7 +458,6 @@ header {
     margin-bottom: 25px;
     font-weight: 300;
 }
-
 .info-card-link {
     display: inline-flex;
     align-items: center;
@@ -531,26 +470,21 @@ header {
     font-weight: 500;
     transition: all 0.3s ease;
 }
-
 .info-card-link:hover {
     gap: 15px;
 }
-
 .info-card-link i {
     transition: transform 0.3s ease;
 }
-
 .info-card-link:hover i {
     transform: translateX(5px);
 }
-
 /* ========================== FOOTER SIMPLE =========================== */
 .main-footer {
     background-color: #3d2817;
     color: #f8f7f3;
     padding: 40px 40px 15px;
 }
-
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -561,7 +495,6 @@ header {
     align-items: start;
     padding-bottom: 30px;
 }
-
 .footer-info {
     grid-column: 1 / -1;
     /* Ocupa todo el ancho */
@@ -570,30 +503,24 @@ header {
     align-items: center;
     margin-top: 20px;
 }
-
 .footer-contact {
     text-align: left;
     margin-bottom: 0;
 }
-
-
 .footer-logo-section {
     text-align: left;
 }
-
 .footer-logo {
     width: 180px;
     height: auto;
-    /* Quitar todos los filtros para que se vea */
+    /* sacar todos los filtros para que se vea */
 }
-
 /* Newsletter centrado */
 .footer-newsletter {
     text-align: left;
     width: 100%;
     max-width: 100%;
 }
-
 .newsletter-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
@@ -602,7 +529,6 @@ header {
     margin-bottom: 8px;
     color: #f8f7f3;
 }
-
 .newsletter-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -610,14 +536,12 @@ header {
     margin-bottom: 20px;
     font-weight: 300;
 }
-
 .newsletter-form {
     display: flex;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .newsletter-input {
     flex: 1;
     min-width: 200px;
@@ -629,17 +553,14 @@ header {
     font-size: 14px;
     transition: all 0.3s ease;
 }
-
 .newsletter-input:focus {
     outline: none;
     border-color: rgba(255, 255, 255, 0.6);
     background-color: rgba(255, 255, 255, 0.1);
 }
-
 .newsletter-input::placeholder {
     color: #c4b5a0;
 }
-
 .newsletter-button {
     padding: 15px 40px;
     background-color: #f8f7f3;
@@ -652,18 +573,15 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .newsletter-button:hover {
     background-color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
 /* Info de contacto */
 .footer-info {
     text-align: center;
 }
-
 .footer-contact {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -672,54 +590,44 @@ header {
     margin-bottom: 20px;
     font-weight: 300;
 }
-
 .footer-contact a {
     color: #f8f7f3;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
-
 .footer-contact a:hover {
     opacity: 0.7;
 }
-
 .footer-social {
     display: flex;
     gap: 15px;
     justify-content: center;
 }
-
 .footer-bottom {
     margin-top: 25px;
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
 }
-
 .footer-bottom p {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #c4b5a0;
     font-weight: 300;
 }
-
 /* Modal  */
 .success-simple {
     border-radius: 12px;
 }
-
 .success-simple .modal-body {
     font-size: 1.15rem;
     color: #4a4a4a;
 }
-
 .text-negro {
     color: #000000 !important;
     text-decoration: none;
 }
-
 /* ============================== PAGINA SOBRE NOSOTROS ================================ */
-
 /* Hero Section - COMPACTO */
 .about-hero {
     margin-top: 80px;
@@ -727,12 +635,10 @@ header {
     background-color: #ffffff;
     text-align: center;
 }
-
 .about-hero-content {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .about-hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 56px;
@@ -742,7 +648,6 @@ header {
     margin-bottom: 30px;
     color: #000;
 }
-
 .about-hero-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -752,17 +657,14 @@ header {
     max-width: 800px;
     margin: 0 auto;
 }
-
 /* Secciones de contenido */
 .about-section {
     padding: 100px 40px;
     background-color: #ffffff;
 }
-
 .about-section-reverse {
     background-color: #f8f7f3;
 }
-
 .about-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -771,28 +673,23 @@ header {
     gap: 80px;
     align-items: center;
 }
-
 .about-image-container {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
-
 .about-main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .about-image-container:hover .about-main-image {
     transform: scale(1.05);
 }
-
 .about-text-container {
     padding: 0 20px;
 }
-
 .about-section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 56px;
@@ -802,7 +699,6 @@ header {
     color: #000;
     line-height: 1.1;
 }
-
 .about-section-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -811,7 +707,6 @@ header {
     font-weight: 300;
     margin-bottom: 40px;
 }
-
 .about-small-image {
     width: 100%;
     height: 300px;
@@ -819,11 +714,9 @@ header {
     margin-top: 30px;
     transition: transform 0.5s ease;
 }
-
 .about-small-image:hover {
     transform: scale(1.02);
 }
-
 /* Items del carrito en el modal */
 .cart-item-modal {
     display: flex;
@@ -831,11 +724,9 @@ header {
     padding: 20px 0;
     border-bottom: 1px solid #e0e0e0;
 }
-
 .cart-item-modal:last-child {
     border-bottom: none;
 }
-
 .cart-item-modal-img {
     width: 80px;
     height: 110px;
@@ -843,11 +734,9 @@ header {
     border: 1px solid #e0e0e0;
     flex-shrink: 0;
 }
-
 .cart-item-modal-info {
     flex: 1;
 }
-
 .cart-item-modal-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
@@ -855,14 +744,12 @@ header {
     margin-bottom: 5px;
     color: #000;
 }
-
 .cart-item-modal-author {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #999;
     margin-bottom: 8px;
 }
-
 .cart-item-modal-price {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -870,9 +757,7 @@ header {
     color: #000;
     margin-bottom: 12px;
 }
-
 /* ============================== PAGINA BOUTIQUES ================================ */
-
 /* Hero Boutiques */
 .boutiques-hero {
     margin-top: 80px;
@@ -880,12 +765,10 @@ header {
     background-color: #f8f7f3;
     text-align: center;
 }
-
 .boutiques-hero-content {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .boutiques-hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 64px;
@@ -904,13 +787,11 @@ header {
     max-width: 700px;
     margin: 0 auto;
 }
-
 /* Boutique Featured (con carrusel) */
 .boutique-featured {
     padding: 100px 40px;
     background-color: #ffffff;
 }
-
 .boutique-featured-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -919,7 +800,6 @@ header {
     gap: 80px;
     align-items: center;
 }
-
 /* Carrusel boutique */
 .boutique-carousel-container {
     position: relative;
@@ -928,13 +808,11 @@ header {
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
-
 .boutique-carousel-slides {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
 .boutique-carousel-slide {
     position: absolute;
     width: 100%;
@@ -942,17 +820,14 @@ header {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-
 .boutique-carousel-slide.active {
     opacity: 1;
 }
-
 .boutique-carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 /* Dots del carrusel */
 .boutique-carousel-dots {
     position: absolute;
@@ -963,7 +838,6 @@ header {
     gap: 10px;
     z-index: 10;
 }
-
 .boutique-dot {
     width: 10px;
     height: 10px;
@@ -972,22 +846,18 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .boutique-dot:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
-
 .boutique-dot.active {
     background-color: #fff;
     width: 28px;
     border-radius: 5px;
 }
-
 /* Info boutique featured */
 .boutique-featured-info {
     padding: 0 20px;
 }
-
 .boutique-featured-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
@@ -996,7 +866,6 @@ header {
     margin-bottom: 10px;
     color: #000;
 }
-
 .boutique-featured-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -1005,7 +874,6 @@ header {
     margin-bottom: 30px;
     text-transform: uppercase;
 }
-
 .boutique-featured-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -1014,11 +882,9 @@ header {
     font-weight: 300;
     margin-bottom: 40px;
 }
-
 .boutique-info-section {
     margin-bottom: 30px;
 }
-
 .boutique-info-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -1028,7 +894,6 @@ header {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-
 .boutique-info-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -1036,27 +901,22 @@ header {
     color: #666;
     font-weight: 300;
 }
-
 .boutique-info-text a {
     color: #000;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
-
 .boutique-info-text a:hover {
     opacity: 0.6;
 }
-
 /* Boutiques estándar */
 .boutique-standard {
     padding: 100px 40px;
     background-color: #ffffff;
 }
-
 .boutique-standard:nth-child(even) {
     background-color: #ffffff;
 }
-
 .boutique-standard-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1065,20 +925,17 @@ header {
     gap: 80px;
     align-items: center;
 }
-
 .boutique-standard-image {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
-
 .boutique-standard-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .boutique-standard-image:hover img {
     transform: scale(1.05);
 }
@@ -1086,7 +943,6 @@ header {
 .boutique-standard-info {
     padding: 0 20px;
 }
-
 .boutique-standard-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -1095,7 +951,6 @@ header {
     margin-bottom: 10px;
     color: #000;
 }
-
 .boutique-standard-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -1104,8 +959,6 @@ header {
     margin-bottom: 40px;
     text-transform: uppercase;
 }
-
-
 /* ====================== RESPONSIVE TEL GENERAL (DONDE TENGO CASI TODO) ========================== */
 @media (max-width: 768px) {
     .navbar {
@@ -1118,7 +971,6 @@ header {
         background-color: #ffffff;
         position: relative;
     }
-
     /* Boton hamburguesa visible */
     .menu-toggle {
         display: flex;
@@ -1130,7 +982,6 @@ header {
         border: none;
         cursor: pointer;
     }
-
     .menu-toggle span {
         display: block;
         height: 2px;
@@ -1139,16 +990,13 @@ header {
         border-radius: 1px;
         transition: all 0.3s ease;
     }
-
     /* Ocultar mega menu en tel */
     .mega-menu {
         display: none;
     }
-
     .has-dropdown:hover .mega-menu {
         display: none;
     }
-
     /* Logo centrado */
     .logo {
         position: absolute;
@@ -1156,16 +1004,13 @@ header {
         transform: translateX(-50%);
         text-align: center;
     }
-
     .logo-img {
         height: 50px;
     }
-
     /* OCULTAR ICONOS EN TEL */
     .nav-icons .icon-link {
         display: none;
     }
-
     /* Carrito a la derecha */
     .bag {
         display: flex;
@@ -1174,7 +1019,6 @@ header {
         position: relative;
         font-size: 22px;
     }
-
     /* Menu desplegable */
     .navbar ul {
         display: none;
@@ -1189,7 +1033,6 @@ header {
         padding: 20px 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
-
     .navbar ul.active {
         display: flex;
         align-items: center;
@@ -1197,26 +1040,21 @@ header {
         animation: slideDown 0.3s ease;
         z-index: 1001;
     }
-
     @keyframes slideDown {
         from {
             opacity: 0;
             transform: translateY(-10px);
         }
-
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
-
     /* Video hero ajustado */
     .hero {
         margin-top: 70px;
     }
-
     /* Video hero ajustado */
-
     .hero video {
         width: 100%;
         height: 100%;
@@ -1224,189 +1062,148 @@ header {
         object-position: center;
         /* AGREGAR: centra el video */
     }
-
     .sound-btn {
         bottom: 20px;
         right: 20px;
     }
-
     /* Seccion coleccion en tel */
     .collection-section {
         padding: 50px 20px 0 20px;
     }
-
     .collection-title {
         font-size: 28px;
     }
-
     .collection-description {
         font-size: 14px;
         line-height: 1.6;
     }
-
     .collection-images {
         grid-template-columns: 1fr;
     }
-
     .collection-image-left,
     .collection-image-right {
         height: 400px;
     }
-
     /* Carrusel de destinos en tel */
     .destinations-section {
         padding: 60px 20px;
     }
-
     .destinations-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .carousel-container {
         height: 400px;
     }
-
     .carousel-btn {
         width: 40px;
         height: 40px;
         font-size: 14px;
     }
-
     .carousel-btn.prev {
         left: 10px;
     }
-
     .carousel-btn.next {
         right: 10px;
     }
-
     .destinations-title {
         font-size: 32px;
     }
-
     .destinations-description {
         font-size: 14px;
     }
-
     /* Seccion dual en el tel */
     .info-dual-section {
         padding: 60px 20px;
     }
-
     .info-dual-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
     .info-card-image {
         height: 300px;
     }
-
     .info-card-content {
         padding: 30px 20px;
     }
-
     .info-card-title {
         font-size: 26px;
     }
-
     /* Footer en tel */
     .main-footer {
         padding: 50px 20px 20px;
     }
-
     .footer-content {
         grid-template-columns: 1fr;
         /* Una columna en tel */
         gap: 30px;
         text-align: center;
     }
-
     .footer-logo-section {
         text-align: center;
     }
-
     .footer-newsletter {
         text-align: center;
     }
-
     .footer-info {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-
     .about-hero {
         margin-top: 70px;
         padding: 50px 20px 40px;
     }
-
     .about-hero-title {
         font-size: 34px;
     }
-
     .about-hero-subtitle {
         font-size: 14px;
         line-height: 1.7;
     }
-
     .about-section {
         padding: 60px 20px;
     }
-
     .about-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .about-image-container {
         height: 400px;
     }
-
     .about-section-title {
         font-size: 36px;
     }
-
     .about-section-text {
         font-size: 14px;
         line-height: 1.7;
     }
-
     .about-small-image {
         height: 250px;
     }
-
     .products-page {
         margin-top: 70px;
         padding: 50px 20px;
     }
-
     .page-title-big {
         font-size: 42px;
     }
-
     .products-count {
         font-size: 10px;
     }
-
     .page-description {
         font-size: 14px;
     }
-
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-
     .product-image {
         height: 320px;
     }
-
     .product-info {
         padding: 20px;
     }
-
     .product-title {
         font-size: 20px;
     }
@@ -1414,112 +1211,87 @@ header {
     .product-price {
         font-size: 20px;
     }
-
-    /* Modal en mÃ³vil */
+    /* Modal en tel */
     .modal-body {
         padding: 20px 15px;
     }
-
     .product-detail-title {
         font-size: 24px;
     }
-
     .product-detail-price {
         font-size: 22px;
     }
-
     .cart-item-modal {
         flex-direction: column;
     }
-
     .cart-item-modal-img {
         width: 100%;
         height: 250px;
     }
-
     /* Modal del carrito responsive */
     .cart-modal-content {
         max-width: 100%;
         max-height: 100vh;
     }
-
     .cart-modal-header {
         padding: 20px;
     }
-
     .cart-modal-header h2 {
         font-size: 24px;
     }
-
     .cart-modal-body {
         padding: 15px 20px;
     }
-
     .cart-modal-footer {
         padding: 15px 20px;
     }
-
     .boutiques-hero {
         margin-top: 70px;
         padding: 50px 20px 40px;
     }
-
     .boutiques-hero-title {
         font-size: 38px;
     }
-
     .boutiques-hero-subtitle {
         font-size: 14px;
     }
-
     .boutique-featured {
         padding: 60px 20px;
     }
-
     .boutique-featured-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .boutique-carousel-container {
         height: 400px;
     }
-
     .boutique-carousel-btn {
         width: 40px;
         height: 40px;
         font-size: 14px;
     }
-
     .boutique-carousel-btn.prev {
         left: 10px;
     }
-
     .boutique-carousel-btn.next {
         right: 10px;
     }
-
     .boutique-featured-title {
         font-size: 32px;
     }
-
     .boutique-standard {
         padding: 60px 20px;
     }
-
     .boutique-standard-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
     .boutique-standard-image {
         height: 400px;
     }
-
     .boutique-standard-title {
         font-size: 28px;
     }
-
 }
 
 /* ============================== PAGINA DE PRODUCTOS ================================ */
@@ -1529,13 +1301,11 @@ header {
     min-height: 80vh;
     background-color: #ffffff;
 }
-
 .products-header {
     text-align: left;
     max-width: 1400px;
     margin: 0 auto 60px;
 }
-
 .page-title-big {
     font-family: 'Cormorant Garamond', serif;
     font-size: 80px;
@@ -1546,7 +1316,6 @@ header {
     text-transform: uppercase;
     line-height: 1;
 }
-
 .products-count {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -1556,7 +1325,6 @@ header {
     margin-bottom: 15px;
     text-transform: uppercase;
 }
-
 .page-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -1566,7 +1334,6 @@ header {
     max-width: 900px;
     margin-bottom: 0;
 }
-
 /* ============================== GRID DE PRODUCTOS ================================= */
 .products-grid {
     display: grid;
@@ -1575,7 +1342,6 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 /* ================================ TARJETA DE PRODUCTO ================================= */
 .product-card {
     background-color: #fff;
@@ -1584,27 +1350,22 @@ header {
     cursor: pointer;
     border: 1px solid #e0e0e0;
 }
-
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
-
 .product-image {
     width: 100%;
     height: 400px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .product-card:hover .product-image {
     transform: scale(1.05);
 }
-
 .product-info {
     padding: 25px;
 }
-
 .product-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
@@ -1613,7 +1374,6 @@ header {
     color: #000;
     line-height: 1.3;
 }
-
 .product-author {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -1621,7 +1381,6 @@ header {
     margin-bottom: 12px;
     font-weight: 300;
 }
-
 .product-price {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
@@ -1629,7 +1388,6 @@ header {
     color: #000;
     margin-bottom: 15px;
 }
-
 .btn-view-product {
     width: 100%;
     padding: 12px;
@@ -1644,34 +1402,28 @@ header {
     text-transform: uppercase;
     font-weight: 500;
 }
-
 .btn-view-product:hover {
     background-color: #333;
 }
-
 /* ============================== MODAL DE PRODUCTO ================================== */
 .modal-content {
     border: none;
     border-radius: 0;
 }
-
 .modal-header {
     border-bottom: 1px solid #e0e0e0;
     padding: 25px 30px;
     background-color: #f8f7f3;
 }
-
 .modal-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 0.05em;
 }
-
 .modal-body {
     padding: 40px 30px;
 }
-
 /* Detalles del producto en el modal */
 .product-detail-title {
     font-family: 'Cormorant Garamond', serif;
@@ -1680,14 +1432,12 @@ header {
     margin-bottom: 10px;
     color: #000;
 }
-
 .product-detail-author {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: #999;
     margin-bottom: 20px;
 }
-
 .product-detail-price {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
@@ -1695,7 +1445,6 @@ header {
     color: #000;
     margin: 20px 0;
 }
-
 .product-detail-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -1703,7 +1452,6 @@ header {
     color: #666;
     font-weight: 300;
 }
-
 /* Carrusel en el modal */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -1712,12 +1460,10 @@ header {
     border-radius: 50%;
     padding: 25px;
 }
-
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 /* ============================== MODAL DEL CARRITO ================================ */
 .cart-modal {
     display: none;
@@ -1729,7 +1475,6 @@ header {
     justify-content: center;
     padding: 20px;
 }
-
 .cart-modal-content {
     background-color: #fff;
     width: 100%;
@@ -1739,7 +1484,6 @@ header {
     flex-direction: column;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
-
 .cart-modal-header {
     display: flex;
     justify-content: space-between;
@@ -1748,7 +1492,6 @@ header {
     border-bottom: 1px solid #e0e0e0;
     background-color: #f8f7f3;
 }
-
 .cart-modal-header h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
@@ -1757,7 +1500,6 @@ header {
     margin: 0;
     color: #000;
 }
-
 .cart-modal-close {
     background: none;
     border: none;
@@ -1767,23 +1509,19 @@ header {
     transition: color 0.3s ease;
     padding: 5px;
 }
-
 .cart-modal-close:hover {
     color: #000;
 }
-
 .cart-modal-body {
     flex: 1;
     overflow-y: auto;
     padding: 20px 30px;
 }
-
 .cart-modal-footer {
     padding: 20px 30px;
     border-top: 1px solid #e0e0e0;
     background-color: #f8f7f3;
 }
-
 /* Total y botón de checkout */
 .cart-total {
     display: flex;
@@ -1795,11 +1533,9 @@ header {
     font-weight: 600;
     color: #000;
 }
-
 .cart-total-amount {
     font-size: 24px;
 }
-
 .btn-checkout {
     width: 100%;
     padding: 15px;
@@ -1814,19 +1550,16 @@ header {
     text-transform: uppercase;
     font-weight: 600;
 }
-
 .btn-checkout:hover {
     background-color: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
 .cart-item-modal-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .btn-quantity-modal {
     width: 32px;
     height: 32px;
@@ -1839,13 +1572,11 @@ header {
     font-family: 'Montserrat', sans-serif;
     color: #000;
 }
-
 .btn-quantity-modal:hover {
     background-color: #000;
     color: #fff;
     border-color: #000;
 }
-
 .cart-quantity-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -1853,7 +1584,6 @@ header {
     min-width: 40px;
     text-align: center;
 }
-
 .btn-remove-modal {
     margin-left: auto;
     background: none;
@@ -1863,44 +1593,37 @@ header {
     font-size: 20px;
     transition: all 0.3s ease;
 }
-
 .btn-remove-modal:hover {
     color: #a71d2a;
     transform: scale(1.1);
 }
-
 /* Carrito vacío */
 .empty-cart {
     text-align: center;
     padding: 60px 20px;
     color: #999;
 }
-
 .empty-cart i {
     font-size: 60px;
     margin-bottom: 20px;
     opacity: 0.3;
 }
-
 .empty-cart p {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
-
 /* para suavizar el tema de que cuando apoyo el mouse en la foto se cambie a la siguiente */
 .product-image { 
     transition: opacity .2s ease; 
     display:block;
     
 }
-
 /* ============================= RESPONSIVES APARTE ================================ */
 @media (max-width: 1200px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 @media (max-width: 480px) {
     .products-grid {
         grid-template-columns: 1fr;

@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Assouline x Magdalena Ropolo</title>
-
-    <!-- Tipografía (sacada de google fonts, es la que mas se asemeja a la de la pag de assouline)-->
+    <!-- Tipografía (la saque de google fonts, es la que mas se asemeja a la de la pag de assouline)-->
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- para que se vea el logo arriba en el buscador -->
     <link rel="icon" type="image/png" href="assets/logoRojo.png">
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- ENCABEZADO -->
     <header>
         <nav class="navbar">
             <!-- Botón hamburguesa -->
@@ -36,7 +36,7 @@
                 <li><a href="sobreNosotros.html">SOBRE NOSOTROS</a></li>
                 <li><a href="boutiques.html">BOUTIQUES</a></li>
             </ul>
-            <!-- Iconos a la derecha -->
+            <!-- Iconos del carrito (a la derecha) -->
             <div class="nav-icons">
                 <a href="#" class="bag" id="cartIcon">
                     <i class="fa-solid fa-bag-shopping"></i>
@@ -45,7 +45,7 @@
             </div>
         </nav>
     </header>
-    <!-- Overlay para menú móvil -->
+    <!-- Overlay para menu movil -->
     <div class="overlay" id="overlay"></div>
     <!-- VIDEO HERO -->
     <section class="hero">
@@ -53,7 +53,7 @@
             <source src="assets/hero_vertical.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
-        <!-- Botón de sonido -->
+        <!-- Botón de sonido para el video -->
         <button id="soundToggle" class="sound-btn" aria-label="Toggle sound">
             <i class="fas fa-volume-mute" id="soundIcon"></i>
         </button>
@@ -101,13 +101,6 @@
                             <img src="assets/tailandia.jpg" alt="Tailandia">
                         </div>
                     </div>
-                    <!-- Flechas de navegación -->
-                    <button class="carousel-btn prev" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                     <!-- Puntitos indicadores -->
                     <div class="carousel-dots" id="carouselDots">
                         <span class="dot active" data-slide="0"></span>
