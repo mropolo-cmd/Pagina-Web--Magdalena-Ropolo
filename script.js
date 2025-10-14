@@ -378,7 +378,6 @@ if (checkoutBtn) {
         }, 300);
     });
 }
-
 // Exponer funciones globalmente
 window.formatPrice = formatPrice;
 window.updateCartCount = updateCartCount;

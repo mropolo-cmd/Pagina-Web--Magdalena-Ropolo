@@ -1019,26 +1019,38 @@ header {
         position: relative;
         font-size: 22px;
     }
-    /* Menu desplegable */
+    /* Menú desplegable LATERAL */
     .navbar ul {
         display: none;
         flex-direction: column;
-        width: 100%;
+        width: 280px;
+        height: 100vh;
         background-color: #ffffff;
-        position: static;
-        transform: none;
-        top: 70px;
-        left: 0;
+        position: fixed;
+        top: 0;
+        left: -280px;
         margin: 0;
-        padding: 20px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 100px 0 20px 0;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1002;
     }
+
     .navbar ul.active {
         display: flex;
-        align-items: center;
-        gap: 20px;
-        animation: slideDown 0.3s ease;
-        z-index: 1001;
+        left: 0;
+        align-items: flex-start;
+        padding-left: 30px;
+        gap: 30px;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 10px 0;
     }
     @keyframes slideDown {
         from {
