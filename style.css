@@ -173,7 +173,7 @@ header {
     object-fit: contain;
     object-position: center;
     display: none;
-    background-color: #e0e0e0; /* le pomgo fondo negro para asi achico un poco la img */
+    background-color: #ffffff; /* le pomgo fondo negro para asi achico un poco la img */
 }
 /* BOTÓN DE SONIDO */
 .sound-btn {
