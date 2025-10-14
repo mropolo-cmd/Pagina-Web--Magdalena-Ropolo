@@ -109,13 +109,6 @@ const productsDatabase = [
         ],
     }
 ];
-
-// ========================== CARRITO (USA EL GLOBAL DE script.js) ================================
-// No redefinimos cart aquí, usamos el que ya está en script.js
-
-// =========================== FORMATEAR PRECIO (USA EL DE script.js) ===============================
-// Ya está definido en script.js
-
 // =============================== MOSTRAR PRODUCTOS EN LA PÁGINA ===============================
 function displayProducts() {
     const grid = document.getElementById('productsGrid');
@@ -144,16 +137,13 @@ function displayProducts() {
             '</div>';
         
         grid.appendChild(productCard);
-
         // ----- Hover swap (1 ↔ 2) + preload -----
         const imgEl = productCard.querySelector('.product-image');
         const preload = new Image();
         preload.src = second;
-
         imgEl.addEventListener('mouseenter', () => { imgEl.src = second; });
         imgEl.addEventListener('mouseleave', () => { imgEl.src = first; });
-
-        // En mobile: primer toque alterna
+        // En tel: primer toque alterna
         imgEl.addEventListener('touchstart', () => {
             imgEl.src = (imgEl.src.endsWith(second)) ? first : second;
         }, { passive: true });
@@ -204,3 +194,4 @@ window.addEventListener('DOMContentLoaded', function () {
     displayProducts();
     console.log('12 productos cargados ✓');
 });
+
