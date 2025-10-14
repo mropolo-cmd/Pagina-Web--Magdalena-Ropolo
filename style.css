@@ -1017,20 +1017,20 @@ header {
     }
     /* Menú desplegable LATERAL */
     .navbar ul {
-        display: none;
+        display: flex; /* solo se mueve fuera de la pantalla */
         flex-direction: column;
         width: 280px;
         height: 100vh;
         background-color: #ffffff;
         position: fixed;
         top: 0;
-        left: -280px;
+        left: -280px; /* empieza oculto */
         margin: 0;
         padding: 90px 0 20px 0;
         transition: left 0.3s ease;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         z-index: 1002;
-        overflow-y: auto; /* por si hay muchos items */
+        overflow-y: auto; /* permite scrollear si hay mas items */
     }
     .navbar ul.active {
         display: flex;

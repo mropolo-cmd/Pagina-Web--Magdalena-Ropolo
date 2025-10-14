@@ -2,7 +2,6 @@ console.log("Assouline x Magdalena Ropolo – sitio cargado correctamente");
 
 // ========================== CARRITO GLOBAL (FUNCIONA EN TODAS LAS PÁGINAS) ================================
 let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
-
 // Función para actualizar el contador del carrito
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
@@ -11,18 +10,15 @@ function updateCartCount() {
         cartCount.textContent = totalItems;
     }
 }
-
 // Función para guardar carrito
 function updateCart() {
     localStorage.setItem('assoulineCart', JSON.stringify(cart));
     updateCartCount();
 }
-
 // Formatear precio
 function formatPrice(price) {
     return '$' + price.toLocaleString('es-AR');
 }
-
 // ============================== CONTROL DEL SONIDO DEL VIDEO ======================
 const video = document.getElementById('heroVideo');
 const soundBtn = document.getElementById('soundToggle');
@@ -34,7 +30,6 @@ if (soundBtn && video && soundIcon) {
         soundIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
     });
 }
-
 // =======================MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
@@ -52,7 +47,6 @@ if (menuToggle && navLinks && overlay) {
         overlay.classList.remove('active');
     });
 }
-
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -85,29 +79,24 @@ if (slides.length > 0 && dots.length > 0) {
             showSlide(currentSlide + 1);
         });
     }
-
     // Botón anterior
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             showSlide(currentSlide - 1);
         });
     }
-
     // Click en los puntitos
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showSlide(index);
         });
     });
-
     // Cambio automático cada 5 segundos
     setInterval(() => {
         showSlide(currentSlide + 1);
     }, 5000);
-
     console.log("Carrusel de destinos cargado ✓");
 }
-
 // ============================ NEWSLETTER FORM ===========================
 const newsletterForm = document.getElementById('newsletterForm');
 
@@ -117,19 +106,16 @@ if (newsletterForm) {
         const emailInput = newsletterForm.querySelector('input[type="email"]');
         const nameInput = newsletterForm.querySelector('input[type="text"]');
         const email = emailInput.value;
-
         alert(`¡Gracias por suscribirte! Te enviaremos novedades a ${email}`);
         emailInput.value = '';
         if (nameInput) nameInput.value = '';
     });
 }
-
 // ============================= MODAL DEL CARRITO (PARA INDEX Y SOBRE NOSOTROS) =========================
 const cartIcon = document.getElementById('cartIcon');
 if (cartIcon) {
     cartIcon.addEventListener('click', (e) => {
         e.preventDefault();
-        
         // Si estamos en productos.html y existe Bootstrap, usar el modal de Bootstrap
         if (typeof bootstrap !== 'undefined' && document.getElementById('cartModal')) {
             displayCartModal();
@@ -141,7 +127,6 @@ if (cartIcon) {
         }
     });
 }
-
 // ======================== MODAL SIMPLE PARA INDEX Y SOBRE NOSOTROS ======================
 function showSimpleCartModal() {
     // Crear modal si no existe
@@ -150,15 +135,12 @@ function showSimpleCartModal() {
         modal = createSimpleCartModal();
         document.body.appendChild(modal);
     }
-    
     // Actualizar contenido
     updateSimpleCartContent();
-    
     // Mostrar modal
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
-
 function createSimpleCartModal() {
     const modal = document.createElement('div');
     modal.id = 'simpleCartModal';
@@ -179,26 +161,20 @@ function createSimpleCartModal() {
             </div>
         </div>
     `;
-    
     // Cerrar al hacer click fuera
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeSimpleCartModal();
         }
     });
-    
     return modal;
 }
-
 function updateSimpleCartContent() {
     const bodyEl = document.getElementById('simpleCartBody');
     const footerEl = document.getElementById('simpleCartFooter');
-    
     if (!bodyEl || !footerEl) return;
-    
     // Recargar carrito desde localStorage
     cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
-    
     if (cart.length === 0) {
         bodyEl.innerHTML = `
             <div class="empty-cart">
@@ -209,14 +185,11 @@ function updateSimpleCartContent() {
         footerEl.innerHTML = '';
         return;
     }
-    
     let itemsHTML = '';
     let total = 0;
-    
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        
         itemsHTML += `
             <div class="cart-item-modal">
                 <img src="${item.images[0]}" alt="${item.title}" class="cart-item-modal-img">
@@ -235,9 +208,7 @@ function updateSimpleCartContent() {
             </div>
         `;
     });
-    
     bodyEl.innerHTML = itemsHTML;
-    
     footerEl.innerHTML = `
         <div class="cart-total">
             <span>Total:</span>
@@ -246,7 +217,6 @@ function updateSimpleCartContent() {
         <button class="btn-checkout" onclick="checkoutSimple()">FINALIZAR COMPRA</button>
     `;
 }
-
 function closeSimpleCartModal() {
     const modal = document.getElementById('simpleCartModal');
     if (modal) {
@@ -254,46 +224,36 @@ function closeSimpleCartModal() {
         document.body.style.overflow = 'auto';
     }
 }
-
 function changeQuantitySimple(index, change) {
     cart[index].quantity += change;
-    
     if (cart[index].quantity <= 0) {
         cart.splice(index, 1);
-    }
-    
+    }    
     updateCart();
     updateSimpleCartContent();
 }
-
 function removeFromCartSimple(index) {
     cart.splice(index, 1);
     updateCart();
     updateSimpleCartContent();
 }
-
 function checkoutSimple() {
     if (cart.length === 0) {
         alert('Tu carrito está vacío');
         return;
     }
-    
     alert('¡Gracias por tu compra! Esta es una demo.');
     cart = [];
     updateCart();
     closeSimpleCartModal();
 }
-
 // ======================== FUNCIONES PARA PRODUCTOS.HTML (CON BOOTSTRAP) ======================
 function displayCartModal() {
     const cartBody = document.getElementById('cartModalBody');
     const cartTotal = document.getElementById('cartModalTotal');
-
     if (!cartBody) return;
-
     // Recargar carrito desde localStorage
     cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
-
     if (cart.length === 0) {
         cartBody.innerHTML =
             '<div class="empty-cart">' +
@@ -303,14 +263,11 @@ function displayCartModal() {
         if (cartTotal) cartTotal.textContent = formatPrice(0);
         return;
     }
-
     let total = 0;
     cartBody.innerHTML = '';
-
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item-modal';
         cartItem.innerHTML =
@@ -329,27 +286,21 @@ function displayCartModal() {
             '</div>';
         cartBody.appendChild(cartItem);
     });
-
     if (cartTotal) cartTotal.textContent = formatPrice(total);
 }
-
 function changeQuantity(index, change) {
     cart[index].quantity += change;
-
     if (cart[index].quantity <= 0) {
         cart.splice(index, 1);
     }
-
     updateCart();
     displayCartModal();
 }
-
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
     displayCartModal();
 }
-
 // ======================= CHECKOUT (PARA PRODUCTOS.HTML) ===========================
 const checkoutBtn = document.getElementById('checkoutBtn');
 if (checkoutBtn) {
@@ -358,14 +309,12 @@ if (checkoutBtn) {
             alert('Tu carrito está vacío');
             return;
         }
-
         // Cerrar modal del carrito
         const cartModalEl = document.getElementById('cartModal');
         if (cartModalEl && typeof bootstrap !== 'undefined') {
             const cartModal = bootstrap.Modal.getInstance(cartModalEl);
             if (cartModal) cartModal.hide();
         }
-
         // Mostrar modal de éxito
         setTimeout(() => {
             const successModalEl = document.getElementById('successModal');
@@ -381,24 +330,17 @@ if (checkoutBtn) {
 // Exponer funciones globalmente
 window.formatPrice = formatPrice;
 window.updateCartCount = updateCartCount;
-
 window.displayCartModal = displayCartModal;
 window.changeQuantity = changeQuantity;
 window.removeFromCart = removeFromCart;
-
-// window.changeQuantitySimple = changeQuantitySimple;
-// window.removeFromCartSimple = removeFromCartSimple; LO COMENTO PORQUE PUSE EL NORMAL
-
 window.closeSimpleCartModal = closeSimpleCartModal;
 window.checkoutSimple = checkoutSimple;
-
 // ==================== INICIALIZAR =================================
 window.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
     console.log('Sistema de carrito activo ✓');
 });
 console.log("Script principal cargado ✓");
-
 // ========================== CARRUSEL DE BOUTIQUES ================================
 const boutiqueSlides = document.querySelectorAll('.boutique-carousel-slide');
 const boutiqueDotsContainer = document.getElementById('boutiqueCarouselDots');
