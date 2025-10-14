@@ -49,11 +49,13 @@
     <div class="overlay" id="overlay"></div>
     <!-- VIDEO HERO -->
     <section class="hero">
-        <video id="heroVideo" autoplay muted loop playsinline>
+        <!-- Video para formato tipo compu -->
+        <video id="heroVideo" class="hero-video-desktop" autoplay muted loop playsinline>
             <source src="assets/hero_vertical.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
         </video>
-        <!-- Botón de sonido para el video -->
+        <!-- foto para el tel porque sino el video no se ve -->
+        <img src="assets/imagenReemplazaVideo.webp" alt="Assouline Collection" class="hero-image-mobile">
+        <!-- Botón de sonido (solo para compu) -->
         <button id="soundToggle" class="sound-btn" aria-label="Toggle sound">
             <i class="fas fa-volume-mute" id="soundIcon"></i>
         </button>
