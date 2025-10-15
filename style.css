@@ -1399,36 +1399,46 @@ header {
         font-size: 22px;
         z-index: 1100; 
     }
-    /* Menú desplegable LATERAL */
+    /* Para que se vea el menu */
     .navbar ul {
-        display: flex;
-        flex-direction: column;
-        width: 280px;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
         height: 100vh;
         background-color: #ffffff;
-        position: fixed;
-        top: 0;
-        left: -280px; /* Escondido a la izquierda */
-        margin: 0;
-        padding: 90px 0 20px 0;
-        transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1002; /* Entre el overlay (900) y los controles (1100) */
-        overflow-y: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        transition: top 0.4s ease;
+        z-index: 1000;
     }
     .navbar ul.active {
-        left: 0; /* Se desliza hacia adentro */
+        top: 0;
     }
     .navbar ul li {
-        width: 100%;
-        border-bottom: 1px solid #f0f0f0;
+        list-style: none;
     }
     .navbar ul li a {
-        font-size: 16px;
-        padding: 20px 30px;
-        display: block;
-        width: 100%;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2rem;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        color: #000;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
     }
+    .navbar ul li a:hover {
+        color: #888;
+    }
+    /* Overlay oscuro detrás del menú */
+    .overlay.active {
+        display: block;
+        opacity: 0.6;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 900;
+    }    
     /* Video hero ajustado */
     .hero {
         margin-top: 70px;
