@@ -30,7 +30,6 @@ if (soundBtn && video && soundIcon) {
         soundIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
     });
 }
-
 // ======================= MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
@@ -60,6 +59,7 @@ if (menuToggle && navLinks && overlay) {
         });
     });
 }
+
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');

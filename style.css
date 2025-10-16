@@ -144,23 +144,6 @@ header {
     border-radius: 1px;
     transition: all 0.3s ease;
 }
-
-/* OVERLAY */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    display: none;
-    z-index: 900;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.overlay.active {
-    display: block;
-    opacity: 1;
-}
-
 /* =============================== VIDEO HERO ============================== */
 .hero {
     position: relative;
