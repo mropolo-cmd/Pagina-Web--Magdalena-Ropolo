@@ -30,13 +30,10 @@ if (soundBtn && video && soundIcon) {
         soundIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
     });
 }
-// =======================MENÚ DESPLEGABLE MÓVIL ===========================
+// ======================= MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
 
 if (menuToggle && navLinks && overlay) {
     menuToggle.addEventListener('click', () => {
@@ -50,6 +47,7 @@ if (menuToggle && navLinks && overlay) {
         overlay.classList.remove('active');
     });
 }
+
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -231,7 +229,7 @@ function changeQuantitySimple(index, change) {
     cart[index].quantity += change;
     if (cart[index].quantity <= 0) {
         cart.splice(index, 1);
-    }    
+    }
     updateCart();
     updateSimpleCartContent();
 }

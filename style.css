@@ -1424,6 +1424,7 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
+
 /* Volver al inicio del checkout */
 #backHome a {
     color: #000;
@@ -1453,6 +1454,7 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 /* ===================== RESPONSIVE MÓVIL GENERAL ========================== */
 @media (max-width: 768px) {
     .navbar {
@@ -1808,67 +1810,98 @@ header {
     }
 }
 
-/* ===================== MENÚ MÓVIL ===================== */
+/* ===================== MENÚ MÓVIL ESTILO AMÉLIE ===================== */
 @media (max-width: 991px) {
     /* Botón hamburguesa visible */
     .menu-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 22px;
+        height: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
         z-index: 2001;
         position: relative;
     }
-    /* Menú móvil con fondo beige claro */
-    .navbar ul {
+    .menu-toggle span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+    }
+    /* Menú que baja desde arriba */
+    .nav-links {
         position: fixed;
         top: -100%;
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: #f5f3f0;
+        background-color: #f8f7f3;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 45px;
         transition: top 0.4s ease;
         z-index: 2000;
         overflow-y: auto;
         padding: 80px 20px 40px;
     }
-    .navbar ul.active {
+    .nav-links.active {
         top: 0;
     }
-    /* Items del menú */
-    .navbar ul li {
+
+    .nav-links li {
         list-style: none;
     }
-    .navbar ul li a {
-        color: #000000;
+
+    .nav-links a {
+        color: #000;
         font-family: 'Cormorant Garamond', serif;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         text-decoration: none;
-        transition: color 0.3s ease;
         font-weight: 400;
+        transition: color 0.3s ease;
     }
-    .navbar ul li a:hover {
-        color: #666;
+
+    .nav-links a:hover {
+        color: #555;
     }
-    .overlay {
-        display: none !important;
+
+    /* Overlay suave (ligero efecto al abrir) */
+    #overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 1900;
     }
-    /* Logo y carrito visibles */
+    #overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    /* Logo y carrito se mantienen arriba */
     .logo,
     .bag {
         z-index: 2001;
     }
 }
+
 /* ============================= RESPONSIVES ADICIONALES ================================ */
 @media (max-width: 1200px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
 @media (max-width: 480px) {
     .products-grid {
         grid-template-columns: 1fr;
