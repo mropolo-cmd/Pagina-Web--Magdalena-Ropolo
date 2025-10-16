@@ -4,11 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Cormorant Garamond', serif;
     background-color: #f8f7f3;
     color: #333;
 }
+
 /* ============================= HEADER =============================== */
 header {
     position: fixed;
@@ -18,6 +20,7 @@ header {
     z-index: 1000;
     border-bottom: 1px solid #e0e0e0;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -27,17 +30,20 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
+
 /* LOGO A LA IZQUIERDA */
 .logo {
     display: flex;
     align-items: center;
 }
+
 .logo-img {
     height: 50px;
     width: auto;
     object-fit: contain;
     background-color: #ffffff;
 }
+
 /* MENU DE NAVEGACION CENTRADO */
 .navbar ul {
     list-style: none;
@@ -49,6 +55,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .navbar a {
     text-decoration: none;
     color: #000;
@@ -58,7 +65,9 @@ header {
     letter-spacing: 0.08em;
     font-weight: 400;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
+
 .navbar a::after {
     content: "";
     position: absolute;
@@ -69,15 +78,18 @@ header {
     background-color: #000;
     transition: width 0.3s ease;
 }
+
 .navbar a:hover::after {
     width: 100%;
 }
+
 /* ICONO DEL CARRITO */
 .nav-icons {
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
 .bag {
     position: relative;
     color: #000;
@@ -86,10 +98,12 @@ header {
     cursor: pointer;
     padding: 5px;
 }
+
 .bag:hover {
     opacity: 0.7;
 }
-/* Contador del carrito - CIRCULITO ARRIBA A LA DERECHA */
+
+/* Contador del carrito */
 .cart-count {
     position: absolute;
     top: -5px;
@@ -108,6 +122,7 @@ header {
     border: 2px solid #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 /* BOTON HAMBURGUESA (oculto en desktop) */
 .menu-toggle {
     display: none;
@@ -120,6 +135,7 @@ header {
     cursor: pointer;
     padding: 0;
 }
+
 .menu-toggle span {
     display: block;
     height: 2px;
@@ -128,6 +144,7 @@ header {
     border-radius: 1px;
     transition: all 0.3s ease;
 }
+
 /* OVERLAY */
 .overlay {
     position: fixed;
@@ -138,10 +155,12 @@ header {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
 .overlay.active {
     display: block;
     opacity: 1;
 }
+
 /* =============================== VIDEO HERO ============================== */
 .hero {
     position: relative;
@@ -150,6 +169,7 @@ header {
     margin-top: 80px;
     overflow: hidden;
 }
+
 .hero-video-desktop {
     width: 100%;
     height: 100%;
@@ -157,6 +177,7 @@ header {
     background-color: #000;
     display: block;
 }
+
 .hero-image-mobile {
     width: 100%;
     height: 100%;
@@ -164,8 +185,8 @@ header {
     object-position: center;
     display: none;
     background-color: #ffffff;
-    /* le pomgo fondo blanco para asi achico un poco la img */
 }
+
 /* BOTÓN DE SONIDO */
 .sound-btn {
     position: absolute;
@@ -186,10 +207,12 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 .sound-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
+
 /* =========== SECCION DE LA TRAVEL SERIES COLLECTION ============ */
 .collection-section {
     background-color: #ffffff;
@@ -197,14 +220,17 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
+
 .collection-content {
     max-width: 1200px;
     margin: 0 auto 60px auto;
 }
+
 .collection-text {
     text-align: left;
     max-width: 900px;
 }
+
 .collection-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -214,6 +240,7 @@ header {
     color: #000;
     text-transform: uppercase;
 }
+
 .collection-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -222,6 +249,7 @@ header {
     margin-bottom: 35px;
     font-weight: 300;
 }
+
 .btn-shop-now {
     display: inline-block;
     background-color: #000;
@@ -237,11 +265,13 @@ header {
     font-weight: 500;
     text-decoration: none;
 }
+
 .btn-shop-now:hover {
     background-color: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 /* Imagenes de la coleccion */
 .collection-images {
     display: grid;
@@ -249,12 +279,14 @@ header {
     gap: 10px;
     margin-top: 0;
 }
+
 .collection-image-left,
 .collection-image-right {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
+
 .collection-image-left img,
 .collection-image-right img {
     width: 100%;
@@ -262,15 +294,18 @@ header {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
+
 .collection-image-left img:hover,
 .collection-image-right img:hover {
     transform: scale(1.05);
 }
-/* ===================== SECCION: CARRUSEL DE DESTINOS ========================= */
+
+/* ============================= SECCION: CARRUSEL DE DESTINOS ========================= */
 .destinations-section {
     background-color: #f8f7f3;
     padding: 100px 40px;
 }
+
 .destinations-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -279,6 +314,7 @@ header {
     gap: 80px;
     align-items: center;
 }
+
 /* Carrusel */
 .carousel-container {
     position: relative;
@@ -288,11 +324,13 @@ header {
     border-radius: 3px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
+
 .carousel-slides {
     position: relative;
     width: 100%;
     height: 100%;
 }
+
 .carousel-slide {
     position: absolute;
     width: 100%;
@@ -300,9 +338,11 @@ header {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
+
 .carousel-slide.active {
     opacity: 1;
 }
+
 .carousel-slide img {
     width: 100%;
     height: 100%;
@@ -328,17 +368,21 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 .carousel-btn:hover {
     background-color: #fff;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 .carousel-btn.prev {
     left: 20px;
 }
+
 .carousel-btn.next {
     right: 20px;
 }
+
 /* Puntitos indicadores */
 .carousel-dots {
     position: absolute;
@@ -349,6 +393,7 @@ header {
     gap: 12px;
     z-index: 10;
 }
+
 .dot {
     width: 12px;
     height: 12px;
@@ -357,18 +402,22 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .dot:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
+
 .dot.active {
     background-color: #fff;
     width: 30px;
     border-radius: 6px;
 }
+
 /* Texto de destinos */
 .destinations-text {
     padding: 0 20px;
 }
+
 .destinations-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -378,6 +427,7 @@ header {
     color: #000;
     line-height: 1.2;
 }
+
 .destinations-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -386,6 +436,7 @@ header {
     margin-bottom: 20px;
     font-weight: 300;
 }
+
 .destinations-link {
     display: inline-flex;
     align-items: center;
@@ -399,12 +450,15 @@ header {
     margin-top: 20px;
     transition: all 0.3s ease;
 }
+
 .destinations-link:hover {
     gap: 15px;
 }
+
 .destinations-link i {
     transition: transform 0.3s ease;
 }
+
 .destinations-link:hover i {
     transform: translateX(5px);
 }
@@ -422,28 +476,34 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
+
 .info-card {
     position: relative;
     overflow: hidden;
     background-color: #f8f7f3;
     transition: transform 0.3s ease;
 }
+
 .info-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 .info-card-image {
     width: 100%;
     height: 400px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
+
 .info-card:hover .info-card-image {
     transform: scale(1.05);
 }
+
 .info-card-content {
     padding: 40px;
 }
+
 .info-card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
@@ -452,6 +512,7 @@ header {
     margin-bottom: 20px;
     color: #000;
 }
+
 .info-card-description {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -473,12 +534,15 @@ header {
     font-weight: 500;
     transition: all 0.3s ease;
 }
+
 .info-card-link:hover {
     gap: 15px;
 }
+
 .info-card-link i {
     transition: transform 0.3s ease;
 }
+
 .info-card-link:hover i {
     transform: translateX(5px);
 }
@@ -489,12 +553,12 @@ header {
     color: #f8f7f3;
     padding: 40px 40px 15px;
 }
+
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 250px 1fr;
-    /* Logo | Newsletter */
     gap: 60px;
     align-items: start;
     padding-bottom: 30px;
@@ -502,12 +566,12 @@ header {
 
 .footer-info {
     grid-column: 1 / -1;
-    /* Ocupa todo el ancho */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
+
 .footer-contact {
     text-align: left;
     margin-bottom: 0;
@@ -520,10 +584,9 @@ header {
 .footer-logo {
     width: 180px;
     height: auto;
-    /* sacar todos los filtros para que se vea */
 }
 
-/* Newsletter centrado */
+/* Newsletter */
 .footer-newsletter {
     text-align: left;
     width: 100%;
@@ -596,16 +659,11 @@ header {
 }
 
 /* Info de contacto */
-.footer-info {
-    text-align: center;
-}
-
 .footer-contact {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 1.8;
     color: #c4b5a0;
-    margin-bottom: 20px;
     font-weight: 300;
 }
 
@@ -640,7 +698,6 @@ header {
 }
 
 /* ============================== PAGINA SOBRE NOSOTROS ================================ */
-/* Hero Section - COMPACTO */
 .about-hero {
     margin-top: 80px;
     padding: 80px 40px 70px;
@@ -740,55 +797,7 @@ header {
     transform: scale(1.02);
 }
 
-/* Items del carrito en el modal */
-.cart-item-modal {
-    display: flex;
-    gap: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.cart-item-modal:last-child {
-    border-bottom: none;
-}
-
-.cart-item-modal-img {
-    width: 80px;
-    height: 110px;
-    object-fit: cover;
-    border: 1px solid #e0e0e0;
-    flex-shrink: 0;
-}
-
-.cart-item-modal-info {
-    flex: 1;
-}
-
-.cart-item-modal-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: #000;
-}
-
-.cart-item-modal-author {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 8px;
-}
-
-.cart-item-modal-price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 12px;
-}
-
 /* ============================== PAGINA BOUTIQUES ================================ */
-/* Hero Boutiques */
 .boutiques-hero {
     margin-top: 80px;
     padding: 80px 40px 70px;
@@ -820,7 +829,7 @@ header {
     margin: 0 auto;
 }
 
-/* Boutique Featured (con carrusel) */
+/* Boutique Featured */
 .boutique-featured {
     padding: 100px 40px;
     background-color: #ffffff;
@@ -1092,7 +1101,8 @@ header {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: opacity 0.2s ease;
+    display: block;
 }
 
 .product-card:hover .product-image {
@@ -1137,6 +1147,12 @@ header {
 
 .btn-view-product:hover {
     background-color: #333;
+}
+
+/* Para centrar el botón y contenido de tarjetas de fotos */
+.product {
+    text-align: center;
+    align-items: center;
 }
 
 /* ============================== MODAL DE PRODUCTO ================================== */
@@ -1259,41 +1275,51 @@ header {
     background-color: #f8f7f3;
 }
 
-/* Total y botón de checkout */
-.cart-total {
+/* Items del carrito en el modal */
+.cart-item-modal {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item-modal:last-child {
+    border-bottom: none;
+}
+
+.cart-item-modal-img {
+    width: 80px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.cart-item-modal-info {
+    flex: 1;
+}
+
+.cart-item-modal-title {
+    font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
+    margin-bottom: 5px;
     color: #000;
 }
 
-.cart-total-amount {
-    font-size: 24px;
-}
-
-.btn-checkout {
-    width: 100%;
-    padding: 15px;
-    background-color: #000;
-    color: #fff;
-    border: none;
+.cart-item-modal-author {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 600;
+    color: #999;
+    margin-bottom: 8px;
 }
 
-.btn-checkout:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.cart-item-modal-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
 }
 
 .cart-item-modal-actions {
@@ -1344,6 +1370,43 @@ header {
     transform: scale(1.1);
 }
 
+/* Total y botón de checkout */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+.cart-total-amount {
+    font-size: 24px;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-checkout:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* Carrito vacío */
 .empty-cart {
     text-align: center;
@@ -1361,15 +1424,36 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
-
-/* para suavizar el tema de que cuando apoyo el mouse en la foto se cambie a la siguiente */
-.product-image {
-    transition: opacity .2s ease;
-    display: block;
-
+/* Volver al inicio del checkout */
+#backHome a {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.3s ease;
 }
 
-/* ====================== RESPONSIVE TEL GENERAL ========================== */
+#backHome a:hover {
+    opacity: 0.6;
+}
+
+#cart-count-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ===================== RESPONSIVE MÓVIL GENERAL ========================== */
 @media (max-width: 768px) {
     .navbar {
         display: flex;
@@ -1393,9 +1477,7 @@ header {
         border: none;
         cursor: pointer;
         z-index: 1100;
-        /* Por encima del overlay */
         position: relative;
-        /* Para que z-index funcione */
     }
 
     .menu-toggle span {
@@ -1413,7 +1495,7 @@ header {
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        z-index: 1100;/
+        z-index: 1100;
     }
 
     .logo-img {
@@ -1704,20 +1786,6 @@ header {
         height: 400px;
     }
 
-    .boutique-carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    .boutique-carousel-btn.prev {
-        left: 10px;
-    }
-
-    .boutique-carousel-btn.next {
-        right: 10px;
-    }
-
     .boutique-featured-title {
         font-size: 32px;
     }
@@ -1740,7 +1808,7 @@ header {
     }
 }
 
-/* ===================== MENÚ MÓVIL (FULL OVERLAY, ESTA ES ESPERO) ===================== */
+/* ===================== MENÚ MÓVIL ===================== */
 @media (max-width: 991px) {
     /* Botón hamburguesa visible */
     .menu-toggle {
@@ -1748,7 +1816,7 @@ header {
         z-index: 2001;
         position: relative;
     }
-    /* Ajustes base del menú */
+    /* Menú móvil con fondo beige claro */
     .navbar ul {
         position: fixed;
         top: -100%;
@@ -1761,7 +1829,6 @@ header {
         justify-content: center;
         align-items: center;
         gap: 50px;
-        /* Espaciado entre items */
         transition: top 0.4s ease;
         z-index: 2000;
         overflow-y: auto;
@@ -1776,10 +1843,8 @@ header {
     }
     .navbar ul li a {
         color: #000000;
-        /* Texto negro */
         font-family: 'Cormorant Garamond', serif;
         font-size: 1.8rem;
-        /* Tamaño moderado */
         letter-spacing: 0.08em;
         text-transform: uppercase;
         text-decoration: none;
@@ -1788,18 +1853,17 @@ header {
     }
     .navbar ul li a:hover {
         color: #666;
-        /* Gris al hover */
     }
     .overlay {
         display: none !important;
     }
-    /* Logo y carrito siempre visibles */
+    /* Logo y carrito visibles */
     .logo,
     .bag {
         z-index: 2001;
     }
 }
-/* ============================= RESPONSIVES APARTE ================================ */
+/* ============================= RESPONSIVES ADICIONALES ================================ */
 @media (max-width: 1200px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);

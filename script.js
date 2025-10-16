@@ -33,7 +33,9 @@ if (soundBtn && video && soundIcon) {
 // =======================MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
-const overlay = document.getElementById('overlay');
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
 if (menuToggle && navLinks && overlay) {
     menuToggle.addEventListener('click', () => {
