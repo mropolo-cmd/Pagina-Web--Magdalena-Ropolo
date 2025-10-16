@@ -31,26 +31,34 @@ if (soundBtn && video && soundIcon) {
     });
 }
 // ======================= MENÚ DESPLEGABLE MÓVIL ===========================
+// ======================= MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
 
 if (menuToggle && navLinks && overlay) {
-    // Abrir / cerrar menú con el botón hamburguesa
-    menuToggle.addEventListener('click', () => {
-        const isActive = navLinks.classList.toggle('active');
-        overlay.classList.toggle('active', isActive);
-        document.body.style.overflow = isActive ? 'hidden' : 'auto';
+    // Toggle del menú al hacer clic en hamburguesa
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que se propague el click
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Bloquear scroll cuando el menú está abierto
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     });
 
-    // Cerrar al hacer clic fuera (overlay)
+    // Cerrar al hacer clic en el overlay
     overlay.addEventListener('click', () => {
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
 
-    // Cerrar al hacer clic en un enlace del menú
+    // Cerrar al hacer clic en cualquier link del menú
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');

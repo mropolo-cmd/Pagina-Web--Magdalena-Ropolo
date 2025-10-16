@@ -1808,7 +1808,6 @@ header {
         z-index: 2001;
         position: relative;
     }
-
     .menu-toggle span {
         display: block;
         height: 2px;
@@ -1817,11 +1816,10 @@ header {
         border-radius: 1px;
         transition: all 0.3s ease;
     }
-
-    /* Menú: ocupa solo la parte superior */
+    /* Menú desplegable */
     .nav-links {
         position: fixed;
-        top: -70%;
+        top: -100%;
         left: 0;
         width: 100%;
         height: 65vh;
@@ -1834,6 +1832,8 @@ header {
         transition: top 0.4s ease;
         z-index: 2000;
         box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+        padding: 0;
+        margin: 0;
     }
     .nav-links.active {
         top: 0;
@@ -1841,7 +1841,6 @@ header {
     .nav-links li {
         list-style: none;
     }
-
     .nav-links a {
         color: #000;
         font-family: 'Cormorant Garamond', serif;
@@ -1852,11 +1851,14 @@ header {
         font-weight: 400;
         transition: color 0.3s ease;
     }
-
     .nav-links a:hover {
         color: #555;
     }
-
+    
+    .nav-links a::after {
+        display: none; /* Quita el subrayado animado en móvil */
+    }
+    /* Overlay oscuro */
     #overlay {
         position: fixed;
         inset: 0;
@@ -1876,8 +1878,6 @@ header {
         z-index: 2001;
     }
 }
-
-
 /* ============================= RESPONSIVES ADICIONALES ================================ */
 @media (max-width: 1200px) {
     .products-grid {
