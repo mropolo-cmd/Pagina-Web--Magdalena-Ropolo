@@ -30,30 +30,29 @@ if (soundBtn && video && soundIcon) {
         soundIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
     });
 }
-// ======================= MENÚ DESPLEGABLE MÓVIL ===========================
+
 // ======================= MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
 
 if (menuToggle && navLinks && overlay) {
-    // Abrir o cerrar menú al tocar las tres rayitas
+    // Abrir / cerrar menú con el botón hamburguesa
     menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+        const isActive = navLinks.classList.toggle('active');
+        overlay.classList.toggle('active', isActive);
+        document.body.style.overflow = isActive ? 'hidden' : 'auto';
     });
 
-    // Cerrar si se toca el overlay (fondo oscuro)
+    // Cerrar al hacer clic fuera (overlay)
     overlay.addEventListener('click', () => {
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
 
-    // Cerrar si se toca un enlace del menú
-    const links = navLinks.querySelectorAll('a');
-    links.forEach(link => {
+    // Cerrar al hacer clic en un enlace del menú
+    navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
@@ -61,8 +60,6 @@ if (menuToggle && navLinks && overlay) {
         });
     });
 }
-
-
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
