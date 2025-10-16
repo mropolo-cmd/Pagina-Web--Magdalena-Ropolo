@@ -31,22 +31,37 @@ if (soundBtn && video && soundIcon) {
     });
 }
 // ======================= MENÚ DESPLEGABLE MÓVIL ===========================
+// ======================= MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
 
 if (menuToggle && navLinks && overlay) {
+    // Abrir o cerrar menú al tocar las tres rayitas
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
 
-    // Cerrar menú si se toca el overlay
+    // Cerrar si se toca el overlay (fondo oscuro)
     overlay.addEventListener('click', () => {
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Cerrar si se toca un enlace del menú
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
     });
 }
+
 
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');

@@ -1810,9 +1810,9 @@ header {
     }
 }
 
-/* ===================== MENÚ MÓVIL ESTILO AMÉLIE ===================== */
+/* ===================== MENÚ MÓVIL ===================== */
 @media (max-width: 991px) {
-    /* Botón hamburguesa visible */
+    /* Botón hamburguesa */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -1825,6 +1825,7 @@ header {
         z-index: 2001;
         position: relative;
     }
+
     .menu-toggle span {
         display: block;
         height: 2px;
@@ -1833,28 +1834,27 @@ header {
         border-radius: 1px;
         transition: all 0.3s ease;
     }
-    /* Menú que baja desde arriba */
+
+    /* Menú: ocupa solo la parte superior */
     .nav-links {
         position: fixed;
-        top: -100%;
+        top: -70%;
         left: 0;
         width: 100%;
-        height: 100vh;
+        height: 65vh;
         background-color: #f8f7f3;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 45px;
+        gap: 40px;
         transition: top 0.4s ease;
         z-index: 2000;
-        overflow-y: auto;
-        padding: 80px 20px 40px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
     }
     .nav-links.active {
         top: 0;
     }
-
     .nav-links li {
         list-style: none;
     }
@@ -1862,8 +1862,8 @@ header {
     .nav-links a {
         color: #000;
         font-family: 'Cormorant Garamond', serif;
-        font-size: 1.7rem;
-        letter-spacing: 0.08em;
+        font-size: 1.5rem;
+        letter-spacing: 0.07em;
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 400;
@@ -1874,7 +1874,6 @@ header {
         color: #555;
     }
 
-    /* Overlay suave (ligero efecto al abrir) */
     #overlay {
         position: fixed;
         inset: 0;
@@ -1888,12 +1887,13 @@ header {
         opacity: 1;
         pointer-events: all;
     }
-    /* Logo y carrito se mantienen arriba */
+    /* Logo y carrito siempre por encima */
     .logo,
     .bag {
         z-index: 2001;
     }
 }
+
 
 /* ============================= RESPONSIVES ADICIONALES ================================ */
 @media (max-width: 1200px) {
