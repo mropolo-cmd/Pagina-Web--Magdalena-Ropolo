@@ -37,27 +37,20 @@ const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
 
 if (menuToggle && navLinks && overlay) {
-    // Toggle del menú al hacer clic en hamburguesa
+    // abrir/cerrar al tocar las rayitas
     menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que se propague el click
+        e.stopPropagation(); // evita que el click se propague
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
-        // Bloquear scroll cuando el menú está abierto
-        if (navLinks.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
-
-    // Cerrar al hacer clic en el overlay
+    // cerrar si tocás afuera
     overlay.addEventListener('click', () => {
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
-
-    // Cerrar al hacer clic en cualquier link del menú
+    // cerrar si tocás algún link dentro del menú
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');

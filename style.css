@@ -1475,33 +1475,37 @@ header {
     }
 
     /* Menú desplegable */
+/* ====== MENÚ MÓVIL ====== */
     .nav-links {
         position: fixed;
-        top: -100%;
+        top: 0;
         left: 0;
         width: 100%;
         height: 65vh;
         background-color: #f8f7f3;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 40px;
-        transition: top 0.4s ease;
+        transform: translateY(-100%); /* Empieza oculto arriba */
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.3s ease;
         z-index: 2000;
         box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
         padding: 0;
         margin: 0;
     }
-    
+    /* Cuando se abre */
     .nav-links.active {
-        top: 0;
+        transform: translateY(0); /* Baja */
+        opacity: 1;
+        pointer-events: all;
     }
     
     .nav-links li {
         list-style: none;
     }
-
     .nav-links a {
         color: #000;
         font-family: 'Cormorant Garamond', serif;
@@ -1572,44 +1576,35 @@ header {
     .hero-image-mobile {
         display: block;
     }
-
     .sound-btn {
         display: none;
     }
-
     /* Sección colección en tel */
     .collection-section {
         padding: 50px 20px 0 20px;
     }
-
     .collection-title {
         font-size: 28px;
     }
-
     .collection-description {
         font-size: 14px;
         line-height: 1.6;
     }
-
     .collection-images {
         grid-template-columns: 1fr;
     }
-
     .collection-image-left,
     .collection-image-right {
         height: 400px;
     }
-
     /* Carrusel de destinos en tel */
     .destinations-section {
         padding: 60px 20px;
     }
-
     .destinations-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .carousel-container {
         height: 400px;
     }
