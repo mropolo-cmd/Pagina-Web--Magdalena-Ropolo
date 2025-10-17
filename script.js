@@ -1,7 +1,120 @@
 console.log("Assouline x Magdalena Ropolo – sitio cargado correctamente");
 
+// ========================== BASE DE DATOS: 12 LIBROS ================================
+const productsDatabase = [
+    {
+        id: 1,
+        title: "Mexico City",
+        price: 135000,
+        images: [
+            "assets/libros/mexico1.jpg",
+            "assets/libros/mexico2.jpg"
+        ],
+    },
+    {
+        id: 2,
+        title: "Amalfi Coast",
+        price: 145000,
+        images: [
+            "assets/libros/amalfi1.jpg",
+            "assets/libros/amalfi2.jpg"
+        ],
+    },
+    {
+        id: 3,
+        title: "Bali Mystique",
+        price: 128000,
+        images: [
+            "assets/libros/bali1.webp",
+            "assets/libros/bali2.webp"
+        ],
+    },
+    {
+        id: 4,
+        title: "Capri Dolce Vita",
+        price: 138000,
+        images: [
+            "assets/libros/capri1.jpg",
+            "assets/libros/capri2.webp"
+        ],
+    },
+    {
+        id: 5,
+        title: "Havana Blues",
+        price: 132000,
+        images: [
+            "assets/libros/havana1.jpg",
+            "assets/libros/havana2.webp"
+        ],
+    },
+    {
+        id: 6,
+        title: "Ibiza Bohemia",
+        price: 142000,
+        images: [
+            "assets/libros/ibiza1.webp",
+            "assets/libros/ibiza2.webp"
+        ],
+    },
+    {
+        id: 7,
+        title: "Jamaica Vibes",
+        price: 136000,
+        images: [
+            "assets/libros/jamaica1.jpg",
+            "assets/libros/jamaica2.jpg"
+        ],
+    },
+    {
+        id: 8,
+        title: "Tulum Gypset",
+        price: 130000,
+        images: [
+            "assets/libros/tulum1.jpg",
+            "assets/libros/tulum2.jpg"
+        ],
+    },
+    {
+        id: 9,
+        title: "Mykonos Muse",
+        price: 148000,
+        images: [
+            "assets/libros/mykonos1.jpg",
+            "assets/libros/mykonos2.jpg"
+        ],
+    },
+    {
+        id: 10,
+        title: "Red Sea The Saudi Coast",
+        price: 139000,
+        images: [
+            "assets/libros/redsea1.webp",
+            "assets/libros/redsea2.webp"
+        ],
+    },
+    {
+        id: 11,
+        title: "Kyoto Serenity",
+        price: 141000,
+        images: [
+            "assets/libros/kyoto1.webp",
+            "assets/libros/kyoto2.webp"
+        ],
+    },
+    {
+        id: 12,
+        title: "Sevilla Arte",
+        price: 134000,
+        images: [
+            "assets/libros/sevilla1.webp",
+            "assets/libros/sevilla2.webp"
+        ],
+    }
+];
+
 // ========================== CARRITO GLOBAL (FUNCIONA EN TODAS LAS PÁGINAS) ================================
 let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
+
 // Función para actualizar el contador del carrito
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
@@ -15,10 +128,76 @@ function updateCart() {
     localStorage.setItem('assoulineCart', JSON.stringify(cart));
     updateCartCount();
 }
+
 // Formatear precio
 function formatPrice(price) {
     return '$' + price.toLocaleString('es-AR');
 }
+
+// =============================== MOSTRAR PRODUCTOS EN LA PÁGINA ===============================
+function displayProducts() {
+    const grid = document.getElementById('productsGrid');
+    const countElement = document.getElementById('productsCount');
+    if (!grid) return;
+    
+    if (countElement) {
+        countElement.textContent = productsDatabase.length + ' PRODUCTOS EN ESTA COLECCIÓN';
+    }
+    
+    grid.innerHTML = '';
+    
+    productsDatabase.forEach(product => {
+        const first = product.images[0];
+        const second = product.images[1] || product.images[0];
+        
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML =
+            '<img src="' + first + '" alt="' + product.title + '" class="product-image" ' +
+            '     data-first="' + first + '" data-second="' + second + '">' +
+            '<div class="product-info">' +
+                '<h3 class="product-title">' + product.title + '</h3>' +
+                '<p class="product-price">' + formatPrice(product.price) + '</p>' +
+                '<button class="btn-view-product" onclick="addToCart(' + product.id + ')">AGREGAR AL CARRITO</button>' +
+            '</div>';
+        
+        grid.appendChild(productCard);
+        
+        // ----- Hover swap (1 ↔ 2) + preload -----
+        const imgEl = productCard.querySelector('.product-image');
+        const preload = new Image();
+        preload.src = second;
+        imgEl.addEventListener('mouseenter', () => { imgEl.src = second; });
+        imgEl.addEventListener('mouseleave', () => { imgEl.src = first; });
+        // En tel: primer toque alterna
+        imgEl.addEventListener('touchstart', () => {
+            imgEl.src = (imgEl.src.endsWith(second)) ? first : second;
+        }, { passive: true });
+    });
+}
+
+// =========================== AGREGAR AL CARRITO ================================
+function addToCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
+    const product = productsDatabase.find(p => p.id === productId);
+    if (!product) return;
+    
+    const existingItem = cart.find(item => item.id === productId);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem('assoulineCart', JSON.stringify(cart));
+    
+    const cartCountEl = document.getElementById('cartCount');
+    if (cartCountEl) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCountEl.textContent = totalItems;
+    }
+}
+
 // ============================== CONTROL DEL SONIDO DEL VIDEO ======================
 const video = document.getElementById('heroVideo');
 const soundBtn = document.getElementById('soundToggle');
@@ -39,7 +218,7 @@ const overlay = document.getElementById('overlay');
 if (menuToggle && navLinks && overlay) {
     // abrir/cerrar al tocar las rayitas
     menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // evita que el click se propague
+        e.stopPropagation();
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
@@ -59,7 +238,6 @@ if (menuToggle && navLinks && overlay) {
         });
     });
 }
-
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -110,6 +288,7 @@ if (slides.length > 0 && dots.length > 0) {
     }, 5000);
     console.log("Carrusel de destinos cargado ✓");
 }
+
 // ============================ NEWSLETTER FORM ===========================
 const newsletterForm = document.getElementById('newsletterForm');
 
@@ -124,6 +303,7 @@ if (newsletterForm) {
         if (nameInput) nameInput.value = '';
     });
 }
+
 // ============================= MODAL DEL CARRITO (PARA INDEX Y SOBRE NOSOTROS) =========================
 const cartIcon = document.getElementById('cartIcon');
 if (cartIcon) {
@@ -140,6 +320,7 @@ if (cartIcon) {
         }
     });
 }
+
 // ======================== MODAL SIMPLE PARA INDEX Y SOBRE NOSOTROS ======================
 function showSimpleCartModal() {
     // Crear modal si no existe
@@ -154,6 +335,7 @@ function showSimpleCartModal() {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
+
 function createSimpleCartModal() {
     const modal = document.createElement('div');
     modal.id = 'simpleCartModal';
@@ -182,6 +364,7 @@ function createSimpleCartModal() {
     });
     return modal;
 }
+
 function updateSimpleCartContent() {
     const bodyEl = document.getElementById('simpleCartBody');
     const footerEl = document.getElementById('simpleCartFooter');
@@ -230,6 +413,7 @@ function updateSimpleCartContent() {
         <button class="btn-checkout" onclick="checkoutSimple()">FINALIZAR COMPRA</button>
     `;
 }
+
 function closeSimpleCartModal() {
     const modal = document.getElementById('simpleCartModal');
     if (modal) {
@@ -237,6 +421,7 @@ function closeSimpleCartModal() {
         document.body.style.overflow = 'auto';
     }
 }
+
 function changeQuantitySimple(index, change) {
     cart[index].quantity += change;
     if (cart[index].quantity <= 0) {
@@ -245,21 +430,24 @@ function changeQuantitySimple(index, change) {
     updateCart();
     updateSimpleCartContent();
 }
+
 function removeFromCartSimple(index) {
     cart.splice(index, 1);
     updateCart();
     updateSimpleCartContent();
 }
+
 function checkoutSimple() {
     if (cart.length === 0) {
         alert('Tu carrito está vacío');
         return;
     }
-    alert('¡Gracias por tu compra! Esta es una demo.');
+    alert('¡Gracias por tu compra en Assouline x Magdalena Ropolo! Esperamos que lo disfrutes.');
     cart = [];
     updateCart();
     closeSimpleCartModal();
 }
+
 // ======================== FUNCIONES PARA PRODUCTOS.HTML (CON BOOTSTRAP) ======================
 function displayCartModal() {
     const cartBody = document.getElementById('cartModalBody');
@@ -301,6 +489,7 @@ function displayCartModal() {
     });
     if (cartTotal) cartTotal.textContent = formatPrice(total);
 }
+
 function changeQuantity(index, change) {
     cart[index].quantity += change;
     if (cart[index].quantity <= 0) {
@@ -309,11 +498,13 @@ function changeQuantity(index, change) {
     updateCart();
     displayCartModal();
 }
+
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
     displayCartModal();
 }
+
 // ======================= CHECKOUT (PARA PRODUCTOS.HTML) ===========================
 const checkoutBtn = document.getElementById('checkoutBtn');
 if (checkoutBtn) {
@@ -340,20 +531,7 @@ if (checkoutBtn) {
         }, 300);
     });
 }
-// Exponer funciones globalmente
-window.formatPrice = formatPrice;
-window.updateCartCount = updateCartCount;
-window.displayCartModal = displayCartModal;
-window.changeQuantity = changeQuantity;
-window.removeFromCart = removeFromCart;
-window.closeSimpleCartModal = closeSimpleCartModal;
-window.checkoutSimple = checkoutSimple;
-// ==================== INICIALIZAR =================================
-window.addEventListener('DOMContentLoaded', function () {
-    updateCartCount();
-    console.log('Sistema de carrito activo ✓');
-});
-console.log("Script principal cargado ✓");
+
 // ========================== CARRUSEL DE BOUTIQUES ================================
 const boutiqueSlides = document.querySelectorAll('.boutique-carousel-slide');
 const boutiqueDotsContainer = document.getElementById('boutiqueCarouselDots');
@@ -388,3 +566,36 @@ if (boutiqueSlides.length > 0 && boutiqueDotsContainer) {
     }, 5000);
     console.log('Carrusel de boutiques cargado ✓');
 }
+
+// ============================ ANIMACIONES (DE PRODUCTOS.JS) ===============================
+const style = document.createElement('style');
+style.textContent = `
+@keyframes slideIn {
+    from { transform: translateX(400px); opacity: 0; }
+    to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes slideOut {
+    from { transform: translateX(0);     opacity: 1; }
+    to   { transform: translateX(400px); opacity: 0; }
+}`;
+document.head.appendChild(style);
+
+// ========================= EXPONER FUNCIONES GLOBALMENTE ==============================
+window.formatPrice = formatPrice;
+window.updateCartCount = updateCartCount;
+window.displayCartModal = displayCartModal;
+window.changeQuantity = changeQuantity;
+window.removeFromCart = removeFromCart;
+window.closeSimpleCartModal = closeSimpleCartModal;
+window.checkoutSimple = checkoutSimple;
+window.addToCart = addToCart;
+window.changeQuantitySimple = changeQuantitySimple;
+window.removeFromCartSimple = removeFromCartSimple;
+// ==================== INICIALIZAR =================================
+window.addEventListener('DOMContentLoaded', function () {
+    displayProducts();
+    updateCartCount();
+    console.log('Sistema de carrito activo ✓');
+    console.log('12 productos cargados ✓');
+});
+console.log("Script principal cargado ✓");
