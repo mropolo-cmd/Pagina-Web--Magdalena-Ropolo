@@ -144,6 +144,7 @@ header {
     border-radius: 1px;
     transition: all 0.3s ease;
 }
+
 /* =============================== VIDEO HERO ============================== */
 .hero {
     position: relative;
@@ -1438,406 +1439,107 @@ header {
     justify-content: center;
 }
 
-/* ===================== RESPONSIVE MÓVIL GENERAL ========================== */
+/* ======================= MENU MOVIL ======================= */
 @media (max-width: 768px) {
     .navbar {
-        display: flex;
         justify-content: space-between;
         align-items: center;
         height: 70px;
         padding: 0 20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        background-color: #ffffff;
+        background-color: #fff;
         position: relative;
     }
 
     /* Botón hamburguesa visible */
     .menu-toggle {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 22px;
-        height: 16px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 2001;
-        position: relative;
     }
 
     .menu-toggle span {
-        display: block;
         height: 2px;
         width: 100%;
-        background-color: #333;
+        background-color: #000;
         border-radius: 1px;
         transition: all 0.3s ease;
     }
 
-    /* Menú desplegable */
+    /* Animación del botón cuando se abre */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Ocultar menú en mobile hasta que se abra */
     .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #f8f7f3;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        padding: 60px 0 70px;
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transform: translateY(-120%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.45s ease, opacity 0.3s ease;
-        z-index: 2000; 
+        justify-content: center;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.97);
+        z-index: 999;
+        transition: all 0.3s ease;
     }
+
     .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
+        display: flex;
     }
+
     .nav-links li {
-        list-style: none;
+        margin: 15px 0;
     }
+
     .nav-links a {
-        color: #111;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.3rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 400;
-        transition: color 0.3s ease, letter-spacing 0.2s ease;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        letter-spacing: 0.12em;
+        color: #000;
     }
-    .nav-links a:hover {
-        color: #444;
-        letter-spacing: 0.07em;
-    }
-    .nav-links a::after {
-        display: none;
-    }
+
+    /* Overlay semitransparente detrás */
     #overlay {
         position: fixed;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.45);
         opacity: 0;
-        pointer-events: none;
+        visibility: hidden;
+        z-index: 900;
         transition: opacity 0.3s ease;
-        z-index: 1500; 
     }
+
     #overlay.active {
         opacity: 1;
-        pointer-events: all;
+        visibility: visible;
     }
+
+    /* Ocultar el logo centrado */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        text-align: center;
-        z-index: 2001;
     }
 
-    .logo-img {
-        height: 50px;
+    /* Ícono del carrito a la derecha */
+    .nav-icons {
+        position: absolute;
+        right: 20px;
     }
 
-    /* Carrito a la derecha */
-    .bag {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        font-size: 22px;
-        z-index: 2001;
-    }
-
-    /* Video hero ajustado */
-    .hero {
-        margin-top: 70px;
-    }
-
+    /* Desactivar video en móvil */
     .hero-video-desktop {
         display: none;
     }
 
     .hero-image-mobile {
         display: block;
-    }
-    .sound-btn {
-        display: none;
-    }
-    /* Sección colección en tel */
-    .collection-section {
-        padding: 50px 20px 0 20px;
-    }
-    .collection-title {
-        font-size: 28px;
-    }
-    .collection-description {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-    .collection-images {
-        grid-template-columns: 1fr;
-    }
-    .collection-image-left,
-    .collection-image-right {
-        height: 400px;
-    }
-    /* Carrusel de destinos en tel */
-    .destinations-section {
-        padding: 60px 20px;
-    }
-    .destinations-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .carousel-container {
-        height: 400px;
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    .carousel-btn.prev {
-        left: 10px;
-    }
-
-    .carousel-btn.next {
-        right: 10px;
-    }
-
-    .destinations-title {
-        font-size: 32px;
-    }
-
-    .destinations-description {
-        font-size: 14px;
-    }
-
-    /* Sección dual en el tel */
-    .info-dual-section {
-        padding: 60px 20px;
-    }
-
-    .info-dual-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .info-card-image {
-        height: 300px;
-    }
-
-    .info-card-content {
-        padding: 30px 20px;
-    }
-
-    .info-card-title {
-        font-size: 26px;
-    }
-
-    /* Footer en tel */
-    .main-footer {
-        padding: 50px 20px 20px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .footer-logo-section {
-        text-align: center;
-    }
-
-    .footer-newsletter {
-        text-align: center;
-    }
-
-    .footer-info {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    /* Página Sobre Nosotros */
-    .about-hero {
-        margin-top: 70px;
-        padding: 50px 20px 40px;
-    }
-
-    .about-hero-title {
-        font-size: 34px;
-    }
-
-    .about-hero-subtitle {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .about-section {
-        padding: 60px 20px;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-image-container {
-        height: 400px;
-    }
-
-    .about-section-title {
-        font-size: 36px;
-    }
-
-    .about-section-text {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .about-small-image {
-        height: 250px;
-    }
-
-    /* Página de Productos */
-    .products-page {
-        margin-top: 70px;
-        padding: 50px 20px;
-    }
-
-    .page-title-big {
-        font-size: 42px;
-    }
-
-    .products-count {
-        font-size: 10px;
-    }
-
-    .page-description {
-        font-size: 14px;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .product-image {
-        height: 320px;
-    }
-
-    .product-info {
-        padding: 20px;
-    }
-
-    .product-title {
-        font-size: 20px;
-    }
-
-    .product-price {
-        font-size: 20px;
-    }
-
-    /* Modal en tel */
-    .modal-body {
-        padding: 20px 15px;
-    }
-
-    .product-detail-title {
-        font-size: 24px;
-    }
-
-    .product-detail-price {
-        font-size: 22px;
-    }
-    .cart-item-modal {
-        flex-direction: column;
-    }
-    .cart-item-modal-img {
-        width: 100%;
-        height: 250px;
-    }
-    /* Modal del carrito responsive */
-    .cart-modal-content {
-        max-width: 100%;
-        max-height: 100vh;
-    }
-
-    .cart-modal-header {
-        padding: 20px;
-    }
-
-    .cart-modal-header h2 {
-        font-size: 24px;
-    }
-
-    .cart-modal-body {
-        padding: 15px 20px;
-    }
-
-    .cart-modal-footer {
-        padding: 15px 20px;
-    }
-    /* Página Boutiques */
-    .boutiques-hero {
-        margin-top: 70px;
-        padding: 50px 20px 40px;
-    }
-
-    .boutiques-hero-title {
-        font-size: 38px;
-    }
-
-    .boutiques-hero-subtitle {
-        font-size: 14px;
-    }
-
-    .boutique-featured {
-        padding: 60px 20px;
-    }
-
-    .boutique-featured-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .boutique-carousel-container {
-        height: 400px;
-    }
-    .boutique-featured-title {
-        font-size: 32px;
-    }
-    .boutique-standard {
-        padding: 60px 20px;
-    }
-    .boutique-standard-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .boutique-standard-image {
-        height: 400px;
-    }
-    .boutique-standard-title {
-        font-size: 28px;
-    }
-}
-/* ============================= RESPONSIVES ADICIONALES ================================ */
-@media (max-width: 1200px) {
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-@media (max-width: 480px) {
-    .products-grid {
-        grid-template-columns: 1fr;
     }
 }

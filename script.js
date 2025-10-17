@@ -31,35 +31,6 @@ if (soundBtn && video && soundIcon) {
     });
 }
 
-// ======================= MENÚ DESPLEGABLE MÓVIL ===========================
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-const overlay = document.getElementById('overlay');
-
-if (menuToggle && navLinks && overlay) {
-    // abrir/cerrar al tocar las rayitas
-    menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // evita que el click se propague
-        navLinks.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-    });
-    // cerrar si tocás afuera
-    overlay.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-    // cerrar si tocás algún link dentro del menú
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    });
-}
-
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -387,4 +358,23 @@ if (boutiqueSlides.length > 0 && boutiqueDotsContainer) {
         showBoutiqueSlide(currentBoutiqueSlide + 1);
     }, 5000);
     console.log('Carrusel de boutiques cargado ✓');
+}
+
+// ================== MENÚ MÓVIL ==================
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+const overlay = document.getElementById('overlay');
+
+if (menuToggle && navLinks && overlay) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+        menuToggle.classList.toggle('active'); // animación del botón
+    });
+
+    overlay.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
 }
