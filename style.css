@@ -1461,7 +1461,7 @@ header {
         background: none;
         border: none;
         cursor: pointer;
-        z-index: 1100;
+        z-index: 2001;
         position: relative;
     }
 
@@ -1474,13 +1474,76 @@ header {
         transition: all 0.3s ease;
     }
 
+    /* Menú desplegable */
+    .nav-links {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 65vh;
+        background-color: #f8f7f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: top 0.4s ease;
+        z-index: 2000;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-links.active {
+        top: 0;
+    }
+    
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #000;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #555;
+    }
+    
+    .nav-links a::after {
+        display: none;
+    }
+
+    /* Overlay oscuro */
+    #overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 1900;
+    }
+    
+    #overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
     /* Logo centrado */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        z-index: 1100;
+        z-index: 2001;
     }
 
     .logo-img {
@@ -1494,7 +1557,7 @@ header {
         justify-content: center;
         position: relative;
         font-size: 22px;
-        z-index: 1100;
+        z-index: 2001;
     }
 
     /* Video hero ajustado */
@@ -1712,16 +1775,13 @@ header {
     .product-detail-price {
         font-size: 22px;
     }
-
     .cart-item-modal {
         flex-direction: column;
     }
-
     .cart-item-modal-img {
         width: 100%;
         height: 250px;
     }
-
     /* Modal del carrito responsive */
     .cart-modal-content {
         max-width: 100%;
@@ -1743,7 +1803,6 @@ header {
     .cart-modal-footer {
         padding: 15px 20px;
     }
-
     /* Página Boutiques */
     .boutiques-hero {
         margin-top: 70px;
@@ -1766,116 +1825,24 @@ header {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .boutique-carousel-container {
         height: 400px;
     }
-
     .boutique-featured-title {
         font-size: 32px;
     }
-
     .boutique-standard {
         padding: 60px 20px;
     }
-
     .boutique-standard-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
     .boutique-standard-image {
         height: 400px;
     }
-
     .boutique-standard-title {
         font-size: 28px;
-    }
-}
-
-/* ===================== MENÚ MÓVIL ===================== */
-@media (max-width: 991px) {
-    /* Botón hamburguesa */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 22px;
-        height: 16px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 2001;
-        position: relative;
-    }
-    .menu-toggle span {
-        display: block;
-        height: 2px;
-        width: 100%;
-        background-color: #333;
-        border-radius: 1px;
-        transition: all 0.3s ease;
-    }
-    /* Menú desplegable */
-    .nav-links {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 65vh;
-        background-color: #f8f7f3;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: top 0.4s ease;
-        z-index: 2000;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
-        padding: 0;
-        margin: 0;
-    }
-    .nav-links.active {
-        top: 0;
-    }
-    .nav-links li {
-        list-style: none;
-    }
-    .nav-links a {
-        color: #000;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.5rem;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 400;
-        transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-        color: #555;
-    }
-    
-    .nav-links a::after {
-        display: none; /* Quita el subrayado animado en móvil */
-    }
-    /* Overlay oscuro */
-    #overlay {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.25);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-        z-index: 1900;
-    }
-    #overlay.active {
-        opacity: 1;
-        pointer-events: all;
-    }
-    /* Logo y carrito siempre por encima */
-    .logo,
-    .bag {
-        z-index: 2001;
     }
 }
 /* ============================= RESPONSIVES ADICIONALES ================================ */
@@ -1884,7 +1851,6 @@ header {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 @media (max-width: 480px) {
     .products-grid {
         grid-template-columns: 1fr;

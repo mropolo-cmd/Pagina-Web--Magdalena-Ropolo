@@ -30,7 +30,7 @@ if (soundBtn && video && soundIcon) {
         soundIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
     });
 }
-// ======================= MENÚ DESPLEGABLE MÓVIL ===========================
+
 // ======================= MENÚ DESPLEGABLE MÓVIL ===========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
@@ -42,7 +42,6 @@ if (menuToggle && navLinks && overlay) {
         e.stopPropagation(); // Evita que se propague el click
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
-        
         // Bloquear scroll cuando el menú está abierto
         if (navLinks.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
