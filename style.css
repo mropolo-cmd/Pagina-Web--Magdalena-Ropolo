@@ -1396,7 +1396,7 @@ header {
     justify-content: center;
 }
 
-/* ===================== RESPONSIVE MÓVIL GENERAL ========================== */
+/* ===================== RESPONSIVE MÓVIL MEJORADO ========================== */
 @media (max-width: 768px) {
     .navbar {
         display: flex;
@@ -1405,10 +1405,9 @@ header {
         height: 70px;
         padding: 0 20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        background-color: #ffffff;
+        background-color: #f8f7f3;
         position: relative;
     }
-
     /* Botón hamburguesa visible */
     .menu-toggle {
         display: flex;
@@ -1419,7 +1418,7 @@ header {
         background: none;
         border: none;
         cursor: pointer;
-        z-index: 2001;
+        z-index: 1001;
         position: relative;
     }
 
@@ -1432,78 +1431,13 @@ header {
         transition: all 0.3s ease;
     }
 
-    /* Menú desplegable */
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #f8f7f3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        padding: 60px 0 70px;
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transform: translateY(-120%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.45s ease, opacity 0.3s ease;
-        z-index: 2000;
-    }
-
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    .nav-links li {
-        list-style: none;
-    }
-
-    .nav-links a {
-        color: #111;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.3rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 400;
-        transition: color 0.3s ease, letter-spacing 0.2s ease;
-    }
-
-    .nav-links a:hover {
-        color: #444;
-        letter-spacing: 0.07em;
-    }
-
-    .nav-links a::after {
-        display: none;
-    }
-
-    #overlay {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.25);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-        z-index: 1500;
-    }
-
-    #overlay.active {
-        opacity: 1;
-        pointer-events: all;
-    }
-
+    /* Logo centrado */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        z-index: 2001;
+        z-index: 1001;
     }
 
     .logo-img {
@@ -1517,7 +1451,79 @@ header {
         justify-content: center;
         position: relative;
         font-size: 22px;
-        z-index: 2001;
+        z-index: 1001;
+    }
+
+    /* Menú desplegable */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f7f3;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        margin: 0;
+        padding: 40px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from { 
+            opacity: 0; 
+            transform: translateY(-10px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #666;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    /* Overlay */
+    #overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        display: none;
+        z-index: 900;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    #overlay.active {
+        display: block;
+        opacity: 1;
     }
 
     /* Video hero ajustado */
@@ -1536,7 +1542,8 @@ header {
     .sound-btn {
         display: none;
     }
-    /* Sección colección en tel */
+
+    /* Sección colección en móvil */
     .destinations-section,
     .info-dual-section,
     .about-section,
@@ -1554,6 +1561,7 @@ header {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
     .collection-description,
     .destinations-description,
     .about-hero-subtitle,
@@ -1562,7 +1570,7 @@ header {
         font-size: 14px;
         line-height: 1.7;
     }
-/* ACA ESTOY HACIENDO MODIFF */
+
     .collection-section {
         padding: 50px 20px 0 20px;
     }
@@ -1576,8 +1584,7 @@ header {
         height: 400px;
     }
 
-    /* Carrusel de destinos en tel */
-
+    /* Carrusel de destinos en móvil */
     .carousel-container {
         height: 400px;
     }
@@ -1600,8 +1607,7 @@ header {
         font-size: 32px;
     }
 
-    /* Sección dual en el tel */
-
+    /* Sección dual en móvil */
     .info-dual-container {
         gap: 30px;
     }
@@ -1618,7 +1624,7 @@ header {
         font-size: 26px;
     }
 
-    /* Footer en tel */
+    /* Footer en móvil */
     .main-footer {
         padding: 50px 20px 20px;
     }
@@ -1695,43 +1701,55 @@ header {
     .product-title {
         font-size: 20px;
     }
+
     .product-price {
         font-size: 20px;
     }
-    /* Modal en tel */
+
+    /* Modal en móvil */
     .modal-body {
         padding: 20px 15px;
     }
+
     .product-detail-title {
         font-size: 24px;
     }
+
     .product-detail-price {
         font-size: 22px;
     }
+
     .cart-item-modal {
         flex-direction: column;
     }
+
     .cart-item-modal-img {
         width: 100%;
         height: 250px;
     }
+
     /* Modal del carrito responsive */
     .cart-modal-content {
         max-width: 100%;
         max-height: 100vh;
     }
+
     .cart-modal-header {
         padding: 20px;
     }
+
     .cart-modal-header h2 {
         font-size: 24px;
     }
+
     .cart-modal-body {
         padding: 15px 20px;
     }
+
     .cart-modal-footer {
         padding: 15px 20px;
     }
+
     /* Página Boutiques */
     .boutiques-hero {
         margin-top: 70px;
@@ -1745,11 +1763,9 @@ header {
     .boutiques-hero-subtitle {
         font-size: 14px;
     }
-
     .boutique-carousel-container {
         height: 400px;
     }
-
     .boutique-featured-title {
         font-size: 32px;
     }
