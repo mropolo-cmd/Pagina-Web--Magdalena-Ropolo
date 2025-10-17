@@ -1,4 +1,58 @@
 /* RESET Y TIPOGRAFIA */
+
+/* Texto de párrafos/descr. estándar unificado */
+.collection-description,
+.destinations-description,
+.info-card-description,
+.boutique-featured-description,
+.boutique-info-text,
+.page-description,
+.about-section-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    font-weight: 300;
+}
+/* Base común para títulos serif */
+.collection-title,
+.destinations-title,
+.info-card-title,
+.boutique-featured-title,
+.boutique-standard-title,
+.about-hero-title,
+.about-section-title,
+.page-title-big {
+    font-family: 'Cormorant Garamond', serif;
+    color: #000;
+    font-weight: 400;
+}
+/* Links de acción con flechita */
+.destinations-link,
+.info-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.destinations-link:hover,
+.info-card-link:hover {
+    gap: 15px;
+}
+.destinations-link i,
+.info-card-link i {
+    transition: transform 0.3s ease;
+}
+.destinations-link:hover i,
+.info-card-link:hover i {
+    transform: translateX(5px);
+}
 * {
     margin: 0;
     padding: 0;
@@ -216,22 +270,10 @@ header {
 }
 
 .collection-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
-    font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 25px;
-    color: #000;
     text-transform: uppercase;
-}
-
-.collection-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 35px;
-    font-weight: 300;
 }
 
 .btn-shop-now {
@@ -248,6 +290,7 @@ header {
     text-transform: uppercase;
     font-weight: 500;
     text-decoration: none;
+    margin-top: 20px;
 }
 
 .btn-shop-now:hover {
@@ -403,48 +446,18 @@ header {
 }
 
 .destinations-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
-    font-weight: 400;
     letter-spacing: 0.03em;
     margin-bottom: 30px;
-    color: #000;
     line-height: 1.2;
 }
 
 .destinations-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-    color: #666;
     margin-bottom: 20px;
-    font-weight: 300;
 }
 
 .destinations-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
     margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.destinations-link:hover {
-    gap: 15px;
-}
-
-.destinations-link i {
-    transition: transform 0.3s ease;
-}
-
-.destinations-link:hover i {
-    transform: translateX(5px);
 }
 
 /* ============================= SECCION: BOUTIQUES E HISTORIA ============= */
@@ -489,34 +502,13 @@ header {
 }
 
 .info-card-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
-    font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 20px;
-    color: #000;
 }
 
 .info-card-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-    color: #666;
     margin-bottom: 25px;
-    font-weight: 300;
-}
-
-.info-card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
 }
 
 .info-card-link:hover {
@@ -695,13 +687,11 @@ header {
 }
 
 .about-hero-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 56px;
     font-weight: 300;
     letter-spacing: 0.03em;
     line-height: 1.1;
     margin-bottom: 30px;
-    color: #000;
 }
 
 .about-hero-subtitle {
@@ -751,21 +741,15 @@ header {
 }
 
 .about-section-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 56px;
     font-weight: 300;
     letter-spacing: 0.03em;
     margin-bottom: 30px;
-    color: #000;
     line-height: 1.1;
 }
 
 .about-section-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
     line-height: 1.9;
-    color: #666;
-    font-weight: 300;
     margin-bottom: 40px;
 }
 
@@ -897,12 +881,9 @@ header {
 }
 
 .boutique-featured-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
-    font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
-    color: #000;
 }
 
 .boutique-featured-subtitle {
@@ -915,11 +896,6 @@ header {
 }
 
 .boutique-featured-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.9;
-    color: #666;
-    font-weight: 300;
     margin-bottom: 40px;
 }
 
@@ -935,14 +911,6 @@ header {
     color: #000;
     margin-bottom: 10px;
     text-transform: uppercase;
-}
-
-.boutique-info-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-    color: #666;
-    font-weight: 300;
 }
 
 .boutique-info-text a {
@@ -996,12 +964,9 @@ header {
 }
 
 .boutique-standard-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
-    font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
-    color: #000;
 }
 
 .boutique-standard-subtitle {
@@ -1028,12 +993,9 @@ header {
 }
 
 .page-title-big {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 80px;
-    font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 20px;
-    color: #000;
     text-transform: uppercase;
     line-height: 1;
 }
@@ -1049,11 +1011,6 @@ header {
 }
 
 .page-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    color: #666;
-    font-weight: 300;
-    line-height: 1.8;
     max-width: 900px;
     margin-bottom: 0;
 }
@@ -1439,107 +1396,381 @@ header {
     justify-content: center;
 }
 
-/* ======================= MENU MOVIL ======================= */
+/* ===================== RESPONSIVE MÓVIL GENERAL ========================== */
 @media (max-width: 768px) {
     .navbar {
+        display: flex;
         justify-content: space-between;
         align-items: center;
         height: 70px;
         padding: 0 20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        background-color: #fff;
+        background-color: #ffffff;
         position: relative;
     }
 
     /* Botón hamburguesa visible */
     .menu-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 22px;
+        height: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2001;
+        position: relative;
     }
 
     .menu-toggle span {
+        display: block;
         height: 2px;
         width: 100%;
-        background-color: #000;
+        background-color: #333;
         border-radius: 1px;
         transition: all 0.3s ease;
     }
 
-    /* Animación del botón cuando se abre */
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-6px) rotate(-45deg);
-    }
-
-    /* Ocultar menú en mobile hasta que se abra */
+    /* Menú desplegable */
     .nav-links {
-        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #f8f7f3;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        position: fixed;
-        inset: 0;
-        background-color: rgba(255, 255, 255, 0.97);
-        z-index: 999;
-        transition: all 0.3s ease;
+        gap: 30px;
+        padding: 60px 0 70px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.45s ease, opacity 0.3s ease;
+        z-index: 2000;
     }
 
     .nav-links.active {
-        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
     }
 
     .nav-links li {
-        margin: 15px 0;
+        list-style: none;
     }
 
     .nav-links a {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
-        letter-spacing: 0.12em;
-        color: #000;
+        color: #111;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease, letter-spacing 0.2s ease;
     }
 
-    /* Overlay semitransparente detrás */
+    .nav-links a:hover {
+        color: #444;
+        letter-spacing: 0.07em;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
     #overlay {
         position: fixed;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.45);
+        background-color: rgba(0, 0, 0, 0.25);
         opacity: 0;
-        visibility: hidden;
-        z-index: 900;
+        pointer-events: none;
         transition: opacity 0.3s ease;
+        z-index: 1500;
     }
 
     #overlay.active {
         opacity: 1;
-        visibility: visible;
+        pointer-events: all;
     }
 
-    /* Ocultar el logo centrado */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        text-align: center;
+        z-index: 2001;
     }
 
-    /* Ícono del carrito a la derecha */
-    .nav-icons {
-        position: absolute;
-        right: 20px;
+    .logo-img {
+        height: 50px;
     }
 
-    /* Desactivar video en móvil */
+    /* Carrito a la derecha */
+    .bag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-size: 22px;
+        z-index: 2001;
+    }
+
+    /* Video hero ajustado */
+    .hero {
+        margin-top: 70px;
+    }
+
     .hero-video-desktop {
         display: none;
     }
 
     .hero-image-mobile {
         display: block;
+    }
+
+    .sound-btn {
+        display: none;
+    }
+    /* Sección colección en tel */
+    .destinations-section,
+    .info-dual-section,
+    .about-section,
+    .boutique-featured,
+    .boutique-standard {
+        padding: 60px 20px;
+    }
+
+    .collection-images,
+    .destinations-container,
+    .info-dual-container,
+    .about-container,
+    .boutique-featured-container,
+    .boutique-standard-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .collection-description,
+    .destinations-description,
+    .about-hero-subtitle,
+    .page-description,
+    .about-section-text {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+/* ACA ESTOY HACIENDO MODIFF */
+    .collection-section {
+        padding: 50px 20px 0 20px;
+    }
+
+    .collection-title {
+        font-size: 28px;
+    }
+
+    .collection-image-left,
+    .collection-image-right {
+        height: 400px;
+    }
+
+    /* Carrusel de destinos en tel */
+
+    .carousel-container {
+        height: 400px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    .destinations-title {
+        font-size: 32px;
+    }
+
+    /* Sección dual en el tel */
+
+    .info-dual-container {
+        gap: 30px;
+    }
+
+    .info-card-image {
+        height: 300px;
+    }
+
+    .info-card-content {
+        padding: 30px 20px;
+    }
+
+    .info-card-title {
+        font-size: 26px;
+    }
+
+    /* Footer en tel */
+    .main-footer {
+        padding: 50px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-logo-section {
+        text-align: center;
+    }
+
+    .footer-newsletter {
+        text-align: center;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    /* Página Sobre Nosotros */
+    .about-hero {
+        margin-top: 70px;
+        padding: 50px 20px 40px;
+    }
+
+    .about-hero-title {
+        font-size: 34px;
+    }
+
+    .about-image-container {
+        height: 400px;
+    }
+
+    .about-section-title {
+        font-size: 36px;
+    }
+
+    .about-small-image {
+        height: 250px;
+    }
+
+    /* Página de Productos */
+    .products-page {
+        margin-top: 70px;
+        padding: 50px 20px;
+    }
+
+    .page-title-big {
+        font-size: 42px;
+    }
+
+    .products-count {
+        font-size: 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-image {
+        height: 320px;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+    .product-price {
+        font-size: 20px;
+    }
+    /* Modal en tel */
+    .modal-body {
+        padding: 20px 15px;
+    }
+    .product-detail-title {
+        font-size: 24px;
+    }
+    .product-detail-price {
+        font-size: 22px;
+    }
+    .cart-item-modal {
+        flex-direction: column;
+    }
+    .cart-item-modal-img {
+        width: 100%;
+        height: 250px;
+    }
+    /* Modal del carrito responsive */
+    .cart-modal-content {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+    .cart-modal-header {
+        padding: 20px;
+    }
+    .cart-modal-header h2 {
+        font-size: 24px;
+    }
+    .cart-modal-body {
+        padding: 15px 20px;
+    }
+    .cart-modal-footer {
+        padding: 15px 20px;
+    }
+    /* Página Boutiques */
+    .boutiques-hero {
+        margin-top: 70px;
+        padding: 50px 20px 40px;
+    }
+
+    .boutiques-hero-title {
+        font-size: 38px;
+    }
+
+    .boutiques-hero-subtitle {
+        font-size: 14px;
+    }
+
+    .boutique-carousel-container {
+        height: 400px;
+    }
+
+    .boutique-featured-title {
+        font-size: 32px;
+    }
+    .boutique-standard-container {
+        gap: 30px;
+    }
+    .boutique-standard-image {
+        height: 400px;
+    }
+    .boutique-standard-title {
+        font-size: 28px;
+    }
+}
+/* ============================= RESPONSIVES ADICIONALES ================================ */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 }
