@@ -74,6 +74,7 @@ header {
     z-index: 1000;
     border-bottom: 1px solid #e0e0e0;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -83,11 +84,13 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
+
 /* LOGO A LA IZQUIERDA */
 .logo {
     display: flex;
     align-items: center;
 }
+
 .logo-img {
     height: 50px;
     width: auto;
@@ -95,13 +98,22 @@ header {
     background-color: #ffffff;
 }
 
-/* MENU DE NAVEGACION CENTRADO (solo en desktop)*/
+/* MENU DE NAVEGACION - BASE */
 .navbar ul {
     list-style: none;
     display: flex;
     gap: 30px;
     margin: 0;
     padding: 0;
+}
+
+/* CENTRADO SOLO EN DESKTOP (min-width: 769px) */
+@media (min-width: 769px) {
+    .navbar ul {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .navbar a {
@@ -171,7 +183,6 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 /* BOTON HAMBURGUESA (oculto en desktop) */
 .menu-toggle {
     display: none;
@@ -192,6 +203,11 @@ header {
     background-color: #333;
     border-radius: 1px;
     transition: all 0.3s ease;
+}
+
+/* OVERLAY - OCULTO POR DEFECTO */
+#overlay {
+    display: none;
 }
 /* =============================== VIDEO HERO ============================== */
 .hero {
@@ -1389,7 +1405,6 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 /* ===================== RESPONSIVE MÓVIL MEJORADO ========================== */
 @media (max-width: 768px) {
     .navbar {
@@ -1402,6 +1417,7 @@ header {
         background-color: #f8f7f3;
         position: relative;
     }
+
     /* Botón hamburguesa visible */
     .menu-toggle {
         display: flex;
@@ -1447,25 +1463,27 @@ header {
         font-size: 22px;
         z-index: 1001;
     }
+
+    /* CRÍTICO: Resetear estilos de desktop y OCULTAR por defecto */
     .navbar ul {
+        display: none !important;
         position: static;
         left: auto;
         transform: none;
     }
 
-    /* Menú desplegable - OCULTO POR DEFECTO */
+    /* Menú desplegable móvil */
     .nav-links {
-        display: none;
         flex-direction: column;
         align-items: center;
-        gap: 25px;
+        gap: 30px;
         width: 100%;
         background-color: #f8f7f3;
         position: absolute;
         top: 70px;
         left: 0;
         margin: 0;
-        padding: 40px 0;
+        padding: 50px 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         z-index: 1000;
     }
@@ -1524,22 +1542,27 @@ header {
         opacity: 0;
         transition: opacity 0.3s ease;
     }
+
     #overlay.active {
         display: block;
         opacity: 1;
     }
-    /* Esconder nav-icons en mobile */
+
+    /* Esconder nav-icons en mobile si no querés que se vea */
     .nav-icons {
         position: relative;
         z-index: 1001;
     }
+
     /* Video hero ajustado */
     .hero {
         margin-top: 70px;
     }
+
     .hero-video-desktop {
         display: none;
     }
+
     .hero-image-mobile {
         display: block;
     }
