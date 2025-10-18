@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,10 +94,8 @@
                         <!-- INFO DEL PRODUCTO -->
                         <div class="col-md-6">
                             <h3 id="productDetailTitle" class="product-detail-title"></h3>
-                            <p class="product-detail-author" id="productDetailAuthor"></p>
                             <h4 class="product-detail-price" id="productDetailPrice"></h4>
-                            <p class="product-detail-description" id="productDetailDescription"></p>
-                            <button class="btn btn-dark btn-lg w-100 mt-4" id="addToCartModalBtn">
+                            <button class="btn-shop-now w-100 mt-4" id="addToCartModalBtn">
                                 AGREGAR AL CARRITO
                             </button>
                         </div>
@@ -133,14 +130,16 @@
     <!-- MODAL: COMPRA EXITOSA -->
     <div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content success-simple">
-                <div class="modal-body">
-                    Compra realizada con éxito, gracias por comprar en
-                    <strong>Assouline x Magdalena Ropolo</strong>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 16px; padding: 0;">
+                <div class="modal-body" style="padding: 30px 24px; text-align: left;">
+                    <p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6; color: #333;">
+                        ¡Gracias por tu compra en Assouline x Magdalena Ropolo! Esperamos que lo disfrutes.
+                    </p>
                 </div>
-                <div class="modal-footer justify-content-end">
-                    <button type="button" class="btn btn-link text-pink fw-semibold px-0" data-bs-dismiss="modal">
+                <div class="modal-footer" style="border-top: none; padding: 0 24px 24px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-link" data-bs-dismiss="modal" 
+                        style="color: #e91e63; font-weight: 600; text-decoration: none; padding: 0; font-family: 'Montserrat', sans-serif;">
                         Cerrar
                     </button>
                 </div>
