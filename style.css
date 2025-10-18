@@ -1446,10 +1446,19 @@ header {
     .collection-image-right {
         height: 400px;
     }
+    /* CARRUSEL DE DESTINOS EN MÓVIL */
+    .destinations-section .carousel-container {
+        height: 350px !important;
+    }
 
-    /* CARRUSEL DE DESTINOS */
-    .carousel-container {
-        height: 400px !important;
+    .destinations-section .carousel-slide,
+    .destinations-section .carousel-slides {
+        height: 350px !important;
+    }
+
+    .destinations-section .carousel-slide img {
+        height: 350px !important;
+        object-fit: cover;
     }
     /* NAVBAR TEL */
     .navbar {
