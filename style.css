@@ -1446,11 +1446,10 @@ header {
     .collection-image-right {
         height: 400px;
     }
+
+    /* CARRUSEL DE DESTINOS */
     .carousel-container {
         height: 400px !important;
-    }
-    .about-image-container {
-        height: 400px;
     }
     /* NAVBAR TEL */
     .navbar {
