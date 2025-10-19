@@ -33,8 +33,7 @@ html, body {
     color: #000;
     font-weight: 400;
 }
-/* Links de accion con flechita */
-.destinations-link,
+.destinations-link,  /* Links de accion con flechita */
 .info-card-link {
     display: inline-flex;
     align-items: center;
@@ -64,13 +63,11 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Cormorant Garamond', serif;
     background-color: #f8f7f3;
     color: #333;
 }
-
 /* ============================= HEADER =============================== */
 header {
     position: fixed;
@@ -80,7 +77,6 @@ header {
     z-index: 1000;
     border-bottom: 1px solid #e0e0e0;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -90,38 +86,30 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
-/* LOGO A LA IZQUIERDA */
-.logo {
+.logo {   /* LOGO A LA IZQUIERDA */
     display: flex;
     align-items: center;
 }
-
 .logo-img {
     height: 50px;
     width: auto;
     object-fit: contain;
     background-color: #ffffff;
 }
-
-/* MENU DE NAVEGACION - BASE */
-.navbar ul {
+.navbar ul {  /* MENU DE NAVEGACION - BASE */
     list-style: none;
     display: flex;
     gap: 30px;
     margin: 0;
     padding: 0;
 }
-
-/* CENTRADO SOLO EN DESKTOP */
-@media (min-width: 769px) {
+@media (min-width: 769px) {   /* CENTRADO SOLO EN DESKTOP */
     .navbar ul {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
     }
 }
-
 .navbar a {
     text-decoration: none;
     color: #000;
@@ -133,7 +121,6 @@ header {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
-
 .navbar a::after {
     content: "";
     position: absolute;
@@ -144,18 +131,14 @@ header {
     background-color: #000;
     transition: width 0.3s ease;
 }
-
 .navbar a:hover::after {
     width: 100%;
 }
-
-/* ICONO DEL CARRITO */
-.nav-icons {
+.nav-icons {  /* ICONO DEL CARRITO */
     display: flex;
     align-items: center;
     gap: 20px;
 }
-
 .bag {
     position: relative;
     color: #000;
@@ -164,13 +147,10 @@ header {
     cursor: pointer;
     padding: 5px;
 }
-
 .bag:hover {
     opacity: 0.7;
 }
-
-/* Contador del carrito */
-.cart-count {
+.cart-count {   /* Contador del carrito */
     position: absolute;
     top: -5px;
     right: -5px;
@@ -188,9 +168,7 @@ header {
     border: 2px solid #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-/* BOTON HAMBURGUESA (oculto en desktop) */
-.menu-toggle {
+.menu-toggle { /* BOTON HAMBURGUESA (oculto en desktop) */
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -202,7 +180,6 @@ header {
     padding: 0;
     z-index: 1001;
 }
-
 .menu-toggle span {
     display: block;
     height: 2px;
@@ -211,9 +188,7 @@ header {
     border-radius: 1px;
     transition: all 0.3s ease;
 }
-
-/* OVERLAY - OCULTO POR DEFECTO */
-#overlay {
+#overlay {  /* OVERLAY - OCULTO POR DEFECTO */
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -222,12 +197,10 @@ header {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 #overlay.active {
     display: block;
     opacity: 1;
 }
-
 /* =============================== VIDEO HERO ============================== */
 .hero {
     position: relative;
@@ -236,7 +209,6 @@ header {
     margin-top: 80px;
     overflow: hidden;
 }
-
 .hero-video-desktop {
     width: 100%;
     height: 100%;
@@ -244,7 +216,6 @@ header {
     background-color: #000;
     display: block;
 }
-
 .hero-image-mobile {
     width: 100%;
     height: 100%;
@@ -253,9 +224,7 @@ header {
     display: none;
     background-color: #ffffff;
 }
-
-/* BOTON DE SONIDO */
-.sound-btn {
+.sound-btn {  /* BOTON DE SONIDO */
     position: absolute;
     bottom: 25px;
     right: 35px;
@@ -274,12 +243,10 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 .sound-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
-
 /* =========== SECCION DE LA TRAVEL SERIES COLLECTION ============ */
 .collection-section {
     background-color: #ffffff;
@@ -287,24 +254,20 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .collection-content {
     max-width: 1200px;
     margin: 0 auto 60px auto;
 }
-
 .collection-text {
     text-align: left;
     max-width: 900px;
 }
-
 .collection-title {
     font-size: 42px;
     letter-spacing: 0.05em;
     margin-bottom: 25px;
     text-transform: uppercase;
 }
-
 .btn-shop-now {
     display: inline-block;
     background-color: #000;
@@ -321,28 +284,23 @@ header {
     text-decoration: none;
     margin-top: 20px;
 }
-
 .btn-shop-now:hover {
     background-color: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* Imagenes de la coleccion */
-.collection-images {
+.collection-images {  /* Imagenes de la coleccion */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-top: 0;
 }
-
 .collection-image-left,
 .collection-image-right {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
-
 .collection-image-left img,
 .collection-image-right img {
     width: 100%;
@@ -350,18 +308,15 @@ header {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .collection-image-left img:hover,
 .collection-image-right img:hover {
     transform: scale(1.05);
 }
-
 /* ============================= SECCION: CARRUSEL DE DESTINOS ========================= */
 .destinations-section {
     background-color: #f8f7f3;
     padding: 100px 40px;
 }
-
 .destinations-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -370,9 +325,7 @@ header {
     gap: 80px;
     align-items: center;
 }
-
-/* Carrusel */
-.carousel-container {
+.carousel-container {  /* Carrusel */
     position: relative;
     width: 100%;
     height: 600px;
@@ -380,13 +333,11 @@ header {
     border-radius: 3px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
-
 .carousel-slides {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
 .carousel-slide {
     position: absolute;
     width: 100%;
@@ -394,19 +345,15 @@ header {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-
 .carousel-slide.active {
     opacity: 1;
 }
-
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* Flechas de navegacion */
-.carousel-btn {
+.carousel-btn {  /* Flechas de navegacion */
     display: none;
     position: absolute;
     top: 50%;
@@ -424,47 +371,37 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 .carousel-btn:hover {
     background-color: #fff;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 .carousel-btn.prev {
     left: 20px;
 }
-
 .carousel-btn.next {
     right: 20px;
 }
-
-/* Texto de destinos */
-.destinations-text {
+.destinations-text {  /* Texto de destinos */
     padding: 0 20px;
 }
-
 .destinations-title {
     font-size: 42px;
     letter-spacing: 0.03em;
     margin-bottom: 30px;
     line-height: 1.2;
 }
-
 .destinations-description {
     margin-bottom: 20px;
 }
-
 .destinations-link {
     margin-top: 20px;
 }
-
 /* ============================= SECCION: BOUTIQUES E HISTORIA ============= */
 .info-dual-section {
     background-color: #ffffff;
     padding: 100px 40px;
 }
-
 .info-dual-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -472,63 +409,51 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
-
 .info-card {
     position: relative;
     overflow: hidden;
     background-color: #f8f7f3;
     transition: transform 0.3s ease;
 }
-
 .info-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
 .info-card-image {
     width: 100%;
     height: 400px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .info-card:hover .info-card-image {
     transform: scale(1.05);
 }
-
 .info-card-content {
     padding: 40px;
 }
-
 .info-card-title {
     font-size: 32px;
     letter-spacing: 0.05em;
     margin-bottom: 20px;
 }
-
 .info-card-description {
     margin-bottom: 25px;
 }
-
 .info-card-link:hover {
     gap: 15px;
 }
-
 .info-card-link i {
     transition: transform 0.3s ease;
 }
-
 .info-card-link:hover i {
     transform: translateX(5px);
 }
-
 /* ========================== FOOTER SIMPLE =========================== */
 .main-footer {
     background-color: #3d2817;
     color: #f8f7f3;
     padding: 40px 40px 15px;
 }
-
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -539,23 +464,18 @@ header {
     gap: 40px;
     padding-bottom: 30px;
 }
-
 .footer-logo-section {
     text-align: center;
 }
-
 .footer-logo {
     width: 180px;
     height: auto;
 }
-
-/* Newsletter */
-.footer-newsletter {
+.footer-newsletter {  /* Newsletter */
     text-align: center;
     width: 100%;
     max-width: 600px;
 }
-
 .newsletter-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
@@ -564,7 +484,6 @@ header {
     margin-bottom: 8px;
     color: #f8f7f3;
 }
-
 .newsletter-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -572,14 +491,12 @@ header {
     margin-bottom: 20px;
     font-weight: 300;
 }
-
 .newsletter-form {
     display: flex;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .newsletter-input {
     flex: 1;
     min-width: 200px;
@@ -591,17 +508,14 @@ header {
     font-size: 14px;
     transition: all 0.3s ease;
 }
-
 .newsletter-input:focus {
     outline: none;
     border-color: rgba(255, 255, 255, 0.6);
     background-color: rgba(255, 255, 255, 0.1);
 }
-
 .newsletter-input::placeholder {
     color: #c4b5a0;
 }
-
 .newsletter-button {
     padding: 15px 40px;
     background-color: #f8f7f3;
@@ -614,19 +528,15 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .newsletter-button:hover {
     background-color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
-/* Info de contacto */
-.footer-info {
+.footer-info {  /* Info de contacto */
     text-align: center;
     width: 100%;
 }
-
 .footer-contact {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -636,31 +546,26 @@ header {
     text-align: center;
     margin-bottom: 0;
 }
-
 .footer-contact a {
     color: #f8f7f3;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
-
 .footer-contact a:hover {
     opacity: 0.7;
 }
-
 .footer-bottom {
     margin-top: 25px;
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
 }
-
 .footer-bottom p {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #c4b5a0;
     font-weight: 300;
 }
-
 /* ============================== PAGINA SOBRE NOSOTROS ================================ */
 .about-hero {
     margin-top: 80px;
@@ -668,12 +573,10 @@ header {
     background-color: #ffffff;
     text-align: center;
 }
-
 .about-hero-content {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .about-hero-title {
     font-size: 56px;
     font-weight: 300;
@@ -681,7 +584,6 @@ header {
     line-height: 1.1;
     margin-bottom: 30px;
 }
-
 .about-hero-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -691,13 +593,10 @@ header {
     max-width: 800px;
     margin: 0 auto;
 }
-
-/* Secciones de contenido */
 .about-section {
     padding: 100px 40px;
     background-color: #ffffff;
 }
-
 .about-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -706,28 +605,23 @@ header {
     gap: 80px;
     align-items: center;
 }
-
 .about-image-container {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
-
 .about-main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .about-image-container:hover .about-main-image {
     transform: scale(1.05);
 }
-
 .about-text-container {
     padding: 0 20px;
 }
-
 .about-section-title {
     font-size: 56px;
     font-weight: 300;
@@ -735,12 +629,10 @@ header {
     margin-bottom: 30px;
     line-height: 1.1;
 }
-
 .about-section-text {
     line-height: 1.9;
     margin-bottom: 40px;
 }
-
 .about-small-image {
     width: 100%;
     height: 300px;
@@ -748,11 +640,9 @@ header {
     margin-top: 30px;
     transition: transform 0.5s ease;
 }
-
 .about-small-image:hover {
     transform: scale(1.02);
 }
-
 /* ============================== PAGINA BOUTIQUES ================================ */
 .boutiques-hero {
     margin-top: 80px;
@@ -760,12 +650,10 @@ header {
     background-color: #f8f7f3;
     text-align: center;
 }
-
 .boutiques-hero-content {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .boutiques-hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 64px;
@@ -774,7 +662,6 @@ header {
     margin-bottom: 30px;
     color: #000;
 }
-
 .boutiques-hero-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -784,13 +671,10 @@ header {
     max-width: 700px;
     margin: 0 auto;
 }
-
-/* Boutique Featured */
 .boutique-featured {
     padding: 100px 40px;
     background-color: #ffffff;
 }
-
 .boutique-featured-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -809,14 +693,12 @@ header {
     border-radius: 3px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
-
 .carousel-slides,
 .boutique-carousel-slides {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
 .carousel-slide,
 .boutique-carousel-slide {
     position: absolute;
@@ -825,20 +707,16 @@ header {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-
 .carousel-slide.active,
 .boutique-carousel-slide.active {
     opacity: 1;
 }
-
 .carousel-slide img,
 .boutique-carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* Dots de carruseles */
 .carousel-dots,
 .boutique-carousel-dots {
     position: absolute;
@@ -849,7 +727,6 @@ header {
     gap: 12px;
     z-index: 10;
 }
-
 .dot,
 .boutique-dot {
     width: 12px;
@@ -859,30 +736,24 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .dot:hover,
 .boutique-dot:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
-
 .dot.active,
 .boutique-dot.active {
     background-color: #fff;
     width: 30px;
     border-radius: 6px;
 }
-
-/* Info boutique featured */
 .boutique-featured-info {
     padding: 0 20px;
 }
-
 .boutique-featured-title {
     font-size: 48px;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
 }
-
 .boutique-featured-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -891,15 +762,12 @@ header {
     margin-bottom: 30px;
     text-transform: uppercase;
 }
-
 .boutique-featured-description {
     margin-bottom: 40px;
 }
-
 .boutique-info-section {
     margin-bottom: 30px;
 }
-
 .boutique-info-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -909,27 +777,21 @@ header {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-
 .boutique-info-text a {
     color: #000;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
-
 .boutique-info-text a:hover {
     opacity: 0.6;
 }
-
-/* Boutiques estÃ¡ndar */
 .boutique-standard {
     padding: 100px 40px;
     background-color: #ffffff;
 }
-
 .boutique-standard:nth-child(even) {
     background-color: #ffffff;
 }
-
 .boutique-standard-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -938,34 +800,28 @@ header {
     gap: 80px;
     align-items: center;
 }
-
 .boutique-standard-image {
     width: 100%;
     height: 600px;
     overflow: hidden;
 }
-
 .boutique-standard-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .boutique-standard-image:hover img {
     transform: scale(1.05);
 }
-
 .boutique-standard-info {
     padding: 0 20px;
 }
-
 .boutique-standard-title {
     font-size: 42px;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
 }
-
 .boutique-standard-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -974,7 +830,6 @@ header {
     margin-bottom: 40px;
     text-transform: uppercase;
 }
-
 /* ============================== PAGINA DE PRODUCTOS ================================ */
 .products-page {
     margin-top: 80px;
@@ -982,13 +837,11 @@ header {
     min-height: 80vh;
     background-color: #ffffff;
 }
-
 .products-header {
     text-align: left;
     max-width: 1400px;
     margin: 0 auto 60px;
 }
-
 .page-title-big {
     font-size: 80px;
     letter-spacing: 0.05em;
@@ -996,7 +849,6 @@ header {
     text-transform: uppercase;
     line-height: 1;
 }
-
 .products-count {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -1006,12 +858,10 @@ header {
     margin-bottom: 15px;
     text-transform: uppercase;
 }
-
 .page-description {
     max-width: 900px;
     margin-bottom: 0;
 }
-
 /* ============================== GRID DE PRODUCTOS ================================= */
 .products-grid {
     display: grid;
@@ -1020,7 +870,6 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 /* ================================ TARJETA DE PRODUCTO ================================= */
 .product-card {
     background-color: #fff;
@@ -1029,12 +878,10 @@ header {
     cursor: pointer;
     border: 1px solid #e0e0e0;
 }
-
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
-
 .product-image {
     width: 100%;
     height: 400px;
@@ -1042,15 +889,12 @@ header {
     transition: opacity 0.2s ease;
     display: block;
 }
-
 .product-card:hover .product-image {
     transform: scale(1.05);
 }
-
 .product-info {
     padding: 25px;
 }
-
 .product-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
@@ -1059,7 +903,6 @@ header {
     color: #000;
     line-height: 1.3;
 }
-
 .product-price {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
@@ -1067,7 +910,6 @@ header {
     color: #000;
     margin-bottom: 15px;
 }
-
 .btn-view-product {
     width: 100%;
     padding: 15px 30px;
@@ -1082,51 +924,41 @@ header {
     text-transform: uppercase;
     font-weight: 500;
 }
-
 .btn-view-product:hover {
     background-color: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* Para centrar el boton y contenido de tarjetas de fotos */
-.product {
+.product { /* Para centrar el boton y contenido de tarjetas de fotos */
     text-align: center;
     align-items: center;
 }
-
 /* ============================== MODAL DE PRODUCTO ================================== */
 .modal-content {
     border: none;
     border-radius: 0;
 }
-
 .modal-header {
     border-bottom: 1px solid #e0e0e0;
     padding: 25px 30px;
     background-color: #f8f7f3;
 }
-
 .modal-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 0.05em;
 }
-
 .modal-body {
     padding: 40px 30px;
 }
-
-/* Detalles del producto en el modal */
-.product-detail-title {
+.product-detail-title { /* Detalles del producto en el modal */
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 10px;
     color: #000;
 }
-
 .product-detail-price {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
@@ -1134,21 +966,17 @@ header {
     color: #000;
     margin: 20px 0;
 }
-
-/* Carrusel en el modal */
-.carousel-control-prev-icon,
+.carousel-control-prev-icon, /* Carrusel en el modal */
 .carousel-control-next-icon {
     filter: invert(1);
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
     padding: 25px;
 }
-
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 /* ============================== MODAL DEL CARRITO ================================ */
 .cart-modal {
     display: none;
@@ -1160,7 +988,6 @@ header {
     justify-content: center;
     padding: 20px;
 }
-
 .cart-modal-content {
     background-color: #fff;
     width: 100%;
@@ -1170,7 +997,6 @@ header {
     flex-direction: column;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
-
 .cart-modal-header {
     display: flex;
     justify-content: space-between;
@@ -1179,7 +1005,6 @@ header {
     border-bottom: 1px solid #e0e0e0;
     background-color: #f8f7f3;
 }
-
 .cart-modal-header h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
@@ -1188,7 +1013,6 @@ header {
     margin: 0;
     color: #000;
 }
-
 .cart-modal-close {
     background: none;
     border: none;
@@ -1198,35 +1022,28 @@ header {
     transition: color 0.3s ease;
     padding: 5px;
 }
-
 .cart-modal-close:hover {
     color: #000;
 }
-
 .cart-modal-body {
     flex: 1;
     overflow-y: auto;
     padding: 20px 30px;
 }
-
 .cart-modal-footer {
     padding: 20px 30px;
     border-top: 1px solid #e0e0e0;
     background-color: #f8f7f3;
 }
-
-/* Items del carrito en el modal */
-.cart-item-modal {
+.cart-item-modal { /* Items del carrito en el modal */
     display: flex;
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid #e0e0e0;
 }
-
 .cart-item-modal:last-child {
     border-bottom: none;
 }
-
 .cart-item-modal-img {
     width: 80px;
     height: 110px;
@@ -1234,11 +1051,9 @@ header {
     border: 1px solid #e0e0e0;
     flex-shrink: 0;
 }
-
 .cart-item-modal-info {
     flex: 1;
 }
-
 .cart-item-modal-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
@@ -1246,14 +1061,12 @@ header {
     margin-bottom: 5px;
     color: #000;
 }
-
 .cart-item-modal-author {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #999;
     margin-bottom: 8px;
 }
-
 .cart-item-modal-price {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -1261,13 +1074,11 @@ header {
     color: #000;
     margin-bottom: 12px;
 }
-
 .cart-item-modal-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .btn-quantity-modal {
     width: 32px;
     height: 32px;
@@ -1280,13 +1091,11 @@ header {
     font-family: 'Montserrat', sans-serif;
     color: #000;
 }
-
 .btn-quantity-modal:hover {
     background-color: #000;
     color: #fff;
     border-color: #000;
 }
-
 .cart-quantity-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -1294,7 +1103,6 @@ header {
     min-width: 40px;
     text-align: center;
 }
-
 .btn-remove-modal {
     margin-left: auto;
     background: none;
@@ -1304,14 +1112,11 @@ header {
     font-size: 20px;
     transition: all 0.3s ease;
 }
-
 .btn-remove-modal:hover {
     color: #a71d2a;
     transform: scale(1.1);
 }
-
-/* Total y boton de checkout */
-.cart-total {
+.cart-total { /* Total y boton de checkout */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1321,11 +1126,9 @@ header {
     font-weight: 600;
     color: #000;
 }
-
 .cart-total-amount {
     font-size: 24px;
 }
-
 .btn-checkout {
     width: 100%;
     padding: 15px;
@@ -1340,33 +1143,26 @@ header {
     text-transform: uppercase;
     font-weight: 600;
 }
-
 .btn-checkout:hover {
     background-color: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
-/* Carrito vacÃ­o */
 .empty-cart {
     text-align: center;
     padding: 60px 20px;
     color: #999;
 }
-
 .empty-cart i {
     font-size: 60px;
     margin-bottom: 20px;
     opacity: 0.3;
 }
-
 .empty-cart p {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
-
-/* Volver al inicio del checkout */
-#backHome a {
+#backHome a { /* Volver al inicio del checkout */
     color: #000;
     text-decoration: none;
     font-family: 'Cormorant Garamond', serif;
@@ -1375,11 +1171,9 @@ header {
     border-bottom: 1px solid #000;
     transition: opacity 0.3s ease;
 }
-
 #backHome a:hover {
     opacity: 0.6;
 }
-
 #cart-count-badge {
     position: absolute;
     top: -6px;
@@ -1394,20 +1188,16 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 /* ===================== RESPONSIVE TEL ========================== */
 @media (max-width: 768px) {
-    /* PREVENIR SCROLL HORIZONTAL */
-    body {
+    body { /* PREVENIR SCROLL HORIZONTAL */
         overflow-x: hidden;
         max-width: 100vw;
     }
-    
     .navbar {
         max-width: 100vw;
         overflow-x: hidden;
     }
-
     .boutiques-hero-title {
         font-size: 38px !important;
         line-height: 1.1;
@@ -1423,22 +1213,18 @@ header {
     .collection-image-right {
         height: 400px;
     }
-    /* CARRUSEL DE DESTINOS EN MÓVIL */
-    .destinations-section .carousel-container {
+    .destinations-section .carousel-container { /* CARRUSEL DE DESTINOS EN TEL */
         height: 350px !important;
     }
-
     .destinations-section .carousel-slide,
     .destinations-section .carousel-slides {
         height: 350px !important;
     }
-
     .destinations-section .carousel-slide img {
         height: 350px !important;
         object-fit: cover;
     }
-    /* NAVBAR TEL */
-    .navbar {
+    .navbar { 
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1446,39 +1232,29 @@ header {
         padding: 0 20px;
         background-color: #ffffff;
     }
-
-    /* BOTON HAMBURGUESA VISIBLE */
-    .menu-toggle {
+    .menu-toggle { /* BOTON HAMBURGUESA VISIBLE */
         display: flex !important;
         order: 1;
         z-index: 1001;
     }
-
-    /* LOGO CENTRADO */
-    .logo {
+    .logo { /* LOGO CENTRADO */
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         order: 2;
         z-index: 1001;
     }
-
     .logo-img {
         height: 45px;
     }
-
-    /* CARRITO A LA DERECHA */
-    .nav-icons {
+    .nav-icons {  /* CARRITO A LA DERECHA */
         order: 3;
         z-index: 1001;
     }
-
     .bag {
         font-size: 22px;
     }
-
-    /* MENU OCULTO POR DEFECTO- ESTO ES LO CLAVE */
-    .nav-links {
+    .nav-links { /* MENU OCULTO POR DEFECTO- ESTO ES LO CLAVE */
         display: none !important;  /* OCULTO */
         position: fixed;
         top: 70px;
@@ -1493,13 +1269,10 @@ header {
         z-index: 1000;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
-
-    /* MENU VISIBLE CUANDO TIENE .active ESTO TAMBIEN ES CLAVE */
-    .nav-links.active {
-        display: flex !important;  /* â† VISIBLE */
+    .nav-links.active {   /* MENU VISIBLE CUANDO TIENE .active ESTO TAMBIEN ES CLAVE */
+        display: flex !important;  /*  VISIBLE */
         animation: slideDown 0.3s ease forwards;
     }
-
     @keyframes slideDown {
         from { 
             opacity: 0; 
@@ -1510,17 +1283,14 @@ header {
             transform: translateY(0); 
         }
     }
-
     .nav-links li {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #f0f0f0;
     }
-
     .nav-links li:last-child {
         border-bottom: none;
     }
-
     .nav-links a {
         display: block;
         padding: 20px 30px;
@@ -1533,32 +1303,26 @@ header {
         font-weight: 500;
         transition: all 0.3s ease;
     }
-
     .nav-links a:hover {
         background-color: #f8f7f3;
         color: #000;
     }
-
     .nav-links a::after {
         display: none;
     }
-
     /* Video hero */
     .hero {
         margin-top: 70px;
     }
-
     .hero-video-desktop {
         display: none;
     }
-
     .hero-image-mobile {
         display: block;
     }
     .sound-btn {
         display: none;
     }
-    /* Resto del responsive */
     .collection-section {
         padding: 50px 20px 0 20px;
     }
