@@ -110,29 +110,22 @@ const productsDatabase = [
         ],
     }
 ];
-
 // ========================== CARRITO GLOBAL (FUNCIONA EN TODAS LAS PÁGINAS) ================================
 let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
-
-// Función para actualizar el contador del carrito
-function updateCartCount() {
+function updateCartCount() {  // Función para actualizar el contador del carrito
     const cartCount = document.getElementById('cartCount');
     if (cartCount) {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCount.textContent = totalItems;
     }
 }
-// Función para guardar carrito
-function updateCart() {
+function updateCart() {  // Función para guardar carrito
     localStorage.setItem('assoulineCart', JSON.stringify(cart));
     updateCartCount();
 }
-
-// Formatear precio
-function formatPrice(price) {
+function formatPrice(price) { // Formatear precio
     return '$' + price.toLocaleString('es-AR');
 }
-
 // =============================== MOSTRAR PRODUCTOS EN LA PÁGINA ===============================
 function displayProducts() {
     const grid = document.getElementById('productsGrid');
@@ -145,7 +138,6 @@ function displayProducts() {
     productsDatabase.forEach(product => {
         const first = product.images[0];
         const second = product.images[1] || product.images[0];
-        
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML =
@@ -157,14 +149,13 @@ function displayProducts() {
                 '<button class="btn-view-product" onclick="addToCart(' + product.id + ')">AGREGAR AL CARRITO</button>' +
             '</div>';
         grid.appendChild(productCard);
-        // ----- Hover swap (1 ↔ 2) + preload -----
+        // ----- Hover swap (1 a 2) + preload -----
         const imgEl = productCard.querySelector('.product-image');
         const preload = new Image();
         preload.src = second;
         imgEl.addEventListener('mouseenter', () => { imgEl.src = second; });
         imgEl.addEventListener('mouseleave', () => { imgEl.src = first; });
-        // En tel: primer toque alterna
-        imgEl.addEventListener('touchstart', () => {
+        imgEl.addEventListener('touchstart', () => { // En tel: primer toque alterna
             imgEl.src = (imgEl.src.endsWith(second)) ? first : second;
         }, { passive: true });
     });
@@ -174,7 +165,6 @@ function addToCart(productId) {
     let cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
     const product = productsDatabase.find(p => p.id === productId);
     if (!product) return;
-    
     const existingItem = cart.find(item => item.id === productId);
     if (existingItem) {
         existingItem.quantity++;
@@ -182,7 +172,6 @@ function addToCart(productId) {
         cart.push({ ...product, quantity: 1 });
     }
     localStorage.setItem('assoulineCart', JSON.stringify(cart));
-    
     const cartCountEl = document.getElementById('cartCount');
     if (cartCountEl) {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -193,7 +182,6 @@ function addToCart(productId) {
 const video = document.getElementById('heroVideo');
 const soundBtn = document.getElementById('soundToggle');
 const soundIcon = document.getElementById('soundIcon');
-
 if (soundBtn && video && soundIcon) {
     soundBtn.addEventListener('click', () => {
         video.muted = !video.muted;
@@ -206,21 +194,18 @@ const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
 
 if (menuToggle && navLinks && overlay) {
-    // abrir/cerrar al tocar las rayitas
-    menuToggle.addEventListener('click', (e) => {
+    menuToggle.addEventListener('click', (e) => { // abrir/cerrar al tocar las rayitas
         e.stopPropagation();
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
-    // cerrar si tocás afuera
-    overlay.addEventListener('click', () => {
+    overlay.addEventListener('click', () => { // cerrar si tocás afuera
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
-    // cerrar si tocás algún link dentro del menú
-    navLinks.querySelectorAll('a').forEach(link => {
+    navLinks.querySelectorAll('a').forEach(link => {     // cerrar si tocás algún link dentro del menú
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
@@ -231,13 +216,9 @@ if (menuToggle && navLinks && overlay) {
 // ================================= CARRUSEL DE DESTINOS =============================
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
 if (slides.length > 0 && dots.length > 0) {
     let currentSlide = 0;
-    // Función para mostrar slide
-    function showSlide(index) {
+    function showSlide(index) { // Función para mostrar slide
         if (index >= slides.length) {
             currentSlide = 0;
         } else if (index < 0) {
@@ -250,31 +231,17 @@ if (slides.length > 0 && dots.length > 0) {
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
     }
-    // Botón siguiente
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            showSlide(currentSlide + 1);
-        });
-    }
-    // Botón anterior
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            showSlide(currentSlide - 1);
-        });
-    }
-    // Click en los puntitos
-    dots.forEach((dot, index) => {
+    dots.forEach((dot, index) => { // Click en los puntitos
         dot.addEventListener('click', () => {
             showSlide(index);
         });
     });
-    // Cambio automático cada 5 segundos
-    setInterval(() => {
+    setInterval(() => { // Cambio automático cada 5 segundos
         showSlide(currentSlide + 1);
     }, 5000);
     console.log("Carrusel de destinos cargado ✓");
 }
-// ============================ NEWSLETTER FORM ===========================
+// ============================ NEWSLETTER ===========================
 const newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
@@ -287,7 +254,6 @@ if (newsletterForm) {
         if (nameInput) nameInput.value = '';
     });
 }
-
 // ============================= MODAL DEL CARRITO (PARA INDEX Y SOBRE NOSOTROS) =========================
 const cartIcon = document.getElementById('cartIcon');
 if (cartIcon) {
@@ -299,23 +265,19 @@ if (cartIcon) {
             const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
             cartModal.show();
         } else {
-            // Si estamos en index o sobre nosotros, mostrar modal simple
-            showSimpleCartModal();
+            showSimpleCartModal();// Si estamos en index o sobre nosotros, mostrar modal simple
         }
     });
 }
 // ======================== MODAL SIMPLE PARA INDEX Y SOBRE NOSOTROS ======================
 function showSimpleCartModal() {
-    // Crear modal si no existe
-    let modal = document.getElementById('simpleCartModal');
+    let modal = document.getElementById('simpleCartModal'); // Crear modal si no existe
     if (!modal) {
         modal = createSimpleCartModal();
         document.body.appendChild(modal);
     }
-    // Actualizar contenido
-    updateSimpleCartContent();
-    // Mostrar modal
-    modal.style.display = 'flex';
+    updateSimpleCartContent();     // Actualizar contenido
+    modal.style.display = 'flex';    // Mostrar modal
     document.body.style.overflow = 'hidden';
 }
 function createSimpleCartModal() {
@@ -338,8 +300,7 @@ function createSimpleCartModal() {
             </div>
         </div>
     `;
-    // Cerrar al hacer click fuera
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener('click', (e) => {    // Cerrar al hacer click fuera
         if (e.target === modal) {
             closeSimpleCartModal();
         }
@@ -409,7 +370,6 @@ function changeQuantitySimple(index, change) {
     updateCart();
     updateSimpleCartContent();
 }
-
 function removeFromCartSimple(index) {
     cart.splice(index, 1);
     updateCart();
@@ -429,8 +389,7 @@ function checkoutSimple() {
 function displayCartModal() {
     const cartBody = document.getElementById('cartModalBody');
     const cartTotal = document.getElementById('cartModalTotal');
-    if (!cartBody) return;
-    // Recargar carrito desde localStorage
+    if (!cartBody) return; // Recargar carrito desde localStorage
     cart = JSON.parse(localStorage.getItem('assoulineCart')) || [];
     if (cart.length === 0) {
         cartBody.innerHTML =
